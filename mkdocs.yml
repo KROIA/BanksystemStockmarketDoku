@@ -1,0 +1,170 @@
+site_name: Kroia's Mods
+site_description: Player, admin and developer documentation for the StockMarket and BankSystem Minecraft mods.
+# Set when the GitHub repository exists, e.g. https://<user>.github.io/<repo>/
+# site_url: https://example.github.io/docs/
+docs_dir: docs
+strict: true
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+plugins:
+  - search
+  - glightbox:
+      zoomable: true
+      skip_classes:
+        - no-zoom
+  # German is prepared but not built yet. To add it: write page.de.md next to
+  # page.md, add nav_translations below, then set build: true.
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: de
+          name: Deutsch
+          build: false
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home:
+      - index.md
+      - getting-started.md
+      - glossary.md
+  - StockMarket:
+      - stockmarket/index.md
+      - stockmarket/trading.md
+      - stockmarket/price-chart.md
+      - stockmarket/pair-trading.md
+      - stockmarket/newspaper.md
+      - stockmarket/blocks-and-recipes.md
+      - stockmarket/display-block.md
+      - stockmarket/trading-hours.md
+      - stockmarket/villager-trading.md
+  - BankSystem:
+      - banksystem/index.md
+      - banksystem/bank-accounts.md
+      - banksystem/bank-terminal.md
+      - banksystem/atm.md
+      - banksystem/money.md
+      - banksystem/automation.md
+      - banksystem/displays.md
+      - banksystem/companies.md
+      - banksystem/shares.md
+      - banksystem/currency-bindings.md
+      - banksystem/blocks-and-recipes.md
+      - banksystem/commands.md
+  - Server Admin:
+      - admin/index.md
+      - Both mods:
+          - admin/install.md
+          - admin/multi-server.md
+          - admin/permissions.md
+          - admin/commands.md
+          - admin/placeholders.md
+          - admin/discord.md
+          - admin/backups.md
+      - StockMarket:
+          - admin/stockmarket/index.md
+          - admin/stockmarket/markets.md
+          - admin/stockmarket/setup-use-cases.md
+          - admin/stockmarket/presets.md
+          - admin/stockmarket/mod-settings.md
+          - admin/stockmarket/trading-hours.md
+          - admin/stockmarket/alerts.md
+          - admin/stockmarket/villager-trading.md
+          - Plugins:
+              - admin/stockmarket/plugins/index.md
+              - admin/stockmarket/plugins/net-flow.md
+              - admin/stockmarket/plugins/volatility.md
+              - admin/stockmarket/plugins/target-price-bot.md
+              - admin/stockmarket/plugins/order-book-volume.md
+              - admin/stockmarket/plugins/news.md
+          - News:
+              - admin/stockmarket/news/index.md
+              - admin/stockmarket/news/config-files.md
+              - admin/stockmarket/news/event-reference.md
+              - admin/stockmarket/news/advanced-events.md
+              - admin/stockmarket/news/tutorial.md
+              - admin/stockmarket/news/pictures.md
+              - admin/stockmarket/news/commands.md
+              - admin/stockmarket/news/default-events.md
+      - BankSystem:
+          - admin/banksystem/index.md
+          - admin/banksystem/settings.md
+          - admin/banksystem/bankable-items.md
+          - admin/banksystem/accounts.md
+          - admin/banksystem/audit.md
+          - admin/banksystem/item-components.md
+  - Developers:
+      - developers/index.md
+      - StockMarket:
+          - Plugins:
+              - developers/stockmarket/plugins/index.md
+              - developers/stockmarket/plugins/getting-started.md
+              - developers/stockmarket/plugins/api-reference.md
+              - developers/stockmarket/plugins/examples.md
+          - developers/stockmarket/market-access-api.md
+          - developers/stockmarket/market-creation-api.md
+      - BankSystem:
+          - developers/banksystem/api.md
+          - developers/banksystem/events.md
+          - developers/banksystem/currency-integration.md
+          - developers/banksystem/item-price-provider.md
+          - developers/banksystem/transaction-ledger.md

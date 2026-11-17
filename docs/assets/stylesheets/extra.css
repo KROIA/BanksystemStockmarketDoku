@@ -1,0 +1,4 @@
+/* Charts and screenshots keep their own (light) background; round them so they sit well in dark mode. */
+.md-typeset figure img {
+  border-radius: 0.3rem;
+}
