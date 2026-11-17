@@ -1,9 +1,9 @@
 ---
-title: "Kroia's Mods"
+title: "BankSystem & StockMarket"
 description: "Start page: what StockMarket and BankSystem are, how they fit together, and where each reader group starts."
 ---
 
-# Kroia's Mods
+# BankSystem & StockMarket
 
 !!! info "Not written yet"
     This page will cover: Start page: what StockMarket and BankSystem are, how they fit together, and where each reader group starts.

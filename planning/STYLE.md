@@ -1,4 +1,4 @@
-# Style guide: Kroia's Mods documentation
+# Style guide: BankSystem & StockMarket documentation
 
 This guide applies to every page under `docs/`. It lives in `planning/`, outside `docs/`, so it is never part of the site.
 
@@ -147,7 +147,7 @@ Short troubleshooting lists can be a table (Message | What it means | What to do
 - A setting that has both a GUI name and a key: GUI name first, key in code after it, once per page:
   **Trade cooldown (ms)** (`TRADE_COOLDOWN_MS`).
 - Block and item names as the game shows them: **Stock Market Block**, **Bank Terminal Block**, **Trading Software**. Don't invent short forms.
-- Mod names: **StockMarket**, **BankSystem**, **ModUtilities** (one word each). The site is **Kroia's Mods**.
+- Mod names: **StockMarket**, **BankSystem**, **ModUtilities** (one word each). The site is **BankSystem & StockMarket**.
 - Server roles: **master** and **slave** (lower case), as in the config file.
 
 When the docs and the code disagree, the code wins. Check the default values in the code, not in old docs.
