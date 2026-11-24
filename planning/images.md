@@ -2,7 +2,7 @@
 
 Every image that [structure.md](structure.md) plans, grouped by who makes it. File names are paths under `docs/assets/images/`. Until an image exists, its page shows a placeholder (see the end of this file).
 
-Totals: 46 plain screens (section 2) and 18 pictures and GIFs in the world (section 1), all scripted, plus 1 optional GIF. For you: the Discord feed picture and building the home corner once. 4 diagrams (done), recipe images from the export command, and a few reused files.
+Totals: 46 plain screens (section 2) and 18 pictures and GIFs in the world (section 1), all scripted, plus 1 optional GIF. For you: the Discord feed picture (the home corner is built, see section 1). 4 diagrams (done), recipe images from the export command, and a few reused files.
 
 User decision 2026-11-24: script every image except the Discord feed. Tracker items:
 - BS-288 (24 BankSystem plain screens) and SM-358 (22 StockMarket plain screens): section 2.
@@ -16,7 +16,7 @@ User decision 2026-11-24: script every image except the Discord feed. Tracker it
 
 ## Rules for every picture
 
-- **Window size:** StockMarket and shared pictures 1920×1080 (StockMarket session, 2026-11-24: at 1280×720 buttons overlapped), BankSystem pictures 1280×720 (TestKit default) unless the user decides otherwise. Always GUI scale 2, English, vanilla resource pack. This includes the home picture. The pages show every picture at 600 px wide and open the full size on click, so both sizes work without layout changes.
+- **Window 1920×1080, GUI scale 2** for every picture, BankSystem and StockMarket (user decision 2026-11-24: at 1280×720 buttons overlapped). English, vanilla resource pack. The pages show every picture at 600 px wide and open the full size on click.
 - **In the world:** HUD hidden unless the row says "HUD on", noon and clear weather, no overlays of other mods (JEI, minimap).
 - **Names are invented:** players **Tavrik**, **Quenby** and **Brindle** (the same as in the Audit Tool pictures), the company **Acme Mining**, the accounts **Savings** (Tavrik) and **Farm Co-op** (Tavrik and Quenby). Never a real player name, never "Dev".
 - **Numbers look real** but round: 12'450.00 $, 64 iron ingots.
@@ -27,21 +27,58 @@ User decision 2026-11-24: script every image except the Discord feed. Tracker it
 
 ### Common scene
 
-- **Place:** build on a calm floor (e.g. polished andesite or oak planks) with a wall behind (stone bricks or dark oak), so no sky line, void or test-area border shows. No mobs except where listed.
-- **Camera:** `/tp @s <x> <y> <z> <yaw> <pitch>`, 3–5 blocks from the subject, about eye level, 10–25° down unless the row says otherwise. Everything the row lists must be in the picture.
+- **Place:** the home corner below, for every picture in the world. No mobs except where listed.
+- **Camera:** `/tp @s <x> <y> <z> <yaw> <pitch>` from the camera table below. Everything the row lists must be in the picture.
 - **Settled markets:** about 10 markets (diamond, iron, gold, emerald, coal, copper, redstone, lapis, wheat, oak log) with the default plugins, run with `/tick sprint` until the charts show several hours of candles. The same world can serve the plain screens of section 2.
 - **History by real time** (balance history, company statistics) can't be fast-forwarded: write invented history directly through a dev-only hook.
 - These shots take minutes. They run on demand (`--only <topic>`), never in the normal test runs.
+
+### The home corner
+
+Built by the user on 2026-11-24: world `DemoCorner` (superflat, Prism instance "1.21.1 neoforge", BankSystem and StockMarket 2.2.0). All coordinates are world coordinates. The corner spans x 6..26, y -60..-55, z -13..6 (21×6×20), so its origin is (6, -60, -13).
+
+- **Floor:** jungle planks at y -60, so players stand at y -59.
+- **Walls:** stripped oak logs, 6 high. West wall at x 6, south wall at z 6. Open to the north and east, no roof, so sky shows above the walls.
+- **West wall,** everything at x 7 facing east, from north to south:
+  - z -9 to -8: chest on a hopper that feeds the **Bank Upload Block** (z -8), with a lever on its south side.
+  - z -6 to -4: **Bank Download Block** (y -58) above a hopper into a chest (z -6), with a lever on its south side.
+  - z -3: **Stock Market Block**. z -2: **Bank Terminal Block**. z -1: **Share Stamper**.
+  - z 0 to 5: a counter of polished diorite slabs. Above it, four item frames with **Software**, **ATM Software**, **Banking Software** and **Trading Software**.
+- **South wall,** everything at z 5 facing north, from west to east:
+  - x 12: **Money Stockpile** on a slab, already filled, with a 2×1 **Bank Display** above it (x 11–12).
+  - x 14–15: 2×2 **Bank Display**.
+  - x 17–18: three 2×1 **Stock Market Displays** stacked, each with a price chart.
+  - x 20–22: 3×2 **Stock Market Display** with a price chart.
+- **Not in the corner:** ATM, a plain Terminal Block, a villager. The script places them where a row needs them.
+
+Before the corner goes into the repo as `planning/structures/home-hero.nbt`:
+
+- The Bank Terminal Block stores the UUID of the player who used it. Remove its `PlayerData`.
+- Display blocks point to their screen's main block by absolute coordinates (`ctrlX/Y/Z`). Place the structure at the same origin (6, -60, -13), or the script rebuilds the displays.
+- The displays' settings use market IDs of that world. The script sets every display again (Savings' **Balance History** on the Bank Displays, diamond, gold, iron and emerald charts on the Stock Market Displays).
+
+**Camera spots.** Feet position for `/tp`, eyes are 1.62 higher. Yaw 0 looks south, 90 west. Start values, worked out from the block positions: fine-tune them in the first run.
+
+| File | Position (x y z) | Yaw | Pitch | Before the shot |
+|---|---|---|---|---|
+| `shared/home-hero` | 23.5 -56.5 -8.5 (flying) | 49 | 12 | |
+| `banksystem/blocks-overview` | 17.5 -57.5 -8.5 (flying) | 49 | 13 | ATM and Terminal Block as for terminal-family |
+| `banksystem/automation-setup` | 11.5 -59 -3.5 | 127 | 13 | both levers on, both blocks connected to Savings |
+| `shared/terminal-family`, `stockmarket/news-toast` | 12.5 -59 -2.5 | 90 | 13 | Terminal Block at (7, -59, -4), ATM at (7, -59, -1) in place of the Share Stamper, both facing east |
+| `banksystem/display-in-world` | 15.0 -59 1.5 | 0 | -6 | 2×2 Bank Display: Balance History |
+| `stockmarket/display-in-world` | 17.5 -59 0.5 | -42 | -4 | 3×2 display: diamond chart |
+| `banksystem/money-stockpile` | 12.5 -59 3.0 | 0 | 20 | |
+| `shared/program-terminal.gif` | 11.5 -59 1.5 | 90 | 3 | Terminal Blocks on the counter at (7, -58, 1) and (7, -58, 2), facing east; HUD on |
 
 ### BankSystem (BS-291)
 
 | File | Page | Scene | Needs |
 |---|---|---|---|
-| `banksystem/blocks-overview.png` | BankSystem overview | A small bank room: Terminal Block, Bank Terminal Block, ATM, a Bank Upload Block fed by a hopper, a Bank Download Block filling a chest, a 3×2 Bank Display on the back wall showing **Balance History**, a Share Stamper, a Money Stockpile on a counter. Camera at the entrance, about 20° down. | |
+| `banksystem/blocks-overview.png` | BankSystem overview | The west wall of the home corner with ATM and Terminal Block added, and the Bank Displays on the south wall showing **Balance History**. | |
 | `banksystem/money-items.png` | Money and the ATM | Every coin (**1 Cent** to **50 Cent**, **Dollar**) and every banknote (**5 Dollar** to **1'000'000 Dollar**) in item frames on a wall, sorted by value, coins in the top row. Camera straight in front. | |
-| `banksystem/money-stockpile.png` | Money and the ATM | A Money Stockpile on a counter (e.g. smooth stone slabs): coin piles and a few upright banknotes. Close up, about 2 blocks away, 30° down. | |
-| `banksystem/automation-setup.png` | Automation | Chest → hopper → Bank Upload Block with a lever on it, switched on. Next to it a Bank Download Block → hopper → chest, powered through visible redstone dust. Both connected to Savings. Camera diagonal, 25° down. | |
-| `banksystem/display-in-world.png` | Bank Display | A 3×2 Bank Display on a stone brick wall showing **Balance History** of Savings over 7 days. Camera centred in front, about 4 blocks away. | |
+| `banksystem/money-stockpile.png` | Money and the ATM | The Money Stockpile on its slab in the home corner, close up. | |
+| `banksystem/automation-setup.png` | Automation | Chest → hopper → Bank Upload Block and Bank Download Block → hopper → chest in the home corner, both levers on, both blocks connected to Savings. | |
+| `banksystem/display-in-world.png` | Bank Display | The 2×2 Bank Display in the home corner showing **Balance History** of Savings over 7 days. Camera centred in front. | |
 | `banksystem/share-items.png` | Shares | The inventory screen with two or three Company Shares of different designs (Acme Mining and one more company). The mouse rests on one, so its tooltip with the supply shows. | TK-14: hover |
 | `banksystem/bank-terminal-deposit.gif` | Bank Terminal, Getting started | The Bank Terminal of Savings, 64 iron ingots in its slots: click **Send items to bank**. Then **+10** on iron and **Receive items from bank**. About 8 s. | TK-14: GIF, pointer |
 | `banksystem/currency-bindings.png` | Currency bindings | **Currency Bindings** of Tavrik's personal account: the Spur slot bound to Tavrik's Numismatics account, with a balance. | Numismatics in the cell (TK-14) |
@@ -53,11 +90,11 @@ The shared pictures show both mods, so they are taken in the StockMarket cells, 
 
 | File | Page | Scene | Needs |
 |---|---|---|---|
-| `shared/home-hero.png` | Home | Your corner, placed from `planning/structures/home-hero.nbt` with `/place template`. The script fills the displays: the Bank Display with Savings' **Balance History**, the Stock Market Display with the diamond chart. Camera at the armor stand named `camera`, which is removed before the shot. Without the file: the blocks-overview room plus a Stock Market Block and a Stock Market Display. | the structure file (your part) |
-| `shared/terminal-family.png` | How the two mods work together | Terminal Block, Bank Terminal Block, ATM and Stock Market Block in a row, one block apart, fronts to the camera. Camera in front, about 4 blocks away, 10° down. | |
-| `shared/program-terminal.gif` | Getting started | Two Terminal Blocks side by side, HUD on (the held item shows). Holding Banking Software, right-click the first: it becomes a Bank Terminal Block. Switch to Trading Software, right-click the second: it becomes a Stock Market Block. About 8 s. | TK-14: GIF, use item on block |
+| `shared/home-hero.png` | Home | The whole home corner, placed from `planning/structures/home-hero.nbt` with `/place template`, displays filled by the script. | the structure file |
+| `shared/terminal-family.png` | How the two mods work together | Terminal Block, Stock Market Block, Bank Terminal Block and ATM in a row on the west wall, fronts to the camera. | |
+| `shared/program-terminal.gif` | Getting started | Two Terminal Blocks side by side on the counter, below the software in the item frames, HUD on (the held item shows). Holding Banking Software, right-click the first: it becomes a Bank Terminal Block. Switch to Trading Software, right-click the second: it becomes a Stock Market Block. About 8 s. | TK-14: GIF, use item on block |
 | `shared/alert-chat.png` | Alerts and suspicion flags | HUD on. With low thresholds, trigger one BankSystem suspicion alert and one StockMarket **Profit alert**, so both show in chat. Cropped to the chat. | TK-14: crop |
-| `stockmarket/display-in-world.png` | Stock Market Display, StockMarket overview | A 3×2 Stock Market Display on a wall with the diamond chart, a Stock Market Block in front of it. Camera diagonal. | |
+| `stockmarket/display-in-world.png` | Stock Market Display, StockMarket overview | The Stock Market Displays in the home corner, the 3×2 one with the diamond chart. Camera diagonal. | |
 | `stockmarket/news-toast.png` | Market news | HUD on, **Enable news popups** ticked, standing in the terminal-family scene. Start a news event and shoot while its popup is in the top-right corner. | |
 | `stockmarket/villager-trade.png` | Villager trading | A villager with several trades (e.g. a toolsmith) and prices in money, its trade screen open. | |
 | `stockmarket/web-interface.png` | Web interface | **Web interface (read-only)** on. While the server runs, a headless browser (e.g. `firefox --headless --screenshot --window-size=1920,1080 <url>`) opens `http://127.0.0.1:<port>/` showing one market (diamond): chart, order book, recent trades. | a browser on the test PC |
@@ -66,12 +103,12 @@ The shared pictures show both mods, so they are taken in the StockMarket cells, 
 
 ### Your part
 
-1. **The home corner, built once.** In a creative world with both mods, build a small bank and trading corner: Bank Terminal Block, ATM, Stock Market Block, a 3×2 Bank Display, a 3×2 Stock Market Display, a Money Stockpile on a counter. The displays can stay unconfigured; the script fills them. Place an armor stand named `camera` (name tag) where the picture should be taken from, facing the scene. Save everything with a structure block in **Save** mode, **Include entities** on (for the armor stand), at most 48×48×48. Then copy `<world>/generated/minecraft/structures/<name>.nbt` to `planning/structures/home-hero.nbt` in this repo.
+1. **The home corner:** built (world `DemoCorner`, see above). No armor stands needed: the camera spots come from the block positions. Still open: the structure file `planning/structures/home-hero.nbt`.
 2. **`shared/discord-feed.png`** (Discord feed page): a Discord channel with 4–5 feed messages (a buy, a sell, a deposit, an alert), sent to a test webhook. Crop to the messages; no server name, no real names.
 
 ## 2. Plain screens (scripted: BS-288, SM-358)
 
-These show one screen with no movement. TestKit can take them in a client GUI suite (`Screenshots.take(...)`, done in TK-4): fixed window (StockMarket 1920×1080, BankSystem 1280×720), GUI scale 2, HUD hidden, invented data. BankSystem already writes `banksystem/bank_account_selection.png` this way. Scripted shots can be retaken in one run whenever a screen changes, and later in German for the German pages. Decided 2026-11-24: the BankSystem session scripts its 24 (BS-288), the StockMarket session its 22 (SM-358).
+These show one screen with no movement. TestKit can take them in a client GUI suite (`Screenshots.take(...)`, done in TK-4): fixed 1920×1080 window, GUI scale 2, HUD hidden, invented data. BankSystem already writes `banksystem/bank_account_selection.png` this way. Scripted shots can be retaken in one run whenever a screen changes, and later in German for the German pages. Decided 2026-11-24: the BankSystem session scripts its 24 (BS-288), the StockMarket session its 22 (SM-358).
 
 ### BankSystem (24)
 
