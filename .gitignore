@@ -1,3 +1,39 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+.architectury-transformer
+
+# Files from Forge MDK
+forge*changelog.txt
+
+*.bat
+
+.claude
+CLAUDE.md
+
+graphify-out/
+
+# docs site
+!preview.bat
 .venv/
 site/
 __pycache__/
