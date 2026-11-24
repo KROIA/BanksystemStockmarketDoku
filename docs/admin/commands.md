@@ -27,6 +27,8 @@ See [Admins and permissions](permissions.md) for the flags and the nodes. Comman
 | `/banksystem serverInfo` | Everyone | Shows the role of this server and, on a slave, whether it is trusted. |
 | `/banksystem serverNetworkInfo` | Flag | Lists all connected servers and their trust. |
 
+`op`, `deop`, `trust` and `untrust` must be typed by a player in game. They don't work from the server console.
+
 ### Items and accounts
 
 | Command | Needs | What it does |

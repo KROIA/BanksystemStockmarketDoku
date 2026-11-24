@@ -12,7 +12,8 @@ All types are in `net.kroia.banksystem.api.currency`.
 ## How a binding works
 
 - **Your mod holds the balance.** Balance reads, deposits and withdrawals on the bound slot go to your account.
-- **BankSystem keeps the rest:** account members, rights and the **locked** balance (money reserved for open orders). Locking and unlocking never reach your mod; spending a locked amount withdraws it from your account.
+- **BankSystem keeps the rest:** account members, rights and the **locked** balance (money reserved for open orders).
+- **Locking moves money out of your account.** A lock withdraws the amount from your account in whole units of your mod (see [Units](#units)), and BankSystem holds it in the binding. Unlocking deposits it back. When a locked amount is spent, for example by a filled order, only BankSystem's locked counter goes down: your mod sees no second withdrawal.
 - **Binding moves the money once.** The slot's free balance moves into your account when the player binds it. The locked part stays in BankSystem.
 - **One slot, one account.** Each bank slot can be bound on its own. Other slots of the same account stay normal.
 
@@ -33,7 +34,7 @@ Write an adapter if your mod keeps balances in accounts that survive logouts and
 
 - **Server thread only.** BankSystem calls every method on the server thread. Your adapter doesn't need to be thread-safe. Don't change adapter state from your own background threads.
 - **Amounts are BankSystem raw units** (`long`). Convert to your mod's units inside the adapter. See [Units](#units).
-- **Read live, don't cache.** `getBalance()` is called for every read. Your mod's own machines and commands change balances behind BankSystem's back, and BankSystem relies on a live value to keep its locked balance correct. If a lookup in your mod is slow, cache inside your mod and update that cache on every change.
+- **Read live, don't cache.** `getBalance()` is called for every read and is the slot's free balance. Your mod's own machines and commands change balances behind BankSystem's back, and BankSystem must see that, for example to check whether a player can afford an order. The locked balance isn't in it: BankSystem keeps that in the binding. If a lookup in your mod is slow, cache inside your mod and update that cache on every change.
 - **Don't throw for expected failures.** `deposit` and `withdraw` return `false` with no change when the money doesn't fit, isn't there, or your mod refuses for its own reasons.
 
 ## Writing a provider
@@ -181,7 +182,11 @@ A binding only connects accounts of the same kind:
 
 So set `shared` correctly in every reference you return.
 
-A binding is also refused with `FAILED_WRONG_INSTANCE_TYPE` when the item of the bank slot isn't your provider's base currency item.
+A binding is also refused:
+
+- with `FAILED_WRONG_INSTANCE_TYPE` when the item of the bank slot isn't your provider's base currency item;
+- with `FAILED_INVALID_ITEM_ID` when the slot is already bound. Unbind it first;
+- with `FAILED_OVERFLOW` when your `deposit` returns `false` while binding moves the slot's free balance into your account. Nothing changes.
 
 ## What callers see
 
@@ -189,7 +194,7 @@ Other mods use the bound slot through the normal [BankSystem API](api.md). Your 
 
 | Your adapter | `BankStatus` |
 |---|---|
-| `deposit` returns `false` | `FAILED_OVERFLOW` |
+| `deposit` returns `false` | `FAILED_OVERFLOW`. During an unlock: `FAILED_EXTERNAL_UNAVAILABLE`, and the amount stays locked until a later unlock works. |
 | `withdraw` returns `false` | `FAILED_NOT_ENOUGH_FUNDS` |
 | `open` returns `null`, or `isAvailable()` is `false` | `FAILED_EXTERNAL_UNAVAILABLE` |
 

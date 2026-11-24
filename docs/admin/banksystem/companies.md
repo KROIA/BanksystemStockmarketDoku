@@ -65,7 +65,7 @@ An existing id is replaced. The new symbol reaches all players and slave servers
 | `/banksystem symbols list` | Lists all symbols. |
 | `/banksystem symbols add <id>` | Adds or replaces a symbol from the inbox folder. |
 | `/banksystem symbols remove <id>` | Removes a symbol. |
-| `/banksystem symbols reload` | Reads the symbol folder again after you changed files in it by hand. |
+| `/banksystem symbols reload` | Reads the files of the existing symbols again, after you replaced one by hand. New files are ignored: add them with `/banksystem symbols add`. |
 
 All four commands work on the master server only.
 

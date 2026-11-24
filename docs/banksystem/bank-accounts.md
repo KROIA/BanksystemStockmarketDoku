@@ -69,7 +69,7 @@ Nothing is stored until you click **Save changes**. If you leave the screen with
 
 To trade on the stock market with an account, you need both **Allowed to deposit** and **Allowed to withdraw**. See [How the two mods work together](../together.md#your-bank-account-is-your-trading-wallet).
 
-To remove a player, click the **X** next to them and save. An account always keeps at least one user with **Allowed to manage**.
+To remove a player, click the **X** next to them and save. You can't remove the last user of an account. If your change leaves nobody with **Allowed to manage**, the mod gives that right to the remaining user with the most rights.
 
 ## More buttons
 
@@ -84,7 +84,7 @@ Users with **Allowed to manage** can click **Delete Account**.
 !!! danger "Everything in it is lost"
     Deleting an account destroys all money and items in it. Take everything out first.
 
-Your personal account can't be deleted.
+Your personal account can't be deleted. Neither can a company's account: while a company uses it, **Delete Account** is greyed out.
 
 ## Frozen accounts
 
@@ -95,7 +95,7 @@ An admin can freeze an account. The management screen then shows a grey **Frozen
 | Message | What it means | What to do |
 |---|---|---|
 | *You have reached your limit of N bank account(s). You cannot create another one.* | You already have as many accounts as the server allows. | Delete an account you don't need, or ask your admin. |
-| *An account must always keep at least one user with Manage permission* | Your change would leave nobody who can manage the account. | Give **Allowed to manage** to another user first. |
+| *An account must always keep at least one user with Manage permission — the change was not applied.* | Your change would remove the last user of the account. | Keep at least one user on the account. |
 | *You don't have the permission to withdraw from the account "N"* | You lack a right on this account (the same exists for deposit and manage). | Ask a manager of the account to give you the right. |
 | *This server is not trusted by the master server. Changes are disabled…* | On a network of several servers, this one isn't set up fully yet. You can look, but not change anything. | Tell your admin. |
 

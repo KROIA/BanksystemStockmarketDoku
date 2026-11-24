@@ -34,7 +34,7 @@ CreateOutcome created = payouts.createSchedule(
         workerUuid,                        // target player
         2500L,                             // raw amount: 25.00
         20L * 60 * 20,                     // interval in ticks: 20 minutes
-        server.getTickCount(),             // now
+        PayoutExecutor.getLastObservedTick(), // now, on the payout clock
         managerUuid,                       // who created it, or null
         PayoutSchedule.NO_TARGET_ACCOUNT,  // -1 = the target's personal account
         "Worker", "",                      // names shown in the screen
@@ -47,10 +47,10 @@ if (created.result() == IPayoutManager.OpResult.OK) {
 
 | Parameter | Meaning |
 |---|---|
-| `target` | The player who gets the payout. Needed for `FIXED_PAYOUT` and `ONE_TIME`; may be `null` for `DIVIDEND`. |
+| `target` | The player who gets the payout. Required for `FIXED_PAYOUT`. Set it for `ONE_TIME` too: a `ONE_TIME` without target isn't refused, but each run fails and it tries again every second. May be `null` for `DIVIDEND`. |
 | `amount` | Raw amount per run (100 = 1.00), more than `0`. |
 | `intervalTicks` | Ticks between runs, at least `20` (one second). |
-| `nowTick` | The current server tick. The first run is `intervalTicks` after it. |
+| `nowTick` | The current tick of the payout clock: pass `PayoutExecutor.getLastObservedTick()` (in `net.kroia.banksystem.banking.company`). The first run is `intervalTicks` after it. Don't pass `server.getTickCount()`: schedules run on BankSystem's own counter, which can differ. |
 | `createdBy` | Who created the schedule, or `null`. |
 | `targetAccountNr` | A specific account of the target, or `-1` (`NO_TARGET_ACCOUNT`) for their personal account. A specific account needs the target to have the deposit right on it. |
 | `targetPlayerName`, `targetAccountName` | Names shown in the company screen while the player or account can't be looked up. |
@@ -106,8 +106,8 @@ if (result.success()) {
 
 The rules:
 
-- **All or nothing.** If the company can't pay every holder in full, nobody gets anything and nothing changes.
-- **Only shares in bank accounts count**, free and locked, of every share item of the company. Each holder gets their number of shares × `amountPerShare`.
+- **Checked all or nothing.** If the company's free balance can't pay every holder in full, nobody gets anything and nothing changes. If a single transfer still fails after this check (rare), that holder is skipped and the others are paid. `totalPaid()` and `holderCount()` show what was really paid.
+- **Only whole shares in bank accounts count**, free and locked, of every share item of the company. Each holder gets their number of whole shares × `amountPerShare`; a holder with less than one share gets nothing.
 - **The company never pays itself.** Its own account is always left out; `includeCompanyAccount` has no effect.
 - **Only the company's free balance pays.** Locked money doesn't count.
 - **`actor` isn't checked.** It is written on the `DIVIDEND` ledger rows. If a player triggers the dividend in your mod, check their rights on the company yourself.
@@ -121,8 +121,8 @@ A successful dividend fires [`getDividendPaidEvent()`](events.md#payouts-and-div
 | `COMPANY_MISSING` | No company with this id. |
 | `INVALID_INPUT` | `amountPerShare` is `0` or less, or the total is too large. |
 | `NO_SHARES` | Nobody else holds shares in a bank account. |
-| `INSUFFICIENT_FUNDS` | The free balance doesn't cover the total. |
-| `CURRENCY_ITEM_MISSING` | The company account has no bank for the item. |
+| `INSUFFICIENT_FUNDS` | The free balance doesn't cover the total. For money also when the company account has no money bank. |
+| `CURRENCY_ITEM_MISSING` | The company account has no bank for the item, or `currencyItem` is `Company.CURRENCY_UNSET` (no currency set). |
 | `ACCOUNT_FROZEN` | The company account is frozen. |
 | `SHARES_UNDER_REVIEW` | More shares are in bank accounts than the company stamped. Dividends stop until an admin acknowledges it, see [Share integrity](../../admin/banksystem/companies.md#share-integrity). |
 | `INTERNAL` | Something else went wrong; see the server log. |

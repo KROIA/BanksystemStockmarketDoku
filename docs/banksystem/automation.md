@@ -24,7 +24,9 @@ Both blocks only work while they get a redstone signal. For the recipes, see [Bl
 4. Feed items in with a hopper or a pipe, or put them in by hand.
 5. Power the block with redstone. While it is powered, it sends its items to the bank.
 
-The block deposits in the name of the player who connected it. That player needs **Allowed to deposit** on the account. If they lose the right, the block stops.
+The block deposits in the name of the player who connected it. That player needs **Allowed to deposit** on the account. If they lose the right, the block stops. Only this player can open the block: for anyone else, right-clicking it does nothing.
+
+The block skips damaged and enchanted items. They stay in the block, or drop on the ground with **Drop items if not bankable** ticked.
 
 <figure markdown="span">
   ![The Bank Upload Block screen connected to an account](../assets/images/placeholder.svg){ width="600" }
@@ -52,7 +54,7 @@ Next to each order, **Balance** shows how many of the item are in the bank. The 
 </figure>
 
 !!! tip "Keep a reserve"
-    Use **More than** to stop before the bank runs dry. For example, an order for coal with **More than** 64 never takes your last stack.
+    Use **More than** to stop before the bank runs dry. The block checks the condition before it refills, and the refill itself can go below the value. For example, an order for 64 coal with **More than** 64 still takes 64 coal when the bank holds 70, and leaves 6. To always keep 64 in the bank, set the **Condition value** to 128.
 
 ### Who can change it
 
@@ -65,10 +67,10 @@ A block placed before version 2.2.0 doesn't know who set it up, so it stays idle
 | What you see | Why | What to do |
 |---|---|---|
 | Nothing happens | The block has no redstone signal. | Add a lever, a redstone torch or a clock. |
-| The **Connect to Bank** button flashes orange | The block isn't connected to an account yet. | Click it and pick an account. |
+| The **Connect to Bank** button of the Download Block is orange | The block isn't connected to an account yet. The button flashes when you try something that needs an account. | Click it and pick an account. |
 | Items pile up in the Upload Block | The bank doesn't allow those items, or the player who connected the block lost **Allowed to deposit**. | Tick **Drop items if not bankable**, filter the items out before the block, or check the account rights. |
 | The Download Block stopped refilling | The condition isn't met, the bank ran out, or the player who saved it lost **Allowed to withdraw**. | Check **Balance** and the condition, then click **Save** again. |
-| A chat message says the account is frozen | An admin has frozen the account. | Ask an admin. |
+| The blocks stop and nothing explains why | An admin may have frozen the account. The Upload Block then keeps the items in its slots, and the Download Block doesn't refill. Neither block sends a chat message. | Look for the grey **Frozen** marker in the account's [management screen](bank-accounts.md#frozen-accounts) and ask an admin. |
 
 ## Related pages
 

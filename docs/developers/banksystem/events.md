@@ -53,13 +53,13 @@ When in doubt, pass the work to the server thread.
 
 | Getter | Type | Side | Thread | Fires when |
 |---|---|---|---|---|
-| `getUserAddedEvent()` | `DataEvent<User>` | both | server | A user is added to the bank manager. |
-| `getUserRemovedEvent()` | `DataEvent<User>` | both | server | A user is removed. |
-| `getBankAccountCreatedEvent()` | `DataEvent<ISyncServerBankAccount>` | both | server | A bank account is created. |
-| `getBankAccountDeletedEvent()` | `DataEvent<ISyncServerBankAccount>` | both | server | A bank account is deleted. |
+| `getUserAddedEvent()` | `DataEvent<User>` | master | server | A user is added to the bank manager. |
+| `getUserRemovedEvent()` | `DataEvent<User>` | master | server | A user is removed. |
+| `getBankAccountCreatedEvent()` | `DataEvent<ISyncServerBankAccount>` | master | server | A bank account is created. |
+| `getBankAccountDeletedEvent()` | `DataEvent<ISyncServerBankAccount>` | master | server | A bank account is deleted. |
 | `getItemIDsMergedEvent()` | `DataEvent<Map<ItemID, ItemID>>` | master | server | Item ids were merged. See [Merged and removed items](#merged-and-removed-items). |
 | `getItemIDsRemovedEvent()` | `DataEvent<Set<ItemID>>` | master | server | An admin removed the items of missing mods. |
-| `getBankDataSavedToFileSignal()` | `Signal` | both | server | Bank data was saved. |
+| `getBankDataSavedToFileSignal()` | `Signal` | master | server | Bank data was saved. |
 | `getBankDataLoadedFromFileSignal()` | `Signal` | both | server | Bank data was loaded. |
 | `getSettingsSavedToFileSignal()` | `Signal` | both | server | Settings were saved. |
 | `getSettingsLoadedFromFileSignal()` | `Signal` | both | server | Settings were loaded. |
@@ -145,17 +145,17 @@ Both fire on the master only, on the server thread.
 | `status` | Meaning |
 |---|---|
 | `OK` | Paid. |
-| `INSUFFICIENT_FUNDS` | The company account couldn't cover the amount. |
+| `INSUFFICIENT_FUNDS` | A money schedule: the company account's free balance couldn't cover the amount. |
 | `TARGET_MISSING` | The target player or account no longer exists. For a dividend schedule: nobody holds shares. |
 | `TARGET_NO_DEPOSIT_RIGHT` | The target player has no deposit right on the chosen target account. |
-| `CURRENCY_ITEM_MISSING` | The company account has no bank for the schedule's item. |
+| `CURRENCY_ITEM_MISSING` | An item schedule: the company account has no bank for the item or not enough of it, or the schedule has no item set. |
 | `PAUSED` | A dividend schedule was held back: the company's share check found more shares in bank accounts than were stamped, and no admin has acknowledged it yet. |
 | `ACCOUNT_FROZEN` | The company account is frozen. |
 | `UNKNOWN` | Any other failure. |
 
 `status` is a `PayoutHistoryRecord.Status` from `net.kroia.banksystem.data.table.record`, outside the API package. Compare by name; new values may be added.
 
-**`getDividendPaidEvent()`** fires once each time [`payDividend`](companies-api.md#paying-a-dividend) paid a dividend: called by a mod, or by **Pay Dividend** in the company screen. A refused dividend doesn't fire it, so the event means every holder got paid. Dividend schedules report through `getPayoutExecutedEvent()` instead.
+**`getDividendPaidEvent()`** fires once each time [`payDividend`](companies-api.md#paying-a-dividend) paid a dividend: called by a mod, or by **Pay Dividend** in the company screen. A refused dividend doesn't fire it. `totalPaid` and `holderCount` say what was really paid: only whole shares count, and in rare cases a single transfer fails after the funds check, so that holder is skipped. Dividend schedules report through `getPayoutExecutedEvent()` instead.
 
 | Field of `DividendPaidEvent` | Meaning |
 |---|---|
@@ -180,6 +180,8 @@ How freezing works is on [BankSystem API](api.md#frozen-accounts).
 ## Ledger rows
 
 `getTransactionLoggedEvent()` fires on the master once per [transaction ledger](transaction-ledger.md) row, right after the row was queued for saving and before the audit and suspicion checks run on it. Rows written by other mods fire it too. It fires on the writer's thread. If your listener throws, BankSystem logs a warning and the row is still written.
+
+Rows are only written while BankSystem runs on the master, from server start to server stop. A change outside that time writes no row, so this event doesn't fire. Suspicion flags are raised from these rows, so none are raised either.
 
 | Field of `TransactionLoggedEvent` | Meaning |
 |---|---|

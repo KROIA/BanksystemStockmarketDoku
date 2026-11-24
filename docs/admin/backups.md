@@ -34,7 +34,7 @@ Both mods keep their data inside the world folder, so a normal world backup incl
 
 **Config files** outside the world: `config/modutilities/MultiServerConfig.json` ([network](multi-server.md)), `config/modutilities/discord/` ([Discord feed](discord.md)) and `config/StockMarket/news/` (news events).
 
-On a network, the master holds almost everything. A slave keeps only its `settings.json`, its diagnostics database, `Meta_data.nbt` and `audit/`.
+On a network, the master holds almost everything. A slave keeps only its `settings.json`, its diagnostics database, `Meta_data.nbt` and a copy of the share symbols in `share_symbols/`. The `audit/` files are written on the master only.
 
 ## Backing up a running server
 
@@ -85,6 +85,7 @@ The mods make copies on their own before risky changes:
 - **Before an update** changes the data format: a zip of the old data in `<world>/data/BankSystem_backups/` or `<world>/data/StockMarket_backups/`. See [Installation and updates](install.md#updating).
 - **Before removing items of missing mods** with the one-shot setting: a backup of the BankSystem data. See [Troubleshooting](troubleshooting.md).
 - **A damaged diagnostics database** is renamed to `.corrupt-<time>` and replaced by a new one.
+- **A BankSystem data file that can't be read** (`Meta_data.nbt`, `settings.json`, `ItemIDs.nbt`, `Bank_data/`, `BankAccountBindings.nbt` or `Companies/`) is renamed to `<name>.corrupt-<time>`, and BankSystem starts with a fresh, empty one. Stop the server and restore that file from a backup.
 
 ## Restoring
 

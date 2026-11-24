@@ -29,7 +29,7 @@ public interface ItemPriceProvider {
 }
 ```
 
-`getItemPrice` gets the short id of an item and returns the price of **one item** in raw money units (100 = 1.00), or `0` if the item has no price. Iron worth 2.50 returns `250`. BankSystem calls it on the server thread, once per account and item at each snapshot, so keep it fast and don't block.
+`getItemPrice` gets the short id of an item and returns the price of **one item** in raw money units (100 = 1.00), or `0` if the item has no price. Iron worth 2.50 returns `250`. BankSystem calls it on the master only, on the server thread, once per account and item at each snapshot, so keep it fast and don't block. On a slave, setting a provider has no effect.
 
 ## Registering
 

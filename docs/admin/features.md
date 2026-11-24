@@ -30,7 +30,7 @@ Switches marked "restart" only take effect after a server restart.
 | [Numismatics](../banksystem/currency-bindings.md) bindings | **Numismatics integration** | on |
 | [Lightman's Currency](../banksystem/currency-bindings.md) bindings | **Lightman's Currency integration** | on |
 | Balance history | **Balance snapshot interval (minutes)**, `0` = off | on (every minute) |
-| Thinning out old history | **History retention sweep (minutes)**, `0` = off | on |
+| Thinning out old history | **History retention sweep (minutes)**, `0` = only at server start | on |
 | [Suspicion flags](audit/alerts.md#banksystem-flags) 1 to 5 | One **Flag …** switch each | on |
 | [Daily digest](audit/reports.md#the-daily-digest) | **Daily audit digest** | on |
 

@@ -37,7 +37,7 @@ Run `/banksystem manage`. The **Bank Settings** screen opens.
 
 ## Allowing all items
 
-Large modpacks have too many items to allow one by one. Turn on **Allow all items** in the [Mod Settings](settings.md#bank). Then every item can be banked except a built-in blacklist: bedrock, barriers, command blocks, the debug stick, the knowledge book and coins below one dollar. The blacklist always applies.
+Large modpacks have too many items to allow one by one. Turn on **Allow all items** in the [Mod Settings](settings.md#bank). Then every item can be banked except a built-in blacklist: bedrock, barriers, structure voids, command blocks, the debug stick, the knowledge book, the coins below one dollar and every banknote from $5 to $1,000,000. The blacklist always applies. Items you removed from the bank also stay blocked until you allow them again.
 
 Your allow-list stays saved. If you turn the setting off again, the old list applies again.
 

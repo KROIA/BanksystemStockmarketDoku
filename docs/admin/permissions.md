@@ -16,7 +16,7 @@ Each mod has its own **admin flag**, separate from Minecraft's operator status. 
 | `/stockmarket op [player]` | Gives the StockMarket admin flag. |
 | `/stockmarket deop [player]` | Takes it away. |
 
-These commands need operator level 2, or the matching permission node below. They only work on the master server of a [network](multi-server.md). The flags are stored there, so they apply on every server.
+These commands need operator level 2, or the matching permission node below. Type them in game: the BankSystem ones don't work from the server console. They only work on the master server of a [network](multi-server.md). The flags are stored there, so they apply on every server.
 
 An operator without the flag is not an admin: they can give themselves the flag, but until then they can't open other players' accounts or the market management.
 
@@ -24,7 +24,7 @@ An operator without the flag is not an admin: they can give themselves the flag,
 
 **BankSystem admins** can:
 
-- choose the bankable items and change the [Mod Settings](banksystem/settings.md);
+- choose the bankable items and, with operator level 2, change the [Mod Settings](banksystem/settings.md);
 - open, edit and freeze any account;
 - manage any company;
 - use the Audit screen, the balance histories and the reports;
@@ -55,12 +55,12 @@ With LuckPerms (or another permission mod), you can grant or deny each node per 
 | Node | Grants |
 |---|---|
 | `banksystem.admin.command.op` | `/banksystem op` and `deop` |
-| `banksystem.admin.adminmode` | Changing a player's admin flag |
+| `banksystem.admin.adminmode` | Changing a player's admin flag when another mod asks for it on a slave server. `/banksystem op` doesn't use this node. |
 | `banksystem.admin.command.trust` | `/banksystem trust` and `untrust` |
 | `banksystem.admin.command.backup` | `/banksystem backup …` |
 | `banksystem.admin.command.symbols` | `/banksystem symbols …` (also needs the admin flag) |
 | `banksystem.admin.command.restorebinding` | `/banksystem restorebinding` (also needs the admin flag) |
-| `banksystem.admin.software` | Using the Banking Software on another player (also needs the admin flag) |
+| `banksystem.admin.software` | Using the Banking Software on another player. Also needs the admin flag and creative mode. |
 | `banksystem.admin` | The admin flag itself, while the LuckPerms sync is on (see below) |
 
 ### StockMarket
@@ -76,7 +76,7 @@ With LuckPerms (or another permission mod), you can grant or deny each node per 
 | `stockmarket.admin.notify` | StockMarket [alerts](audit/alerts.md) in chat, notices when another admin changes settings, and `/stockmarket alerts` |
 | `stockmarket.admin` | The admin flag itself, while the LuckPerms sync is on (see below) |
 
-Nodes marked "also needs the admin flag" are open to every player by default. You can only use them to take a command away: set the node to `false` to hide it, even from an admin.
+Nodes marked "(also needs the admin flag)" are open to every player by default. You can only use them to take a command away: set the node to `false` to hide it, even from an admin. `banksystem.admin.software` is different: without a permission mod it needs operator level 2.
 
 The Discord commands of both mods use the node `modutilities.command.discord`, which needs operator level 3 without a permission mod.
 
@@ -101,7 +101,7 @@ Turn on **Sync admin flag with LuckPerms** in the Integrations group of each mod
 !!! note "The wildcard doesn't include the flag"
     `banksystem.admin.*` doesn't grant `banksystem.admin` itself. Grant it on its own to make a group admin.
 
-On a network, turn the sync on on the master. Slave servers pass LuckPerms changes on to the master only if the master [trusts](multi-server.md#trusted-slaves) them. The StockMarket sync needs a restart of the master after you turn it on.
+On a network, turn the sync on on the master. Slave servers pass LuckPerms changes on to the master only if the master [trusts](multi-server.md#trusted-slaves) them. For BankSystem, each slave also needs the sync on in its own file: stop the slave and set `SYNC_ADMIN_FLAG_WITH_PERMISSION` to `true` in its `settings.json`. The Mod Settings screen can't change a slave's file. The StockMarket sync needs a restart of the master after you turn it on.
 
 ## Related pages
 

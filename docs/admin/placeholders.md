@@ -48,7 +48,7 @@ The money format is BankSystem's **Money format** setting (default `$%s`). Stock
 
 | Placeholder | Example | Shows |
 |---|---|---|
-| `%banksystem_circulation%` | `$1'250'000.00` | All available money in all accounts. |
+| `%banksystem_circulation%` | `$1'250'000.00` | All money in all accounts, locked money included. |
 | `%banksystem_circulation_locked%` | `$20'000.00` | All locked money. |
 | `%banksystem_account_count%` | `57` | Number of bank accounts. |
 | `%banksystem_player_count%` | `42` | Number of players with a personal account. |
@@ -95,7 +95,7 @@ The values are refreshed in the background, so they can lag a little:
 
 | Values | Refreshed every |
 |---|---|
-| BankSystem, per player | **Player placeholder refresh (ms)**, default 1 second |
+| BankSystem, per player | **Player placeholder refresh (ms)**, default 1 second. `rank` uses the server rate below. |
 | BankSystem, whole server | **Server placeholder refresh (ms)**, default 30 seconds |
 | StockMarket, all | 2 seconds |
 
@@ -108,7 +108,8 @@ The master computes all values. Slaves fetch them, so players see the same numbe
 - On a slave the master doesn't [trust](multi-server.md#trusted-slaves), all BankSystem placeholders with account data and the StockMarket player placeholders stay empty. Market prices still work.
 - While a slave has no connection, it shows the last values it got.
 - A slave leaves out markets for items it doesn't have installed.
-- Turning placeholders off on the master turns them off on the slaves too.
+- BankSystem: each server uses the placeholder settings of its own `settings.json` (on or off, refresh rates, list size, money format). To change them on a slave, stop it and edit its file. The Mod Settings screen only changes the master's file.
+- StockMarket: turning placeholders off on the master turns them off on the slaves too.
 
 ## Turning placeholders off
 

@@ -24,7 +24,7 @@ Type in chat:
 Founding a company does three things:
 
 1. It creates a bank account with the company's name. All company money and items live there.
-2. It gives you **Allowed to manage** on that account.
+2. It gives you all three rights on that account: **Allowed to deposit**, **Allowed to withdraw** and **Allowed to manage**.
 3. It makes you the company's **founder**.
 
 By default, each player can found 3 companies. The company's bank account also counts toward your [account limit](bank-accounts.md#creating-another-account), so you need a free slot there too.
@@ -110,7 +110,7 @@ Workers, shareholders and admins see all of this. Everyone else only sees how ma
 Only founders see this tab. Both actions can't be undone.
 
 - **Transfer founder**: type the new founder's name and confirm. The new founder must already be a worker, so add them in the Workers tab first. You lose the founder role and **Allowed to manage**, but keep your other rights.
-- **Dissolve company**: type the exact company name, then confirm. The company is gone, but its bank account stays as a normal shared account with all its money. Shares of a dissolved company stay in the world as items but belong to no company anymore.
+- **Dissolve company**: type the exact company name, then confirm. The company is gone, but its bank account stays as a normal shared account with all its money. It still counts toward your bank account limit until you delete it. Shares of a dissolved company stay in the world as items but belong to no company anymore.
 
 ## If something goes wrong
 

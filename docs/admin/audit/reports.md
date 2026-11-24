@@ -34,7 +34,7 @@ On the first server tick after midnight, the master writes a summary of the day 
 - every suspicion flag of the day;
 - how many admin actions of each kind there were, and the last 20.
 
-If the server was offline at midnight, the digest is written at the next start. A digest that already exists is never written again.
+If the server was offline at midnight, it writes the digest of the day before at the next start. Earlier days it missed get no digest. A digest that already exists is never written again.
 
 | Setting | Default | What it does |
 |---|---|---|

@@ -27,7 +27,7 @@ A display you add next to a configured screen takes over its settings, so the wh
 3. Under **Select Account:**, pick the account.
 4. Click **Apply**.
 
-If you close the window without **Apply**, a popup asks whether to **Save** or **Discard** your changes. To change the screen later, right-click it again.
+If you close the window without **Apply**, a popup asks whether to **Save** or **Discard** your changes.
 
 <figure markdown="span">
   ![The Configure Display screen of a Bank Display](../assets/images/placeholder.svg){ width="600" }
@@ -36,7 +36,7 @@ If you close the window without **Apply**, a popup asks whether to **Save** or *
 
 | Display Type | Shows | Updates |
 |---|---|---|
-| **Balance Overview** | The items with the highest value in the account, as icons with their amounts. | Every second |
+| **Balance Overview** | The items the account holds the most of, as icons with their amounts. | Every second |
 | **Balance History** | A chart of the balances over time, one coloured line per item, with a legend on the right. | Every minute |
 
 You can only pick accounts you are a user of.

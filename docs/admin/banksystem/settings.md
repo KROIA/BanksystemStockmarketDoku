@@ -9,11 +9,11 @@ BankSystem keeps its server settings in one file per world. You change them in g
 
 ## Opening the screen
 
-1. Run `/banksystem manage`. You need the BankSystem admin flag, see [Admins and permissions](../permissions.md).
+1. Run `/banksystem manage`. You need the BankSystem admin flag and operator level 2, see [Admins and permissions](../permissions.md).
 2. Click **Mod Settings**.
 3. Change the values and click **Apply**.
 
-The button only shows on the master server of a [network](../multi-server.md). Settings take effect at once, except those marked **⟳ Restart required** in the screen. **Defaults** fills in the default values and **Reload** reads the saved values again; neither saves anything until you click **Apply**. If you close the screen with changes you didn't apply, a popup asks whether to **Save** or **Discard** them.
+The button only shows on the master server of a [network](../multi-server.md), and only for players with operator level 2. Settings take effect at once, except those marked **⟳ Restart required** in the screen. **Defaults** fills in the default values and **Reload** reads the saved values again; neither saves anything until you click **Apply**. If you close the screen with changes you didn't apply, a popup asks whether to **Save** or **Discard** them.
 
 <figure markdown="span">
   ![The BankSystem Mod Settings screen, scrolled to the Suspicious activity group](../../assets/images/banksystem/mod-settings.png){ width="600" }
@@ -26,9 +26,9 @@ The file is `<world>/data/BankSystem/settings.json`. The server creates it with 
 !!! warning "Edit the file only while the server is stopped"
     The server rewrites the file every few seconds while it runs, so changes made to the file by hand are lost. Keep the JSON valid: if the file can't be read, BankSystem replaces it with a fresh default file.
 
-Values outside their range are set to the nearest allowed value when the file loads. The server log gets one line for every value it changed.
+Values outside their range are set to the nearest allowed value when the file loads. The server log gets one line for every value it changed, starting with *settings.json value out of range, corrected*.
 
-Each server of a network has its own file. The item component lists are taken from the master.
+Each server of a network has its own file. The screen only edits the master's file; to change a slave's file, stop the slave and edit it by hand. The item component lists are taken from the master.
 
 ## Utilities
 
@@ -37,7 +37,7 @@ Each server of a network has its own file. The item component lists are taken fr
 | **Autosave interval (seconds)** | `SAVE_INTERVAL_SECONDS` | `5` | 1 to 86,400 | How often BankSystem saves its data while players are online. A short interval keeps the time small in which a crash could duplicate withdrawn items. |
 | **Balance snapshot interval (minutes)** | `BALANCE_SNAPSHOT_INTERVAL_MINUTES` | `1` | 0 to 10,080 | How often the balance history of all accounts is recorded. A row is only written when a balance changed. `0` = off. |
 | **Balance snapshot heartbeat (minutes)** | `BALANCE_SNAPSHOT_HEARTBEAT_MINUTES` | `60` | 0 or more | For accounts that don't change: write a row at least this often, so their chart line stays visible. `0` = off. |
-| **History retention sweep (minutes)** | `BALANCE_HISTORY_RETENTION_SWEEP_MINUTES` | `60` | 0 or more | How often old history is thinned out. `0` = never, and the history database grows without limit. |
+| **History retention sweep (minutes)** | `BALANCE_HISTORY_RETENTION_SWEEP_MINUTES` | `60` | 0 or more | How often old history is thinned out. `0` = no regular sweep; old history is then only thinned out once at every server start. |
 | **Enable info logging** | `LOGGING_ENABLE_INFO` | on | | Info messages in the server log. |
 | **Enable warning logging** | `LOGGING_ENABLE_WARNING` | on | | Warnings in the server log. |
 | **Enable error logging** | `LOGGING_ENABLE_ERROR` | on | | Errors in the server log. |

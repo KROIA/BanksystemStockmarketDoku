@@ -20,9 +20,9 @@ A company's shares are real items. They only come into the world through a **Sha
 1. Place the Share Stamper and right-click it. Its screen says *Not bound — right-click to choose a company*.
 2. Pick your company from the list.
 
-From now on, the stamper only makes shares of that company. Only founders and players with **Allowed to manage** on the company can open it. Everyone else sees *Bound to … — no permission*.
+From now on, the stamper only makes shares of that company. Only founders, players with **Allowed to manage** on the company and BankSystem admins can open it. Everyone else sees *Bound to … — no permission*.
 
-A bound stamper is hard to break for anyone without **Allowed to manage**: it takes 20 times longer. When it does break, it keeps its company, so placing it again binds it again.
+A bound stamper is hard to break for anyone else: it takes 20 times longer. When it does break, it keeps its company, so placing it again binds it again.
 
 To bind it to another company, click **Unbind** first. Everything inside drops on top of the block.
 
@@ -49,7 +49,7 @@ Click the mode button to switch to **Mode: Redeem**. Now the stamper turns your 
 - **Auto Input**: hoppers and pipes can fill the top slot from above. Only the right item gets in: Blank Shares in Stamp mode, this company's shares in Redeem mode.
 - **Auto Output**: hoppers and pipes can take finished items from the bottom.
 
-Leave the stamper started, and it keeps working as long as items arrive.
+The stamper doesn't start again by itself. When it has stopped (top slot empty, bottom slot full, max supply reached), refilling the top slot is not enough: open the stamper and click **Start**.
 
 Only one player can have the stamper open at a time.
 

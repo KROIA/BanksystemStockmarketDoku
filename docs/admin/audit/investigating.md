@@ -5,7 +5,7 @@ description: "Following money and items with the Audit screen, the balance histo
 
 # Investigating in game
 
-When an [alert](alerts.md) comes in or a player reports something odd, these screens show what happened. They are for BankSystem admins only. On a slave server that isn't trusted they stay empty.
+When an [alert](alerts.md) comes in or a player reports something odd, these screens show what happened. They are for BankSystem admins only. On a slave server that isn't trusted, the Audit screen shows *Access denied* and the other screens stay empty.
 
 ## The Audit screen
 

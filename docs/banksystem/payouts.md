@@ -24,7 +24,7 @@ Below, each payout has one row with its **Target**, **Amount**, **Interval**, th
 2. Enter the **Amount** (two decimals allowed).
 3. Pick the **Currency**: money, or any item the company account holds.
 4. Pick the **Interval**: **1 min**, **1 hour**, **1 Minecraft day**, or **Custom** for any number of real minutes.
-5. Click **Pick target** and choose the player and which of their accounts gets the money. Only accounts where the company may deposit are listed.
+5. Click **Pick target** and choose the player and which of their accounts gets the money. The list shows the player's personal account and the accounts where the player has **Allowed to deposit**. The company's own account is left out. Unless you are an admin, you only see the player's personal account and the accounts you are a user of yourself.
 6. Click **Save**.
 
 <figure markdown="span">
@@ -73,14 +73,16 @@ The **Status** column shows why the last run failed:
 | **Insufficient funds** | The company account didn't have enough free money. | Pay money into the company account. |
 | **Insufficient item balance** | The payout pays an item, and the company doesn't hold enough of it. | Deposit the item, or change the currency. |
 | **Target not found** | The player or their account no longer exists. | Pick a new target. |
-| **No deposit right** | The target account doesn't accept money from the company. | Pick another account of the player. |
-| **Paused** | The payout is paused, or dividends are paused for the company (see below). | Unpause it, or wait for the admin. |
-| **Account frozen** | An admin has frozen the company account. | Ask an admin. |
+| **No deposit right** | The player no longer has **Allowed to deposit** on the account you picked. | Pick another account of the player, or ask a manager of that account to give the right back. |
+
+A paused payout shows **PAUSED** in the **Next** column. The Edit Payout window shows the last run in more detail. There you also see **Paused** and **Account frozen**, which mean the payout was paused or an admin froze the company account.
 
 A failed run isn't tried again. The payout waits for its next run and counts the missed amount. Click **Pay Missed** on the row to pay what was missed. You can pay all of it or only a part.
 
 !!! note "Dividends paused"
     If more shares of the company turn up in bank accounts than were ever stamped, dividends pause until it has been checked. Wages to single players keep running. A manager or a founder can accept the count with `/company shares acknowledge "<name>"`. Until then, no dividend is paid and dividend payouts can't be created or changed.
+
+    If the company has a [share market](company-market.md), trading on it stops too, and the company's managers get a chat message. Accepting the count doesn't restart it: click **Resume trading** in the **Market** tab.
 
 ## Related pages
 

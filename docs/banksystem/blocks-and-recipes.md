@@ -133,7 +133,7 @@ The software is not used up. A programmed block drops as itself when you break i
 
 ### Changing money
 
-Every coin and banknote can be crafted into the next one up and back down, from 1 Cent to 1'000'000 Dollar. Two examples:
+You can craft coins and banknotes into larger and smaller ones, from 1 Cent to 1'000'000 Dollar. Two examples:
 
 <figure markdown="span">
   ![Crafting recipe: five Dollar coins make a 5 Dollar note](../assets/images/banksystem/recipe-money-combine.png){ width="350" }
@@ -144,6 +144,32 @@ Every coin and banknote can be crafted into the next one up and back down, from 
   ![Crafting recipe: one 5 Dollar note makes five Dollar coins](../assets/images/banksystem/recipe-money-split.png){ width="350" }
   <figcaption>5 Dollar → 5 × Dollar</figcaption>
 </figure>
+
+Not every step works both ways, and the amounts differ. For example, a 100'000 Dollar note splits into 5 × 20'000, and a 50 Dollar note can't be split into 20 Dollar notes. The table lists every money recipe. A number alone means a Dollar note: **2 × 500** means two 500 Dollar notes. **Dollar** is the Dollar coin.
+
+| Item | Crafted from | Splits into |
+|---|---|---|
+| **1 Cent** | – | – |
+| **5 Cent** | 5 × 1 Cent | 5 × 1 Cent |
+| **10 Cent** | 2 × 5 Cent | 2 × 5 Cent, 10 × 1 Cent |
+| **20 Cent** | 2 × 10 Cent; 4 × 5 Cent; 10 Cent + 2 × 5 Cent | 2 × 10 Cent, 4 × 5 Cent, 20 × 1 Cent |
+| **50 Cent** | 5 × 10 Cent; 2 × 20 Cent + 10 Cent | 5 × 10 Cent, 10 × 5 Cent, 50 × 1 Cent |
+| **Dollar** | 2 × 50 Cent; 5 × 20 Cent; 50 Cent + 2 × 20 Cent + 10 Cent | 2 × 50 Cent, 5 × 20 Cent, 10 × 10 Cent, 20 × 5 Cent |
+| **5 Dollar** | 5 × Dollar | 5 × Dollar, 10 × 50 Cent, 25 × 20 Cent, 50 × 10 Cent |
+| **10 Dollar** | 2 × 5 | 2 × 5, 10 × Dollar, 20 × 50 Cent, 50 × 20 Cent |
+| **20 Dollar** | 2 × 10; 4 × 5 | 2 × 10, 4 × 5, 20 × Dollar, 40 × 50 Cent |
+| **50 Dollar** | 5 × 10; 2 × 20 + 10 | 5 × 10, 10 × 5, 50 × Dollar |
+| **100 Dollar** | 2 × 50; 5 × 20 | 2 × 50, 5 × 20, 10 × 10, 20 × 5 |
+| **200 Dollar** | 2 × 100; 4 × 50; 100 + 2 × 50 | 2 × 100, 4 × 50, 10 × 20, 20 × 10, 40 × 5 |
+| **500 Dollar** | 5 × 100; 2 × 200 + 100 | 5 × 100, 10 × 50, 25 × 20, 50 × 10 |
+| **1'000 Dollar** | 2 × 500; 5 × 200 | 2 × 500, 5 × 200, 10 × 100, 20 × 50, 50 × 20 |
+| **5'000 Dollar** | 5 × 1'000 | 5 × 1'000, 10 × 500, 25 × 200, 50 × 100 |
+| **10'000 Dollar** | 2 × 5'000 | 2 × 5'000, 10 × 1'000, 20 × 500, 50 × 200 |
+| **20'000 Dollar** | 2 × 10'000 | 2 × 10'000, 4 × 5'000, 20 × 1'000, 40 × 500 |
+| **50'000 Dollar** | 5 × 10'000; 2 × 20'000 + 10'000 | 5 × 10'000, 10 × 5'000, 50 × 1'000 |
+| **100'000 Dollar** | 5 × 20'000; 2 × 50'000 | 5 × 20'000, 10 × 10'000, 20 × 5'000 |
+| **500'000 Dollar** | 5 × 100'000 | 5 × 100'000, 10 × 50'000, 25 × 20'000, 50 × 10'000 |
+| **1'000'000 Dollar** | 2 × 500'000 | 2 × 500'000, 10 × 100'000, 20 × 50'000, 50 × 20'000 |
 
 The recipe book, or JEI if you have it, shows every money recipe. The [ATM](money.md#convert-change-money) changes money without crafting.
 

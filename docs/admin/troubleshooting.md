@@ -47,7 +47,8 @@ The one-shot settings switch themselves off after one start. Edit `settings.json
 |---|---|
 | An admin command answers "admin only" | You need the mod's admin flag: `/banksystem op` or `/stockmarket op`. Being operator is not enough. See [Admins and permissions](permissions.md). |
 | A command doesn't show up after a permission change | Rejoin the server. |
-| The **Mod Settings** button is missing | It only shows on the master server. |
+| The **Mod Settings** button is missing | It only shows on the master server, and only for players with operator level 2. |
+| `/banksystem op`, `deop`, `trust` or `untrust` fails in the server console | These commands need a player. Type them in game. |
 | A player's amount stays locked | Read [Locked amounts](banksystem/accounts.md#locked-amounts) before you unlock it. |
 
 ## Related pages

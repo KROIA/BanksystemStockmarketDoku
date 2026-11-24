@@ -58,7 +58,7 @@ Only the master server posts, so every event shows up once. Slaves send nothing.
 | `/banksystem discord status` | Lists the webhooks (valid or not) and, for both mods, which message types are on, their `minAmount` and their webhooks. |
 | `/banksystem discord reload` | Reads all files in `config/modutilities/discord/` again. |
 
-`/stockmarket discord` and `/modutilities discord` do the same. All three need operator level 3 or the permission `modutilities.command.discord`, see [Admins and permissions](permissions.md). On a slave, status only says that the master posts.
+`/stockmarket discord` and `/modutilities discord` do the same. All three need operator level 3 or the permission `modutilities.command.discord`, see [Admins and permissions](permissions.md). On a slave, status first says that the master posts. The lines below it show the slave's own webhooks, queue and message types, not the master's.
 
 ## BankSystem messages
 

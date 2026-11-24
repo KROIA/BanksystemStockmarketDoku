@@ -61,6 +61,8 @@ The 3×3 crafting grid works like a crafting table, with all normal recipes. Two
 
 The terminal remembers both checkboxes for you. Items left in the grid go back to your inventory when you close the screen.
 
+To craft an item without knowing its recipe, click its icon in the bank list. If exactly one of its recipes can be paid for (from the bank with **Use Bank Items** on, otherwise from your inventory), the terminal sets it up in the grid. Otherwise the **Recipe selection** window lists the recipes to pick from.
+
 <figure markdown="span">
   ![The crafting view of the Bank Terminal with Use Bank Items and Auto-deposit output turned on](../assets/images/placeholder.svg){ width="600" }
   <figcaption>Image missing: banksystem/bank-terminal-crafting.png</figcaption>
@@ -68,10 +70,7 @@ The terminal remembers both checkboxes for you. Items left in the grid go back t
 
 ### With JEI
 
-If the JEI mod is installed:
-
-- The **+** button in a JEI recipe fills the crafting grid. With **Use Bank Items** on, it only places the recipe pattern, and the bank supplies the ingredients when you craft.
-- Clicking an item in the bank list looks up its recipes and picks one your bank can pay for.
+If the JEI mod is installed, the **+** button in a JEI recipe fills the crafting grid. With **Use Bank Items** on, it only places the recipe pattern, and the bank supplies the ingredients when you craft.
 
 ## Balance history
 

@@ -16,7 +16,7 @@ BankSystemAPI api = BankSystemMod.getAPI();
 | Method | Returns | What it gives you |
 |---|---|---|
 | `getModID()` / `getModVersion()` | `String` | BankSystem's mod id and the loaded version. |
-| `getServerBankManager()` | `IBankManager` | Bank accounts on this server, sync and async. See [Sync or async](#sync-or-async). |
+| `getServerBankManager()` | `IBankManager` | Bank accounts on this server, sync and async. `null` before the server has started and after it has stopped, so check it. See [Sync or async](#sync-or-async). |
 | `getClientBankManager()` | `IClientBankManager` | Bank data from the client side. See [On the client](#on-the-client). |
 | `getEvents()` | `IBankSystemEvents` | Events and signals. See [Events and signals](events.md). |
 | `getDataHandler()` | `IBankSystemDataHandler` | Saves and loads BankSystem's data (`saveAll`, `loadAll`, `save_bank`, `load_bank`, `save_globalSettings`, `load_globalSettings`; each returns `true` on success). Call it on the server thread. BankSystem saves on its own timer and on shutdown, so you rarely need it. |
@@ -73,7 +73,7 @@ IAsyncBankManager async = bankManager.getAsync(); // always there
 
 ### Who may read what
 
-Async reads of account data go to account members, BankSystem admins and server-internal calls (calls without a player sender). A request that comes through an untrusted slave only gets member data, because a slave could fake the sender. A refused read completes with `null`, an empty list or a copy with names only. Clients can never change balances: deposits, withdrawals and transfers must come from server code on the master or a trusted slave.
+Async reads of account data go to account members, BankSystem admins and server-internal calls (calls without a player sender). A request that comes through an untrusted slave only gets member data, because a slave could fake the sender. A refused read of account data completes with `null`, an empty list or a copy with names only. A refused balance read on a bank (`getBalanceAsync`, `getLockedBalanceAsync`, `getTotalBalanceAsync` and their `Real` variants) completes with `0` or `0.0`, so it looks like an empty bank. Other refused bank reads, such as formatted balances or JSON, complete with `null`. Clients can never change balances: deposits, withdrawals and transfers must come from server code on the master or a trusted slave.
 
 ### When an async call fails
 
