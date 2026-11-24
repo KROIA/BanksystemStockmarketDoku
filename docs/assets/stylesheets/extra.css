@@ -4,12 +4,12 @@
 }
 
 /* Screenshots, GIFs and charts fill the text column; the width on the page is only the fallback.
-   Recipes (width 350) and block icons (width 100) keep the size the page gives them. */
-.md-typeset figure:has(img:not([width="350"]):not([width="100"])),
-.md-typeset figure > a:has(> img:not([width="350"]):not([width="100"])) {
+   Recipes (width 350), block icons (width 100) and .own-size screenshots keep the size the page gives them. */
+.md-typeset figure:has(img:not([width="350"]):not([width="100"]):not(.own-size)),
+.md-typeset figure > a:has(> img:not([width="350"]):not([width="100"]):not(.own-size)) {
   width: 100%;
 }
-.md-typeset figure img:not([width="350"]):not([width="100"]) {
+.md-typeset figure img:not([width="350"]):not([width="100"]):not(.own-size) {
   width: 100%;
   height: auto;
 }

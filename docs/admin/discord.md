@@ -8,8 +8,7 @@ description: "Posting trades, bank events and alerts to Discord webhooks."
 Both mods can post to Discord channels: deposits, transfers, trades, admin changes and alerts. They use Discord webhooks, so no bot is needed. The feed is off by default.
 
 <figure markdown="span">
-  ![A Discord channel with feed messages for trades, a deposit and an alert](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: shared/discord-feed.png</figcaption>
+  ![Five Discord feed messages from a webhook named Economy Feed: Market buy (64 diamonds), Market sell (128 wheat), Market alert (a trading profit over the threshold), Bank deposit (256 iron ingots) and Bank dividend (750.00 to 3 holders)](../assets/images/shared/discord-feed.png){ .own-size width="589" }
 </figure>
 
 Only the master server posts, so every event shows up once. Slaves send nothing.
