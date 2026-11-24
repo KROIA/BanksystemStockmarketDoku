@@ -1,12 +1,12 @@
 ---
-title: "Backups"
-description: "What to back up for both mods, pausing database writes, and the export package."
+title: "Data files and backups"
+description: "Where both mods keep their data, the backup commands, automatic safety copies and the export package."
 ---
 
-# Backups
+# Data files and backups
 
 !!! info "Not written yet"
-    This page will cover: What to back up for both mods, pausing database writes, and the export package.
+    This page will cover: Where both mods keep their data, the backup commands, automatic safety copies and the export package.
 
 <!-- Sources for the rewrite:
   - SM:documentation/user-guide/admin-setup.md#backups

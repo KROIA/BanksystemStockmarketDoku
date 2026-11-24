@@ -14,11 +14,11 @@ Every page is written for exactly one reader group. The nav tab tells you which:
 
 | Tab | Reader | Knows | Wants |
 |---|---|---|---|
-| Home, StockMarket, BankSystem | Player | Minecraft, not markets or config files | to do something in the game |
+| Home, Player Guide | Player | Minecraft, not markets or config files | to do something in the game |
 | Server Admin | Server owner or operator | config files, commands, mods folder | to set up and tune the server |
 | Developers | Mod author | Java, Architectury, Gradle | to call the API |
 
-If a topic matters to two groups, write two pages and link them. Example: players read [Trading hours](../docs/stockmarket/trading-hours.md) (what a closed market looks like), admins read the admin page of the same name (how to set the hours).
+If a topic matters to two groups, write two pages and link them. Example: players read [Trading basics → When a market is closed](../docs/stockmarket/trading.md) (what a closed market looks like), admins read [Trading hours](../docs/admin/stockmarket/trading-hours.md) (how to set the hours).
 
 ## 2. Tone
 
@@ -194,6 +194,7 @@ Don't use `!!! example`, `!!! question` or collapsible boxes (`???`) unless the 
 ## 7. Images
 
 - Images go in `docs/assets/images/<mod>/` (`stockmarket/`, `banksystem/`, `shared/`). Copy only images a page uses.
+- New file names are kebab-case and say what they show: `banksystem/bank-terminal-crafting.png`. [images.md](images.md) lists every planned image with its file name.
 - Every image is a centred figure with a width and a real alt text (what the image shows, for readers who can't see it):
 
   ```markdown
@@ -206,6 +207,16 @@ Don't use `!!! example`, `!!! question` or collapsible boxes (`???`) unless the 
 - All images can be clicked to zoom (glightbox). Add `{ .no-zoom }` for tiny icons.
 - Screenshots: GUI scale 2 or 3, English game language, no personal player names or server names in the shot.
 - Charts: SVG with a light background. Keep the colours readable in dark mode (the site rounds the corners).
+- **Missing images** use the placeholder and name the planned file in a caption. The alt text is already the final one:
+
+  ```markdown
+  <figure markdown="span">
+    ![The Bank Terminal with the item banks of the account](../assets/images/placeholder.svg){ width="600" }
+    <figcaption>Image missing: banksystem/bank-terminal.png</figcaption>
+  </figure>
+  ```
+
+  When the file arrives, its path replaces `placeholder.svg` and the `figcaption` line goes. Search for `placeholder.svg` to list the open ones.
 
 ## 8. Links
 
@@ -214,7 +225,7 @@ Don't use `!!! example`, `!!! question` or collapsible boxes (`???`) unless the 
 - **Cross-links between mods** are normal links, not "see the other mod's docs". When a StockMarket page needs a bank concept, link the BankSystem page at the point of need, e.g. "your [BankSystem bank account](../banksystem/bank-accounts.md)". Shared topics (multi-server, permissions, placeholders, Discord, backups) live once under **Server Admin → Both mods**; mod pages link there instead of repeating them.
 - Link text says where the link goes. Never "click here" or "this page".
 - Each page ends with a **Related pages** list of 2-4 links, each with a few words on why.
-- External links (CurseForge, Modrinth, GitHub) only on the Home and Installation pages.
+- External links (CurseForge, Modrinth, GitHub) only on the Home, Installation and Audit Tool pages.
 
 ## 9. Front matter
 

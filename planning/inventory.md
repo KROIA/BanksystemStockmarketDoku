@@ -31,7 +31,7 @@ Snapshot of 2026-11-17: StockMarket `mc_1.21.1` at `6e533a17`, BankSystem `mc_1.
 | Access Control & Trust Model | A | `admin/permissions.md` | duplicate of `admin-setup.md#permissions` and of the BankSystem trust docs |
 | Plugins (all five) + How the plugins work together | A | `admin/stockmarket/plugins/*.md` | duplicate of the plugin pages |
 | Villager Trading | P + A | `stockmarket/villager-trading.md` (player view), `admin/stockmarket/villager-trading.md` (file + settings) | no separate page today; split by reader |
-| JEI Integration | P | `stockmarket/index.md` or `blocks-and-recipes.md` | ok, mentions loader internals (entrypoint name) that players don't need |
+| JEI Integration | P | none | drop: the StockMarket JEI plugin registers nothing (F-11) |
 | Why does a price move?, Terminology | P | `stockmarket/price-chart.md`, `glossary.md` | ok in substance, many typos |
 | Development | D | `developers/index.md` | not deep-checked |
 | Changelog links | — | not on the site (stays in the mod repos) | — |
@@ -41,12 +41,12 @@ Snapshot of 2026-11-17: StockMarket `mc_1.21.1` at `6e533a17`, BankSystem `mc_1.
 | Page | Reader | Target | Status |
 |---|---|---|---|
 | `README.md` (index) | — | replaced by the site nav | drop |
-| `user-guide/admin-setup.md` | A | `admin/stockmarket/setup-use-cases.md`, `admin/permissions.md`, `admin/discord.md`, `admin/stockmarket/alerts.md`, `admin/backups.md` | duplicate (permissions, Discord, backups are shared with BankSystem); one page mixes five topics |
+| `user-guide/admin-setup.md` | A | `admin/stockmarket/setup-use-cases.md`, `admin/permissions.md`, `admin/discord.md`, `admin/audit/alerts.md`, `admin/backups.md` | duplicate (permissions, Discord, backups are shared with BankSystem); one page mixes five topics |
 | `user-guide/candle-timebase.md` | A | section of `admin/stockmarket/mod-settings.md` | ok; too small for its own page |
 | `user-guide/mod-settings.md` | A | `admin/stockmarket/mod-settings.md` | duplicate of the README section; not deep-checked |
 | `user-guide/multi-server.md` | A | `admin/multi-server.md` | duplicate of BankSystem `MultiserverSetup.md`; links to the BankSystem GitHub instead of a page |
 | `user-guide/placeholders.md` | A | `admin/placeholders.md` | duplicate topic with BankSystem `Placeholders.md` (different placeholders, same setup) |
-| `user-guide/trading-hours.md` | A + P | `admin/stockmarket/trading-hours.md`, player part to `stockmarket/trading-hours.md` | ok; split by reader |
+| `user-guide/trading-hours.md` | A + P | `admin/stockmarket/trading-hours.md`, player part to `stockmarket/trading.md#when-a-market-is-closed` (done) | ok; split by reader |
 | `user-guide/news-system/overview.md` | P + A | player part to `stockmarket/newspaper.md`, admin part to `admin/stockmarket/news/index.md` | ok; mixes readers |
 | `user-guide/news-system/configuration.md` | A | `admin/stockmarket/news/config-files.md` (pilot), `event-reference.md`, `commands.md` | folder part checked: ok. Example event outdated (F-3). One page mixes folder, schema, commands and history storage |
 | `user-guide/news-system/advanced-events.md` | A | `admin/stockmarket/news/advanced-events.md` | ok; its "Getting the New Default Events" section repeats the config page (moved to the pilot) |
@@ -89,13 +89,13 @@ Snapshot of 2026-11-17: StockMarket `mc_1.21.1` at `6e533a17`, BankSystem `mc_1.
 | Page | Reader | Target | Status |
 |---|---|---|---|
 | `README.md` (index) | — | replaced by the site nav | drop; its "Development & Testing" section is dev-only (F-8) |
-| `user-guide/Usage.md` | P | `banksystem/bank-terminal.md`, `atm.md`, `automation.md`, `displays.md`, `money.md`, `shares.md` (Share Stamper) | duplicate of README Usage |
+| `user-guide/Usage.md` | P | `banksystem/bank-terminal.md`, `money.md` (incl. ATM), `automation.md`, `displays.md`, `shares.md` (Share Stamper) | duplicate of README Usage |
 | `user-guide/BankAccounts.md` | P | `banksystem/bank-accounts.md` | ok |
 | `user-guide/Commands.md` | P + A | `banksystem/commands.md`, `admin/commands.md` | duplicate of README Commands |
-| `user-guide/Companies.md` | P | `banksystem/companies.md`, `banksystem/shares.md` | not deep-checked; long (441 lines), split |
+| `user-guide/Companies.md` | P | `banksystem/companies.md`, `payouts.md`, `shares.md`, `company-market.md`, `stockmarket/company-shares.md` | not deep-checked; long (441 lines), split |
 | `user-guide/CurrencyBindings.md` | P | `banksystem/currency-bindings.md` | not deep-checked |
-| `user-guide/Administration.md` | A | `admin/banksystem/bankable-items.md`, `accounts.md`, `audit.md`, `admin/backups.md`, `admin/permissions.md` | ok; one page mixes eight topics |
-| `user-guide/Configuration.md` | A | `admin/banksystem/settings.md`, `admin/banksystem/item-components.md` | ok; organised by JSON key, not by GUI name (style difference S-3) |
+| `user-guide/Administration.md` | A | `admin/banksystem/bankable-items.md`, `accounts.md`, `admin/audit/*.md`, `admin/backups.md`, `admin/permissions.md` | ok; one page mixes eight topics |
+| `user-guide/Configuration.md` | A | `admin/banksystem/settings.md`, `admin/banksystem/bankable-items.md` (item components) | ok; organised by JSON key, not by GUI name (style difference S-3) |
 | `user-guide/MultiserverSetup.md` | A | `admin/multi-server.md` | duplicate of StockMarket `multi-server.md` |
 | `user-guide/Placeholders.md` | A | `admin/placeholders.md` | duplicate topic with StockMarket |
 | `developer-guide/API.md` | D | `developers/banksystem/api.md` | not deep-checked |
@@ -126,6 +126,12 @@ Snapshot of 2026-11-17: StockMarket `mc_1.21.1` at `6e533a17`, BankSystem `mc_1.
 **F-9 Shared topics are written twice.** Multi-server, placeholders, Discord feed, backups, permissions/LuckPerms and commands exist in both mods with different wording and structure. Each becomes one page under Server Admin → Both mods.
 
 **F-10 READMEs carry content that belongs in pages.** Both READMEs repeat large parts of the docs (SM: plugins, villager trading, commands, admin GUI; BS: usage, commands, settings). After the site goes live, the READMEs should shrink to an intro, install links and a link to the site (decision D-7).
+
+**F-11 StockMarket has no JEI integration.** The README's "JEI Integration" section (marked ok above) describes a plugin that the code doesn't fill: `StockMarketJeiPlugin` is an empty stub that registers nothing. BankSystem has a real JEI plugin. Don't mention JEI on StockMarket pages.
+
+**F-12 No fees, taxes or interest.** Neither mod charges trading fees, taxes or bank interest (code check 2026-11-24). Pages must not suggest otherwise.
+
+**F-13 Dead or unreachable code that a reader could stumble on (mod issues, not docs).** StockMarket: `CreateMarketScreen` ("Create new Market") has no caller; the "Player" settings group (`STARTING_BALANCE`) is unused. BankSystem: a doc comment mentions `/company stamper-bind`, which isn't registered (binding happens at the Share Stamper block).
 
 ## Style differences between BankSystem and StockMarket
 

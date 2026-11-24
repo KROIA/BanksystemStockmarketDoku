@@ -11,3 +11,8 @@ description: "Settings reference: the random price movement around the equilibri
 <!-- Sources for the rewrite:
   - SM:documentation/user-guide/plugin-system/plugins/volatility-plugin.md
 -->
+
+<figure markdown="span">
+  ![The settings of the Volatility plugin](../../../assets/images/placeholder.svg){ width="600" }
+  <figcaption>Image missing: stockmarket/plugins/volatility-settings.png</figcaption>
+</figure>

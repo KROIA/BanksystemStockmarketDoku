@@ -100,13 +100,29 @@ After an accepted order, the **Buy** and **Sell** buttons are greyed out for a s
 - **My History** lists your filled and cancelled orders.
 - **Market Trades** lists the latest trades of everyone on this market.
 
+## When a market is closed
+
+A market can have opening hours, set by the server admin. The trading panel shows them, for example **Trading hours 08:00-18:00**, or **24h** for a market that never closes, together with the current time of the server's clock.
+
+When you can't trade, a red banner covers the trading panel and the **Buy** and **Sell** buttons are greyed out:
+
+- **Market Closed**: the market is outside its opening hours, or an admin closed it. Your open orders stay and fill when the market opens again. You can still cancel them, but you can't move them on the chart.
+- **Under Maintenance**: an admin paused trading on this market. Your open orders on it are cancelled and refunded right away.
+
+In **Item / Item** mode, both markets must be open. If one of them is closed, your exchange order waits until both are open.
+
+<figure markdown="span">
+  ![The trading screen with the red Market Closed banner over the trading panel](../assets/images/placeholder.svg){ width="600" }
+  <figcaption>Image missing: stockmarket/market-closed.png</figcaption>
+</figure>
+
 ## Limits and messages
 
 | Message | What it means | What to do |
 |---|---|---|
 | *Order too large: max N items per order* | Each market has a max order size, set by the admin. The quantity box never goes above it. | Split the trade into several orders. |
 | *Trading too fast: wait N s* | You placed an order during the trade cooldown. | Wait a moment and try again. A rejected order doesn't restart the cooldown. |
-| *Market is closed - outside trading hours* | The market has [trading hours](trading-hours.md) and is closed right now. | Come back when it opens. |
+| *Market is closed - outside trading hours* | The market has opening hours and is [closed right now](#when-a-market-is-closed). | Come back when it opens. |
 | *Under Maintenance* (on the screen) | An admin has paused trading on this market. Your open orders on it were cancelled and refunded. | Wait until the admin ends the maintenance. |
 | *No answer from the server - the order may have been placed* | The server didn't confirm the order in time, for example during lag. | Check **Pending Orders** and **My History** before you place it again. The order is never sent twice on its own. |
 

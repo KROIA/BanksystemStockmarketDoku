@@ -81,53 +81,75 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-  - Home:
-      - index.md
-      - getting-started.md
-      - glossary.md
-  - StockMarket:
-      - stockmarket/index.md
-      - stockmarket/trading.md
-      - stockmarket/price-chart.md
-      - stockmarket/pair-trading.md
-      - stockmarket/newspaper.md
-      - stockmarket/blocks-and-recipes.md
-      - stockmarket/display-block.md
-      - stockmarket/trading-hours.md
-      - stockmarket/villager-trading.md
-  - BankSystem:
-      - banksystem/index.md
-      - banksystem/bank-accounts.md
-      - banksystem/bank-terminal.md
-      - banksystem/atm.md
-      - banksystem/money.md
-      - banksystem/automation.md
-      - banksystem/displays.md
-      - banksystem/companies.md
-      - banksystem/shares.md
-      - banksystem/currency-bindings.md
-      - banksystem/blocks-and-recipes.md
-      - banksystem/commands.md
+  - Home: index.md
+  - Player Guide:
+      - Start here:
+          - getting-started.md
+          - together.md
+          - glossary.md
+      - BankSystem:
+          - banksystem/index.md
+          - banksystem/bank-accounts.md
+          - banksystem/bank-terminal.md
+          - banksystem/money.md
+          - banksystem/automation.md
+          - banksystem/displays.md
+          - banksystem/currency-bindings.md
+          - Companies:
+              - banksystem/companies.md
+              - banksystem/payouts.md
+              - banksystem/shares.md
+              - banksystem/company-market.md
+          - banksystem/blocks-and-recipes.md
+          - banksystem/commands.md
+      - StockMarket:
+          - stockmarket/index.md
+          - stockmarket/trading.md
+          - stockmarket/price-chart.md
+          - stockmarket/pair-trading.md
+          - stockmarket/company-shares.md
+          - stockmarket/newspaper.md
+          - stockmarket/villager-trading.md
+          - stockmarket/display-block.md
+          - stockmarket/blocks-and-recipes.md
   - Server Admin:
       - admin/index.md
-      - Both mods:
+      - Setup:
           - admin/install.md
-          - admin/multi-server.md
+          - admin/features.md
           - admin/permissions.md
           - admin/commands.md
+          - admin/multi-server.md
+          - admin/backups.md
+          - admin/troubleshooting.md
+      - Integrations:
           - admin/placeholders.md
           - admin/discord.md
-          - admin/backups.md
+          - admin/web-interface.md
+      - Audit and anti-cheat:
+          - admin/audit/index.md
+          - admin/audit/alerts.md
+          - admin/audit/investigating.md
+          - admin/audit/reports.md
+          - admin/audit/audit-tool.md
+      - BankSystem:
+          - admin/banksystem/index.md
+          - admin/banksystem/settings.md
+          - admin/banksystem/bankable-items.md
+          - admin/banksystem/accounts.md
+          - admin/banksystem/companies.md
       - StockMarket:
           - admin/stockmarket/index.md
-          - admin/stockmarket/markets.md
           - admin/stockmarket/setup-use-cases.md
+          - admin/stockmarket/markets.md
           - admin/stockmarket/presets.md
           - admin/stockmarket/mod-settings.md
           - admin/stockmarket/trading-hours.md
-          - admin/stockmarket/alerts.md
           - admin/stockmarket/villager-trading.md
           - Plugins:
               - admin/stockmarket/plugins/index.md
@@ -145,17 +167,11 @@ nav:
               - admin/stockmarket/news/pictures.md
               - admin/stockmarket/news/commands.md
               - admin/stockmarket/news/default-events.md
-      - BankSystem:
-          - admin/banksystem/index.md
-          - admin/banksystem/settings.md
-          - admin/banksystem/bankable-items.md
-          - admin/banksystem/accounts.md
-          - admin/banksystem/audit.md
-          - admin/banksystem/item-components.md
   - Developers:
       - developers/index.md
+      - developers/setup.md
       - StockMarket:
-          - Plugins:
+          - Custom plugins:
               - developers/stockmarket/plugins/index.md
               - developers/stockmarket/plugins/getting-started.md
               - developers/stockmarket/plugins/api-reference.md
@@ -165,6 +181,7 @@ nav:
       - BankSystem:
           - developers/banksystem/api.md
           - developers/banksystem/events.md
+          - developers/banksystem/transaction-ledger.md
           - developers/banksystem/currency-integration.md
           - developers/banksystem/item-price-provider.md
-          - developers/banksystem/transaction-ledger.md
+          - developers/banksystem/companies-api.md

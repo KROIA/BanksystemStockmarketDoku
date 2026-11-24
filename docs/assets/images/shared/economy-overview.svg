@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-label="How BankSystem and StockMarket fit together">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#455a64"/>
+    </marker>
+  </defs>
+  <rect width="760" height="330" fill="#ffffff"/>
+  <g font-family="Helvetica, Arial, sans-serif" text-anchor="middle">
+    <!-- boxes -->
+    <rect x="15" y="70" width="160" height="96" rx="10" fill="#eceff1" stroke="#607d8b" stroke-width="2"/>
+    <text x="95" y="108" font-size="17" font-weight="bold" fill="#263238">Your inventory</text>
+    <text x="95" y="132" font-size="13" fill="#455a64">items, banknotes</text>
+    <text x="95" y="150" font-size="13" fill="#455a64">and coins</text>
+
+    <rect x="300" y="70" width="160" height="96" rx="10" fill="#e0f2f1" stroke="#00796b" stroke-width="2"/>
+    <text x="380" y="108" font-size="17" font-weight="bold" fill="#004d40">Bank account</text>
+    <text x="380" y="132" font-size="13" fill="#00695c">money and items</text>
+    <text x="380" y="150" font-size="13" fill="#00695c">BankSystem</text>
+
+    <rect x="585" y="70" width="160" height="96" rx="10" fill="#e0f2f1" stroke="#00796b" stroke-width="2"/>
+    <text x="665" y="108" font-size="17" font-weight="bold" fill="#004d40">Markets</text>
+    <text x="665" y="132" font-size="13" fill="#00695c">other players and bots</text>
+    <text x="665" y="150" font-size="13" fill="#00695c">StockMarket</text>
+
+    <rect x="585" y="230" width="160" height="80" rx="10" fill="#fff8e1" stroke="#ff8f00" stroke-width="2"/>
+    <text x="665" y="264" font-size="17" font-weight="bold" fill="#6d4c00">Company</text>
+    <text x="665" y="288" font-size="13" fill="#8d6e00">shares, payouts</text>
+
+    <!-- arrows -->
+    <line x1="180" y1="118" x2="295" y2="118" stroke="#455a64" stroke-width="2.5" marker-start="url(#a)" marker-end="url(#a)"/>
+    <text x="237" y="96" font-size="13" fill="#263238">Bank Terminal</text>
+    <text x="237" y="144" font-size="12" fill="#546e7a">ATM, automation</text>
+
+    <line x1="465" y1="118" x2="580" y2="118" stroke="#455a64" stroke-width="2.5" marker-start="url(#a)" marker-end="url(#a)"/>
+    <text x="522" y="90" font-size="13" fill="#263238">Stock Market</text>
+    <text x="522" y="106" font-size="13" fill="#263238">Block</text>
+    <text x="522" y="144" font-size="12" fill="#546e7a">buy and sell orders</text>
+
+    <line x1="665" y1="226" x2="665" y2="172" stroke="#ff8f00" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="574" y="204" font-size="12" fill="#6d4c00">its own share market</text>
+
+    <path d="M580 270 H380 V172" fill="none" stroke="#ff8f00" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#a)"/>
+    <text x="480" y="262" font-size="12" fill="#6d4c00">company account</text>
+
+    <text x="380" y="32" font-size="14" fill="#546e7a">Every trade uses the money and items in your bank account.</text>
+  </g>
+</svg>

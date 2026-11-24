@@ -11,3 +11,8 @@ description: "Every setting of the BankSystem Mod Settings screen and its key in
 <!-- Sources for the rewrite:
   - BS:documentation/user-guide/Configuration.md
 -->
+
+<figure markdown="span">
+  ![The BankSystem Mod Settings screen](../../assets/images/placeholder.svg){ width="600" }
+  <figcaption>Image missing: banksystem/mod-settings.png</figcaption>
+</figure>

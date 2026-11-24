@@ -11,3 +11,8 @@ description: "The Item / Item mode: swapping one item for another at the current
 <!-- Sources for the rewrite:
   - SM:README.md#trading-modes
 -->
+
+<figure markdown="span">
+  ![The Item / Item mode with I HAVE iron and I WANT diamond on the Exchange tab](../assets/images/placeholder.svg){ width="600" }
+  <figcaption>Image missing: stockmarket/item-item-mode.png</figcaption>
+</figure>

@@ -11,3 +11,8 @@ description: "What the BankSystem mod adds for players and which page answers wh
 <!-- Sources for the rewrite:
   - BS:README.md#features
 -->
+
+<figure markdown="span">
+  ![All BankSystem blocks placed in a small bank room](../assets/images/placeholder.svg){ width="600" }
+  <figcaption>Image missing: banksystem/blocks-overview.png</figcaption>
+</figure>

@@ -11,3 +11,8 @@ description: "Settings reference: news sensitivity per market, event timing and 
 <!-- Sources for the rewrite:
   - SM:documentation/user-guide/plugin-system/plugins/news-plugin.md
 -->
+
+<figure markdown="span">
+  ![The Per-Market News Settings of the News plugin](../../../assets/images/placeholder.svg){ width="600" }
+  <figcaption>Image missing: stockmarket/plugins/news-settings.png</figcaption>
+</figure>

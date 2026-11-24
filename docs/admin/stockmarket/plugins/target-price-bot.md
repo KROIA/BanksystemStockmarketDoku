@@ -11,3 +11,8 @@ description: "Settings reference: the bot that trades the price toward its targe
 <!-- Sources for the rewrite:
   - SM:documentation/user-guide/plugin-system/plugins/target-price-bot.md
 -->
+
+<figure markdown="span">
+  ![The settings of the Target Price Bot](../../../assets/images/placeholder.svg){ width="600" }
+  <figcaption>Image missing: stockmarket/plugins/target-price-bot-settings.png</figcaption>
+</figure>

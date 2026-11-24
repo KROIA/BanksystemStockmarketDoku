@@ -11,3 +11,8 @@ description: "Default price, abundance and max order size per item, and adding p
 <!-- Sources for the rewrite:
   - SM:README.md#presets-tab
 -->
+
+<figure markdown="span">
+  ![The Presets tab showing the Ore category](../../assets/images/placeholder.svg){ width="600" }
+  <figcaption>Image missing: stockmarket/presets-tab.png</figcaption>
+</figure>
