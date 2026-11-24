@@ -8,7 +8,7 @@ hide:
 
 # BankSystem & StockMarket
 
-A bank and a stock market for your Minecraft server: one shared economy, played with real items.
+Your diamonds deserve better than a chest in the basement. Put them in the bank, trade them on a real stock market, found a company and sell its shares, then watch the prices go wild every time the news shouts "Diamond rush!". It's capitalism, one block at a time.
 
 <div class="download-buttons" markdown>
 
