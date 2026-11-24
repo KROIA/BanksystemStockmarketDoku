@@ -45,3 +45,19 @@
 .md-typeset .news-down {
   color: #e03e3e;
 }
+/* Default events table: the news picture fills its cell (4px gap) without making the row taller */
+.md-typeset td:has(img.news-pic) {
+  position: relative;
+  width: 128px;
+  height: 112px;
+  padding: 0;
+}
+.md-typeset td img.news-pic {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  object-fit: contain;
+  object-position: center top;
+}
