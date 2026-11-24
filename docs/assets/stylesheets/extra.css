@@ -115,3 +115,75 @@
     margin-left: 0.2rem;
   }
 }
+/* Depth: pictures float a little above the page (not diagrams or block icons) */
+:root {
+  --fx-shadow: 0 1px 3px rgb(0 0 0 / 0.12), 0 8px 24px rgb(0 0 0 / 0.16);
+  --fx-shadow-high: 0 2px 6px rgb(0 0 0 / 0.14), 0 16px 40px rgb(0 0 0 / 0.22);
+}
+[data-md-color-scheme="slate"] {
+  --fx-shadow: 0 1px 3px rgb(0 0 0 / 0.4), 0 10px 28px rgb(0 0 0 / 0.45);
+  --fx-shadow-high: 0 2px 6px rgb(0 0 0 / 0.45), 0 18px 44px rgb(0 0 0 / 0.6);
+}
+.md-typeset figure img:not([src$=".svg"]):not([width="100"]) {
+  box-shadow: var(--fx-shadow);
+}
+
+/* Home page effects, switched on by assets/javascripts/home-fx.js */
+.home-fx .md-typeset figure > a:has(> img.hero) {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.3rem;
+  box-shadow: var(--fx-shadow-high);
+}
+.home-fx .md-typeset img.hero {
+  box-shadow: none;
+  transform: translateY(var(--hero-shift, 0px)) scale(1.12);
+  will-change: transform;
+}
+.home-fx .md-typeset .grid.cards > ul > li {
+  position: relative;
+  transform: perspective(800px) translateY(var(--lift, 0px)) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.15s ease-out, box-shadow 0.25s, border 0.25s,
+              opacity 0.7s ease var(--delay, 0s), translate 0.7s ease var(--delay, 0s);
+}
+.home-fx .md-typeset .grid.cards > ul > li:hover {
+  --lift: -6px;
+  box-shadow: var(--fx-shadow-high);
+}
+.home-fx .md-typeset .grid.cards > ul > li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s;
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgb(255 255 255 / 0.14), transparent 60%);
+}
+.home-fx .md-typeset .grid.cards > ul > li:hover::after {
+  opacity: 1;
+}
+.home-fx .reveal {
+  opacity: 0;
+  translate: 0 24px;
+  transition: opacity 0.7s ease var(--delay, 0s), translate 0.7s ease var(--delay, 0s);
+}
+.home-fx figure.reveal {
+  transform: perspective(900px) rotateX(14deg);
+  transform-origin: 50% 100%;
+  transition: opacity 0.8s ease, translate 0.8s ease, transform 0.8s ease;
+}
+.home-fx .reveal.is-visible {
+  opacity: 1;
+  translate: none;
+}
+.home-fx figure.reveal.is-visible {
+  transform: none;
+}
+@media print {
+  .home-fx .reveal {
+    opacity: 1;
+    translate: none;
+    transform: none;
+  }
+}

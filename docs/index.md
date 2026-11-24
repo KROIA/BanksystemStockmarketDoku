@@ -21,7 +21,7 @@ Your diamonds deserve better than a chest in the basement. Put them in the bank,
 </div>
 
 <figure markdown="span">
-  ![A bank and trading corner: price charts and balance displays on the wall, a Money Stockpile, software in item frames and a row of terminal blocks](assets/images/shared/home-hero.png){ width="800" }
+  ![A bank and trading corner: price charts and balance displays on the wall, a Money Stockpile, software in item frames and a row of terminal blocks](assets/images/shared/home-hero.png){ .hero width="800" }
 </figure>
 
 <div class="grid cards" markdown>
