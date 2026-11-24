@@ -15,7 +15,7 @@ The **Bank Display** shows a bank account on a wall: either its current balances
 ## Building a screen
 
 1. Place the displays on a wall, side by side and on top of each other.
-2. Make sure they all face the same way. Displays that face the same way and touch each other join into one screen.
+2. Make sure they all face the same way. Displays that face the same way, touch each other and show the same display type join into one screen.
 3. Fill a full rectangle, for example 3 wide and 2 high.
 
 A display you add next to a configured screen takes over its settings, so the whole screen shows one picture.

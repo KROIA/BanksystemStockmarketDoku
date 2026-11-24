@@ -72,7 +72,7 @@ Place a second **Terminal Block**. Hold the **Trading Software** and right-click
 The market sells the iron from your bank account right away. The money lands in the same account. Your **Bank Balance** in the trading screen goes up.
 
 <figure markdown="span">
-  ![The trading screen in Item / Money mode on the diamond market, with the Market tab open](assets/images/stockmarket/trading-screen.png){ width="600" }
+  ![The trading screen in Item / Money mode on the iron market, with the Market tab open](assets/images/stockmarket/trading-screen.png){ width="600" }
 </figure>
 
 ## 6. Buy something

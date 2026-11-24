@@ -62,12 +62,12 @@ Built by the user on 2026-11-24: world `DemoCorner` (superflat, Prism instance "
 
 | File | Position (x y z) | Yaw | Pitch | Before the shot |
 |---|---|---|---|---|
-| `shared/home-hero` *(tuned)* | 25.5 -57 -4.5 (flying) | 58 | 10 | |
+| `shared/home-hero` *(tuned)* | 27.0 -58.52 1.0 | 69.5 | -4 | FOV 40, FOV effects off |
 | `banksystem/blocks-overview` | 17.5 -57.5 -8.5 (flying) | 49 | 13 | ATM and Terminal Block as for terminal-family |
 | `banksystem/automation-setup` | 11.5 -59 -3.5 | 127 | 13 | both levers on, both blocks connected to Savings |
 | `shared/terminal-family`, `stockmarket/news-toast` *(tuned)* | 11.5 -59 -2 | 90 | 14 | Terminal Block at (7, -59, -4), ATM at (7, -59, -1) in place of the Share Stamper, both facing east |
 | `banksystem/display-in-world` | 15.0 -59 1.5 | 0 | -6 | 2×2 Bank Display: Balance History |
-| `stockmarket/display-in-world` *(tuned)* | 23.5 -59 1.5 | 43 | -4 | 3×2 display: diamond chart |
+| `stockmarket/display-in-world` *(tuned)* | 23.99 -58.82 -2.37 | 17 | -1 | FOV 30, FOV effects off; 3×2 display: diamond chart, Stock Market Block below it |
 | `banksystem/money-stockpile` | 12.5 -59 3.0 | 0 | 20 | |
 | `shared/program-terminal.gif` | 11.5 -59 1.5 | 90 | 3 | Terminal Blocks on the counter at (7, -58, 1) and (7, -58, 2), facing east; HUD on |
 
@@ -96,8 +96,8 @@ The shared pictures show both mods, so they are taken in the StockMarket cells, 
 | `shared/program-terminal.gif` | Getting started | Two Terminal Blocks side by side on the counter, below the software in the item frames, HUD on (the held item shows). Holding Banking Software, right-click the first: it becomes a Bank Terminal Block. Switch to Trading Software, right-click the second: it becomes a Stock Market Block. About 8 s. | TK-14: GIF, use item on block |
 | `shared/alert-chat.png` | Alerts and suspicion flags | HUD on. With low thresholds, trigger one BankSystem suspicion alert and one StockMarket **Profit alert**, so both show in chat. Cropped to the chat. | TK-14: crop |
 | `stockmarket/display-in-world.png` | Stock Market Display, StockMarket overview | The Stock Market Displays in the home corner, the 3×2 one with the diamond chart. Camera diagonal. | |
-| `stockmarket/news-toast.png` | Market news | HUD on, **Enable news popups** ticked, standing in the terminal-family scene. Start a news event and shoot while its popup is in the top-right corner. | |
-| `stockmarket/villager-trade.png` | Villager trading | A villager with several trades (e.g. a toolsmith) and prices in money, its trade screen open. | |
+| `stockmarket/news-toast.png` | Market news | HUD on, **Enable news popups** ticked, standing in the terminal-family scene. Start a news event and shoot while its popup is in the top-right corner. Cropped to the popup, 360×100; the page shows it at its own size. | |
+| `stockmarket/villager-trade.png` | Villager trading | A villager with several trades (e.g. a toolsmith) and prices in money, its trade screen open. Daylight, cropped to the trade window (560×340). | |
 | `stockmarket/web-interface.png` | Web interface | **Web interface (read-only)** on. While the server runs, a headless browser (e.g. `firefox --headless --screenshot --window-size=1920,1080 <url>`) opens `http://127.0.0.1:<port>/` showing one market (diamond): chart, order book, recent trades. | a browser on the test PC |
 | `stockmarket/dev/example-plugin.png` | Developers → Your first plugin | **Plugin Management** with the example plugin (`PriceFloorPlugin`) added to diamond, its entry open with its settings form. | the example plugin jar in the cell (TK-14) |
 | `stockmarket/trading-screen.gif` *(optional)* | Trading basics | Open a Stock Market Block, pick diamond in the favourites bar, place a small market buy; the trade shows in **My History**. About 10 s. Replaces the old `StockMarketTerminal.gif`. | TK-14: GIF, pointer |

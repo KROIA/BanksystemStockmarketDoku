@@ -42,7 +42,7 @@ The headlines are in your game language if the server has a translation for it. 
 By default nothing pops up: you only see news when you open the newspaper. To get a small popup in the top-right corner for each new story, tick **Enable news popups** in the newspaper. The server remembers your choice.
 
 <figure markdown="span">
-  ![A news popup in the corner of the screen while playing](../assets/images/stockmarket/news-toast.png){ width="600" }
+  ![A news popup in the corner of the screen while playing](../assets/images/stockmarket/news-toast.png){ width="350" }
 </figure>
 
 With popups on, you also catch up when you join: you see up to three stories from the last ten minutes.

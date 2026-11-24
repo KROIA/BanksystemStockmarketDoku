@@ -5,10 +5,10 @@ description: Build a wall screen from Stock Market Displays and choose which mar
 
 # Stock Market Display
 
-The **Stock Market Display** shows the live price chart of a market on a wall. Put several next to each other and they join into one big screen. You can show a normal market, or the exchange rate between two items.
+The **Stock Market Display** shows the live price chart of a market on a wall. Several displays next to each other that show the same market join into one big screen. You can show a normal market, or the exchange rate between two items.
 
 <figure markdown="span">
-  ![Several Stock Market Displays on a wall, the largest showing a candlestick price chart](../assets/images/stockmarket/display-in-world.png){ width="600" }
+  ![A 3×2 Stock Market Display with the diamond chart above a Stock Market Block, next to three stacked smaller displays that each show another market](../assets/images/stockmarket/display-in-world.png){ width="600" }
 </figure>
 
 ## Before you start
@@ -19,7 +19,7 @@ The **Stock Market Display** shows the live price chart of a market on a wall. P
 ## Building a screen
 
 1. Place the displays on a wall, side by side and on top of each other.
-2. Make sure they all face the same way. Displays that face the same way and touch each other join into one screen.
+2. Make sure they all face the same way. Displays that face the same way, touch each other and show the same market join into one screen. New displays aren't set up yet, so they join each other: place the whole screen first, then set it up.
 3. Fill a full rectangle, for example 3 wide and 2 high. The screen covers the largest rectangle that starts at the top-left display.
 
 A new screen shows *Right-click to configure*.
@@ -32,7 +32,7 @@ A new screen shows *Right-click to configure*.
 4. Click **Apply**.
 
 <figure markdown="span">
-  ![The Configure Display screen of a Stock Market Display with diamond chosen and no second item, so it shows the Diamond / Dollar chart](../assets/images/stockmarket/display-config.png){ width="600" }
+  ![The Configure Display screen of a Stock Market Display with diamond and iron ingot chosen as a pair](../assets/images/stockmarket/display-config.png){ width="600" }
 </figure>
 
 ## Looking closer

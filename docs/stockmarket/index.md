@@ -10,7 +10,7 @@ StockMarket adds a stock market to your server. Every item can have its own mark
 StockMarket uses your [BankSystem bank account](../banksystem/bank-accounts.md) as its wallet. New to both mods? Start with [Getting started](../getting-started.md).
 
 <figure markdown="span">
-  ![Several Stock Market Displays on a wall, the largest showing a candlestick price chart](../assets/images/stockmarket/display-in-world.png){ width="600" }
+  ![A 3×2 Stock Market Display with the diamond chart above a Stock Market Block, next to three stacked smaller displays that each show another market](../assets/images/stockmarket/display-in-world.png){ width="600" }
 </figure>
 
 ## What you can do

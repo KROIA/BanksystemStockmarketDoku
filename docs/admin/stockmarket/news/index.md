@@ -65,7 +65,7 @@ On the right are the **Per-Market News Settings** (**News enabled**, **Sensitivi
 ### Active tab
 
 <figure markdown="span">
-  ![The Active tab of the News plugin with a running event](../../../assets/images/stockmarket/news/active.png){ width="600" }
+  ![The Active tab of the News plugin with three running events](../../../assets/images/stockmarket/news/active.png){ width="600" }
 </figure>
 
 One row per running event. Each row shows the phase (**Pending**, **Ramping**, **Holding**, **Reverting**, **Permanent**), the time left, whether the headline is out yet and the current effect on each market, for example `+25%`. Events with several steps show the step name and *phase N of M*. Click a market icon to select that market on the right.
