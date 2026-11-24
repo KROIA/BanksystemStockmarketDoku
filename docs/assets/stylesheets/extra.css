@@ -345,3 +345,11 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Every table spans the full text width; a table wider than the column still scrolls sideways */
+.md-typeset__table {
+  min-width: 100%;
+}
+.md-typeset table:not([class]) {
+  display: table;
+}
