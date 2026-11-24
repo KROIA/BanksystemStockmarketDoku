@@ -53,7 +53,7 @@ You can only bind accounts of the same kind:
 
 If the kind you need is missing, create it first: a shared bank account with `/bank create <name>`, or a Blaze Banker or team in the currency mod.
 
-With Numismatics, every user of the shared bank account who has **Allowed to withdraw** is added to the Blaze Banker's trust list. With Lightman's Currency, you manage the team members in that mod yourself.
+The users of the bank account and the members on the currency mod's side are not kept in step. Manage the Blaze Banker's trust list (Numismatics) or the team members (Lightman's Currency) in that mod yourself.
 
 <figure markdown="span">
   ![Choosing the external account when binding a slot](../assets/images/placeholder.svg){ width="600" }
