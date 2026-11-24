@@ -105,7 +105,7 @@ The shared pictures show both mods, so they are taken in the StockMarket cells, 
 ### Your part
 
 1. **The home corner:** built (world `DemoCorner`, see above). No armor stands needed: the camera spots come from the block positions. Still open: the structure file `planning/structures/home-hero.nbt`.
-2. **`shared/discord-feed.png`** (Discord feed page): a Discord channel with 4–5 feed messages (a buy, a sell, a deposit, an alert), sent to a test webhook. Crop to the messages; no server name, no real names.
+2. **`shared/discord-feed.png`** (Discord feed page): a Discord channel with 4–5 feed messages (a buy, a sell, a deposit, an alert), sent to a test webhook. Crop to the messages; no server name, no real names. 2026-11-24 (user): the TestKit session posts them with invented names (player MinerMia, company Oak & Iron Co.) to the user's webhook-test channel; the user takes the screenshot.
 
 ## 2. Plain screens (scripted: BS-288, SM-358)
 
