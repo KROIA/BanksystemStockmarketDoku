@@ -181,6 +181,8 @@ A binding only connects accounts of the same kind:
 
 So set `shared` correctly in every reference you return.
 
+A binding is also refused with `FAILED_WRONG_INSTANCE_TYPE` when the item of the bank slot isn't your provider's base currency item.
+
 ## What callers see
 
 Other mods use the bound slot through the normal [BankSystem API](api.md). Your return values become a `BankStatus`:
