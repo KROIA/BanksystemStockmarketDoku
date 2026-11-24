@@ -1,6 +1,6 @@
 ---
-title: Trading item for item
-description: The Item / Item mode: swap one item for another at the current exchange rate, with Exchange and Limit orders.
+title: "Trading item for item"
+description: "The Item / Item mode: swap one item for another at the current exchange rate, with Exchange and Limit orders."
 ---
 
 # Trading item for item

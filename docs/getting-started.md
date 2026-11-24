@@ -1,6 +1,6 @@
 ---
-title: Getting started
-description: Your first ten minutes as a player: check your bank account, deposit items, build a Stock Market Block and make your first trade.
+title: "Getting started"
+description: "Your first ten minutes as a player: check your bank account, deposit items, build a Stock Market Block and make your first trade."
 ---
 
 # Getting started

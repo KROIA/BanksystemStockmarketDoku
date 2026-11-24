@@ -233,11 +233,12 @@ Every page starts with:
 
 ```yaml
 ---
-title: Trading basics          # shown in the nav and the browser tab
-description: One sentence.    # shown in search results and link previews
+title: "Trading basics"         # shown in the nav and the browser tab
+description: "One sentence."   # shown in search results and link previews
 ---
 ```
 
+- Always put both values in double quotes. A colon in an unquoted value breaks the YAML, and the page then shows the raw block as text. The build stops with an error when that happens (`hooks/check_front_matter.py`).
 - `title` matches the page's `# Heading`.
 - `description` is one sentence, under 160 characters.
 - Optional: `hide: [toc]` on short pages, `hide: [navigation]` on the home page.

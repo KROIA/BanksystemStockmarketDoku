@@ -43,6 +43,9 @@ theme:
 extra_css:
   - assets/stylesheets/extra.css
 
+hooks:
+  - hooks/check_front_matter.py
+
 plugins:
   - search
   - glightbox:
