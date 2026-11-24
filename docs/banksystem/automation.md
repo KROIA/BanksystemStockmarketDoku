@@ -13,8 +13,7 @@ Two blocks connect your bank account to hoppers, pipes and redstone:
 Both blocks only work while they get a redstone signal. For the recipes, see [Blocks and recipes](blocks-and-recipes.md).
 
 <figure markdown="span">
-  ![A hopper feeding a Bank Upload Block with a lever, and a Bank Download Block filling a chest](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/automation-setup.png</figcaption>
+  ![A chest and hopper feeding a Bank Upload Block, and a Bank Download Block filling a chest through a hopper, each with a lever](../assets/images/banksystem/automation-setup.png){ width="600" }
 </figure>
 
 ## Bank Upload Block

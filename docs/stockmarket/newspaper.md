@@ -24,8 +24,7 @@ To craft a Newspaper, put one **Paper** and one **Ink Sac** anywhere in a crafti
 ## Reading the news
 
 <figure markdown="span">
-  ![The Market Times with three news items](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/newspaper.png</figcaption>
+  ![The Market Times with the latest news, grouped by day](../assets/images/stockmarket/newspaper.png){ width="600" }
 </figure>
 
 The newest stories are at the top, grouped by in-game day. Each story has a headline, a short article and sometimes a picture. Under it you see when it came out: your local date and time and the in-game day.

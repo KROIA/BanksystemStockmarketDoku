@@ -29,8 +29,7 @@ To bind it to another company, click **Unbind** first. Everything inside drops o
 ## Stamping shares
 
 <figure markdown="span">
-  ![A bound Share Stamper in Stamp mode](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/share-stamper.png</figcaption>
+  ![A bound Share Stamper in Stamp mode](../assets/images/banksystem/share-stamper.png){ width="600" }
 </figure>
 
 1. Put Blank Shares into the top slot.
@@ -59,8 +58,7 @@ Only one player can have the stamper open at a time.
 In [Company Management](companies.md#the-company-management-screen), open the **Shares** tab and click **Edit Visual Layers**.
 
 <figure markdown="span">
-  ![The Share Visuals editor with a finished share design](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/share-visuals.png</figcaption>
+  ![The Share Visuals editor with a finished share design](../assets/images/banksystem/share-visuals.png){ width="600" }
 </figure>
 
 | Field | What it changes |

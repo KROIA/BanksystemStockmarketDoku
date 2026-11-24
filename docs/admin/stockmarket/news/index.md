@@ -65,8 +65,7 @@ On the right are the **Per-Market News Settings** (**News enabled**, **Sensitivi
 ### Active tab
 
 <figure markdown="span">
-  ![The Active tab of the News plugin with one running event](../../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/news/active.png</figcaption>
+  ![The Active tab of the News plugin with three running events](../../../assets/images/stockmarket/news/active.png){ width="600" }
 </figure>
 
 One row per running event. Each row shows the phase (**Pending**, **Ramping**, **Holding**, **Reverting**, **Permanent**), the time left, whether the headline is out yet and the current effect on each market, for example `+25%`. Events with several steps show the step name and *phase N of M*. Click a market icon to select that market on the right.
@@ -81,8 +80,7 @@ Click anywhere else on the row to open the event details.
 ### All events tab
 
 <figure markdown="span">
-  ![The All events tab of the News plugin](../../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/news/all-events.png</figcaption>
+  ![The All events tab of the News plugin](../../../assets/images/stockmarket/news/all-events.png){ width="600" }
 </figure>
 
 One row per loaded event, with its headline and these markers: **[adminOnly]**, **[active]**, **[disabled]** and **[cooldown …]**.
@@ -94,8 +92,7 @@ One row per loaded event, with its headline and these markers: **[adminOnly]**, 
 ### Scheduler tab
 
 <figure markdown="span">
-  ![The Scheduler tab of the News plugin](../../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/news/scheduler.png</figcaption>
+  ![The Scheduler tab of the News plugin](../../../assets/images/stockmarket/news/scheduler.png){ width="600" }
 </figure>
 
 Four fields change the scheduler while the server runs: **Min seconds between events**, **Max seconds between events**, **Max active events (global)** and **Max active events (per market)**. A value that differs from the file is marked **(overridden)**.
@@ -108,8 +105,7 @@ Below the fields, **Upcoming events (planned)** shows the next planned slots. Th
 ### Event details
 
 <figure markdown="span">
-  ![The details window of one news event](../../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/news/event-details.png</figcaption>
+  ![The details window of one news event](../../../assets/images/stockmarket/news/event-details.png){ width="600" }
 </figure>
 
 Click an event in the **Active** or **All events** tab, or a planned event in the **Scheduler** tab, to see everything about it:

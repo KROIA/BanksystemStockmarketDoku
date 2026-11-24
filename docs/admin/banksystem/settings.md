@@ -16,8 +16,7 @@ BankSystem keeps its server settings in one file per world. You change them in g
 The button only shows on the master server of a [network](../multi-server.md). Settings take effect at once, except those marked **⟳ Restart required** in the screen. **Defaults** fills in the default values and **Reload** reads the saved values again; neither saves anything until you click **Apply**. If you close the screen with changes you didn't apply, a popup asks whether to **Save** or **Discard** them.
 
 <figure markdown="span">
-  ![The BankSystem Mod Settings screen](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/mod-settings.png</figcaption>
+  ![The BankSystem Mod Settings screen, scrolled to the Suspicious activity group](../../assets/images/banksystem/mod-settings.png){ width="600" }
 </figure>
 
 ## The settings file

@@ -63,8 +63,7 @@ opens the balance chart of any account, the same chart players see, with its tot
 **Server history** at the top of the Bank Settings screen (`/banksystem manage`) shows the balance history of all accounts added up, per item. Money supply flags show as markers. Use it to see when money or items appeared on the server.
 
 <figure markdown="span">
-  ![The balance history of the whole server](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/server-history.png</figcaption>
+  ![The balance history of the whole server](../../assets/images/banksystem/server-history.png){ width="600" }
 </figure>
 
 ## A typical check

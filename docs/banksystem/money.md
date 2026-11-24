@@ -13,8 +13,7 @@ BankSystem money is counted in dollars and cents. Most of the time it is just a 
 - **In your hand**, money is items: coins from **1 Cent** to **50 Cent** plus the **Dollar** coin, and banknotes from **5 Dollar** up to **1'000'000 Dollar**.
 
 <figure markdown="span">
-  ![All banknotes and coins of BankSystem in a row](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/money-items.png</figcaption>
+  ![All banknotes and coins of BankSystem in a row](../assets/images/banksystem/money-items.png){ width="600" }
 </figure>
 
 To put cash back into the bank, use a [Bank Terminal](bank-terminal.md) like for any item: put the notes and coins into the slots and click **Send items to bank**. They count at their face value. Or use the ATM's **Convert** tab, see below.
@@ -69,8 +68,7 @@ You can put cash in the world as a pile. Hold banknotes or coins and right-click
 - Break it to get all the money back.
 
 <figure markdown="span">
-  ![A pile of banknotes and coins on a table](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/money-stockpile.png</figcaption>
+  ![A pile of banknotes and coins on a table](../assets/images/banksystem/money-stockpile.png){ width="600" }
 </figure>
 
 !!! warning "Piles are not in the bank"

@@ -9,6 +9,11 @@ User decision 2026-11-24: script every image except the Discord feed. Tracker it
 - BS-291 (BankSystem pictures in the world and 1 GIF) and SM-361 (StockMarket and shared pictures in the world, 1–2 GIFs): section 1.
 - TK-14: the test kit pieces these still miss (GIF recording with a drawn pointer, hover, crop, using an item on a block, extra mods in a cell, on-demand suites).
 
+**Stand-ins from the old docs (2026-11-24).** 13 files below are copies of old pictures from the mod repos, checked for names, IDs and outdated labels. The scripted runs still take them and overwrite the copies under the same name:
+- BankSystem: `money-items`, `money-stockpile`, `automation-setup` (HUD and hand visible), `server-history`, `mod-settings` (shows the **Suspicious activity** group), `share-stamper`, `share-visuals`.
+- StockMarket: `web-interface`, `newspaper`, `news/active`, `news/all-events`, `news/scheduler`, `news/event-details`.
+- Not used: the old `settingsGUI.png` (shows a removed setting), and every old picture with a real player name, "Dev", "Tester_1" or a UUID in it.
+
 ## Rules for every picture
 
 - **Window 1280×720, GUI scale 2,** English, vanilla resource pack. This includes the home picture.

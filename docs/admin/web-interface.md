@@ -8,8 +8,7 @@ description: "StockMarket's read-only web page with price charts: turning it on,
 StockMarket can show its markets on a web page. Players open it in a browser and follow prices without joining the game. The page only shows; nobody can trade or change anything through it.
 
 <figure markdown="span">
-  ![The web interface in a browser with a price chart, the order book and recent trades](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/web-interface.png</figcaption>
+  ![The web interface in a browser with the market list, a candle chart and the order book depth](../assets/images/stockmarket/web-interface.png){ width="600" }
 </figure>
 
 ## Turning it on
