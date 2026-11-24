@@ -2,3 +2,10 @@
 .md-typeset figure img {
   border-radius: 0.3rem;
 }
+
+/* Language switch left of the light/dark toggle: Material puts it to the right, so the toggle
+   and everything after it (search, repo link) move behind the switch. */
+.md-header__inner > [data-md-component="palette"],
+.md-header__inner > [data-md-component="palette"] ~ :not(.md-header__option) {
+  order: 1;
+}

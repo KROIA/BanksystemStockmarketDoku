@@ -52,8 +52,8 @@ plugins:
       zoomable: true
       skip_classes:
         - no-zoom
-  # German is prepared but not built yet. To add it: write page.de.md next to
-  # page.md, add nav_translations below, then set build: true.
+  # German is built; pages without a page.de.md show the English text. To translate:
+  # write page.de.md next to page.md and add nav_translations below.
   - i18n:
       docs_structure: suffix
       fallback_to_default: true
@@ -65,7 +65,7 @@ plugins:
           build: true
         - locale: de
           name: Deutsch
-          build: false
+          build: true
 
 markdown_extensions:
   - admonition
