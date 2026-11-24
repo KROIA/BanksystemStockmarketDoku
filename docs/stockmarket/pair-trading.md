@@ -23,8 +23,7 @@ In **Item / Item** mode you swap one item straight for another, for example iron
 Each side shows your **Balance** of that item. **Swap** turns the pair around. When you pick an item, the list has two tabs: **Commodities** for normal items and **Companies** for [company shares](company-shares.md).
 
 <figure markdown="span">
-  ![The Item / Item mode with I HAVE iron and I WANT diamond on the Exchange tab](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/item-item-mode.png</figcaption>
+  ![The Item / Item mode with I HAVE iron and I WANT diamond on the Exchange tab](../assets/images/stockmarket/item-item-mode.png){ width="600" }
 </figure>
 
 ## The exchange rate

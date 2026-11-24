@@ -25,8 +25,7 @@ For every price level the plugin works out a **target volume**. The real volume 
 All settings are **per market**. Open the Plugin Management screen (`/stockmarket manage` → **Manage Plugins**), select a market icon in this plugin's entry, edit the fields and click one of the buttons:
 
 <figure markdown="span">
-  ![The settings of the order book volume plugin for one market](../../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/plugins/order-book-volume-settings.png</figcaption>
+  ![The settings of the order book volume plugin for one market](../../../assets/images/stockmarket/plugins/order-book-volume-settings.png){ width="600" }
 </figure>
 
 | Button | What it does |

@@ -21,8 +21,7 @@ A bank and a stock market for your Minecraft server: one shared economy, played 
 </div>
 
 <figure markdown="span">
-  ![A bank and trading corner with a Bank Terminal, an ATM, a Stock Market Block and wall displays showing a balance history and a price chart](assets/images/placeholder.svg){ width="800" }
-  <figcaption>Image missing: shared/home-hero.png</figcaption>
+  ![A bank and trading corner with a Bank Terminal, an ATM, a Stock Market Block and wall displays showing a balance history and a price chart](assets/images/shared/home-hero.png){ width="800" }
 </figure>
 
 <div class="grid cards" markdown>

@@ -13,11 +13,10 @@ Players can found companies in BankSystem and print shares of them. When a compa
 2. Click **Select Market** in the top bar. In **Item / Item** mode, click **Select...** next to **I HAVE:** or **I WANT:**.
 3. Open the **Companies** tab. Normal items are on the **Commodities** tab.
 
-Each company share has its own card picture, so you can tell the companies apart. **Sort: Supply** puts the companies first that have printed the largest part of their shares.
+A company can give its share its own card design (see [Designing the share](../banksystem/shares.md#designing-the-share)), so you can tell the companies apart. A share without a design shows a plain card. **Sort: Supply** puts the companies first that have printed the largest part of their shares.
 
 <figure markdown="span">
-  ![The market selector on the Companies tab with two company markets](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/companies-tab.png</figcaption>
+  ![The trading screen with the Companies tab open in the market list, showing two company shares](../assets/images/stockmarket/companies-tab.png){ width="600" }
 </figure>
 
 ## Buying and selling shares

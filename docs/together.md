@@ -25,8 +25,7 @@ The **Terminal Block** from BankSystem is the base for all the bank and market b
 The software is not used up. You can reprogram any of these blocks at any time, for example turn a Bank Terminal into a Stock Market Block.
 
 <figure markdown="span">
-  ![Terminal Block, Bank Terminal Block, ATM and Stock Market Block side by side](assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: shared/terminal-family.png</figcaption>
+  ![An ATM, a Bank Terminal Block, a Stock Market Block and a plain Terminal Block side by side](assets/images/shared/terminal-family.png){ width="600" }
 </figure>
 
 ## Your bank account is your trading wallet

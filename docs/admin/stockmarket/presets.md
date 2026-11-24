@@ -14,8 +14,7 @@ StockMarket ships presets for most vanilla items, including enchanted books and 
 Run `/stockmarket manage` and open the **Presets** tab. You need the StockMarket admin flag.
 
 <figure markdown="span">
-  ![The Presets tab showing the Ore category](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/presets-tab.png</figcaption>
+  ![The Presets tab showing the Ore category](../../assets/images/stockmarket/presets-tab.png){ width="600" }
 </figure>
 
 Choose a category on the left. **+ New** adds a category; **Rename** and **Delete** change the selected one. Each item in the category has these fields:

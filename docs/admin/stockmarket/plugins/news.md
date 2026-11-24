@@ -58,8 +58,7 @@ A permanent event of +20 % changes the default price from 160 to 192 when it end
 In the Plugin Management screen (`/stockmarket manage` → **Manage Plugins**), click **Open Plugin Settings** in the plugin's entry. The **Per-Market News Settings** are on the right side of the window.
 
 <figure markdown="span">
-  ![The Per-Market News Settings of the News plugin](../../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/plugins/news-settings.png</figcaption>
+  ![The Per-Market News Settings of the News plugin](../../../assets/images/stockmarket/plugins/news-settings.png){ width="600" }
 </figure>
 
 Select a market, change the values and click **Apply** for this market or **Apply to all** for every market of the plugin.

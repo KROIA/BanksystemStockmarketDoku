@@ -16,8 +16,7 @@ StockMarket keeps its server settings in one file per world. You change them in 
 The button only shows on the master server of a [network](../multi-server.md). Settings take effect at once, except those marked **⟳ Restart required**: they are saved, but only used after a restart. **Defaults** fills in the default values and **Reload** reads the saved values again; neither saves anything until you click **Apply**.
 
 <figure markdown="span">
-  ![The StockMarket Mod Settings screen with the Market group](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/mod-settings.png</figcaption>
+  ![The StockMarket Mod Settings screen with the Market group](../../assets/images/stockmarket/mod-settings.png){ width="600" }
 </figure>
 
 If the server doesn't answer, the screen says *No answer from the server - the change may have been applied. Reopen to check.* Open the screen again to see what was saved.

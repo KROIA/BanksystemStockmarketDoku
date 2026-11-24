@@ -8,8 +8,7 @@ description: How villager prices follow the stock market, and how you pay villag
 With StockMarket on the server, villagers trade for money instead of emeralds. Their prices follow the stock market: when the market price of wheat goes up, a farmer pays you more for it. This page explains what changes for you.
 
 <figure markdown="span">
-  ![A villager's trade screen with prices in money](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/villager-trade.png</figcaption>
+  ![A villager's trade screen with prices in money](../assets/images/stockmarket/villager-trade.png){ width="600" }
 </figure>
 
 ## Which trades change

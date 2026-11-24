@@ -40,8 +40,7 @@ When a player buys or sells a lot, the bot doesn't snap the price straight back.
 The bot has its own screen. In the Plugin Management screen (`/stockmarket manage` → **Manage Plugins**), click **Open Plugin Settings** in the bot's entry.
 
 <figure markdown="span">
-  ![The settings of the Target Price Bot](../../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/plugins/target-price-bot-settings.png</figcaption>
+  ![The settings of the Target Price Bot](../../../assets/images/stockmarket/plugins/target-price-bot-settings.png){ width="600" }
 </figure>
 
 The screen shows the chart and order book of the selected market at the top left, the market list below it and the **PID Settings** on the right. Select a market, change the values and click **Apply** for this market or **Apply to all** for every market of the bot. **Defaults** fills in the default values; nothing changes until you apply.

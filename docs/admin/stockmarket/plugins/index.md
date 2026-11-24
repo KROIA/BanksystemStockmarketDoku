@@ -37,8 +37,7 @@ The rule: plugins that set a price run before the plugins that read it. The **Ne
 Run `/stockmarket manage` and click **Manage Plugins**. The **Plugins** box above the button shows how many plugins are switched on.
 
 <figure markdown="span">
-  ![The Plugin Management screen with the five default plugins](../../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/plugin-management.png</figcaption>
+  ![The Plugin Management screen with the TargetPriceBot and NewsPlugin entries](../../../assets/images/stockmarket/plugin-management.png){ width="600" }
 </figure>
 
 The left side shows the chart and order book of the selected market, with the plugins' lines drawn on it, such as the target price. The right side lists the plugins. Each entry has:

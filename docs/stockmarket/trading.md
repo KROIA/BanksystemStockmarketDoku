@@ -104,7 +104,7 @@ After an accepted order, the **Buy** and **Sell** buttons are greyed out for a s
 
 A market can have opening hours, set by the server admin. The trading panel shows them, for example **Trading hours 08:00-18:00**, or **24h** for a market that never closes, together with the current time of the server's clock.
 
-When you can't trade, a red banner covers the trading panel and the **Buy** and **Sell** buttons are greyed out:
+When you can't trade, a red label shows next to the **Market** and **Limit** tabs and the **Buy** and **Sell** buttons are greyed out:
 
 - **Market Closed**: the market is outside its opening hours, or an admin closed it. Your open orders stay and fill when the market opens again. You can still cancel them, but you can't move them on the chart.
 - **Under Maintenance**: an admin paused trading on this market. Your open orders on it are cancelled and refunded right away.
@@ -112,8 +112,7 @@ When you can't trade, a red banner covers the trading panel and the **Buy** and 
 In **Item / Item** mode, both markets must be open. If one of them is closed, your exchange order waits until both are open.
 
 <figure markdown="span">
-  ![The trading screen with the red Market Closed banner over the trading panel](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/market-closed.png</figcaption>
+  ![The wheat trading screen outside trading hours, with a red Market Closed label next to the Market and Limit tabs](../assets/images/stockmarket/market-closed.png){ width="600" }
 </figure>
 
 ## Limits and messages

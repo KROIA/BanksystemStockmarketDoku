@@ -26,8 +26,7 @@ target price = fair price × (1 + random value × Volatility Scale)
 The setting is **per market**. Open the Plugin Management screen (`/stockmarket manage` → **Manage Plugins**), select a market icon in this plugin's entry, change the field and click **Apply** for this market or **Apply to all** for every market of the plugin.
 
 <figure markdown="span">
-  ![The settings of the Volatility plugin](../../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/plugins/volatility-settings.png</figcaption>
+  ![The settings of the Volatility plugin](../../../assets/images/stockmarket/plugins/volatility-settings.png){ width="600" }
 </figure>
 
 | Setting | Default | Range | What it does |

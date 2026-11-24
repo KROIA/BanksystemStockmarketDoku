@@ -12,8 +12,7 @@ The screen has three tabs: **Overview**, **Create Markets** and **Presets**.
 ## The Overview tab
 
 <figure markdown="span">
-  ![The Overview tab of the Stock Market Management screen](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/management-overview.png</figcaption>
+  ![The Overview tab of the Stock Market Management screen](../../assets/images/stockmarket/management-overview.png){ width="600" }
 </figure>
 
 The left side shows every market in a grid with a search box. Click a market to see its price chart. Under **Selected Market** you have:
@@ -34,8 +33,7 @@ On the right:
 ## Creating markets
 
 <figure markdown="span">
-  ![The Create Markets tab with a few items selected](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/create-markets.png</figcaption>
+  ![The Create Markets tab with a few items selected](../../assets/images/stockmarket/create-markets.png){ width="600" }
 </figure>
 
 1. Open the **Create Markets** tab.
@@ -55,8 +53,7 @@ Each new market starts at its price and is open for trading right away, within i
 ## Market settings
 
 <figure markdown="span">
-  ![The Market Settings screen of one market](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/market-settings.png</figcaption>
+  ![The Market Settings screen of one market](../../assets/images/stockmarket/market-settings.png){ width="600" }
 </figure>
 
 Select a market on the **Overview** tab and click **Market Settings**.

@@ -8,8 +8,7 @@ description: Reading the candlestick chart and the order book next to it, moving
 The left half of the trading screen shows the price history of the market as a candlestick chart. Along its right edge you see the order book: how many items wait to be bought or sold at each price. This page explains how to read both and why the price moves.
 
 <figure markdown="span">
-  ![The price chart with candles, the order book along its right edge and two of your order markers](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/price-chart.png</figcaption>
+  ![The price chart with candles, the order book along its right edge and two of your order markers](../assets/images/stockmarket/price-chart.png){ width="600" }
 </figure>
 
 ## Candles

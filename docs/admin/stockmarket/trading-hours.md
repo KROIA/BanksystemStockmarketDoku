@@ -43,7 +43,7 @@ The change takes effect at once. Price candles have their own clock setting, see
 - **The price is frozen.** The chart shows flat candles.
 - **News still counts.** A news event can change the market's base price while it is closed, so the price can jump when it opens.
 
-Players see a **Market Closed** banner on the trading screen and the trading hours next to the clock. See [Trading](../../stockmarket/trading.md) for the player's view.
+Players see a red **Market Closed** label on the trading screen and the trading hours next to the clock. See [Trading](../../stockmarket/trading.md) for the player's view.
 
 ## Opening and closing by command
 
@@ -67,7 +67,7 @@ Both stop player trading. Use the trading hours for a schedule, and [maintenance
 | Waiting player orders | Kept | Cancelled and refunded |
 | Bots and plugins | Pause | Keep trading |
 | Price | Frozen | Keeps moving |
-| Banner | **Market Closed** | **Under Maintenance** |
+| Label on the trading screen | **Market Closed** | **Under Maintenance** |
 
 The open/close commands don't end maintenance.
 

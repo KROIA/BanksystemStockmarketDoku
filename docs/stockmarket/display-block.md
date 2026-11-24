@@ -8,8 +8,7 @@ description: Build a wall screen from Stock Market Displays and choose which mar
 The **Stock Market Display** shows the live price chart of a market on a wall. Put several next to each other and they join into one big screen. You can show a normal market, or the exchange rate between two items.
 
 <figure markdown="span">
-  ![A wall of Stock Market Displays showing a price chart next to a Stock Market Block](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/display-in-world.png</figcaption>
+  ![Several Stock Market Displays on a wall, the largest showing a candlestick price chart](../assets/images/stockmarket/display-in-world.png){ width="600" }
 </figure>
 
 ## Before you start
@@ -33,8 +32,7 @@ A new screen shows *Right-click to configure*.
 4. Click **Apply**.
 
 <figure markdown="span">
-  ![The Configure Display screen of a Stock Market Display with a pair chosen](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/display-config.png</figcaption>
+  ![The Configure Display screen of a Stock Market Display with diamond chosen and no second item, so it shows the Diamond / Dollar chart](../assets/images/stockmarket/display-config.png){ width="600" }
 </figure>
 
 ## Looking closer

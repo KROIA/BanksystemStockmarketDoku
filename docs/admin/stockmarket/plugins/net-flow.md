@@ -30,8 +30,7 @@ anchor     = default price, moved slowly by lasting trends
 All settings are **per market**. Open the Plugin Management screen (`/stockmarket manage` → **Manage Plugins**), select a market icon in this plugin's entry, change the fields and click **Apply** for this market or **Apply to all** for every market of the plugin. Hover a field for its tooltip.
 
 <figure markdown="span">
-  ![The settings of the Net Flow plugin](../../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/plugins/net-flow-settings.png</figcaption>
+  ![The settings of the Net Flow plugin](../../../assets/images/stockmarket/plugins/net-flow-settings.png){ width="600" }
 </figure>
 
 Below the fields, *Current anchor: … x default price* shows the selected market's anchor. Invalid values are replaced by the default.
