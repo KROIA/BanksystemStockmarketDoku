@@ -3,6 +3,25 @@
   border-radius: 0.3rem;
 }
 
+/* Screenshots, GIFs and charts fill the text column; the width on the page is only the fallback.
+   Recipes (width 350) and block icons (width 100) keep the size the page gives them. */
+.md-typeset figure:has(img:not([width="350"]):not([width="100"])),
+.md-typeset figure > a:has(> img:not([width="350"]):not([width="100"])) {
+  width: 100%;
+}
+.md-typeset figure img:not([width="350"]):not([width="100"]) {
+  width: 100%;
+  height: auto;
+}
+
+/* Home page: download buttons centred, one row per mod. */
+.md-typeset .download-buttons {
+  text-align: center;
+}
+.md-typeset .download-buttons .md-button {
+  margin: 0.2rem;
+}
+
 /* Language switch left of the light/dark toggle: Material puts it to the right, so the toggle
    and everything after it (search, repo link) move behind the switch. */
 .md-header__inner > [data-md-component="palette"],

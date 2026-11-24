@@ -204,6 +204,7 @@ Don't use `!!! example`, `!!! question` or collapsible boxes (`???`) unless the 
   ```
 
 - **Width 600** by default. **Recipes 350.** Small block icons 100. Small order book animations 350.
+- Every image except width 350 and 100 is stretched to the full text width by `extra.css` (user decision 2026-11-24); the width on the page is only the fallback. So give an image width 350 only when it should stay small (recipes, small animations).
 - All images can be clicked to zoom (glightbox). Add `{ .no-zoom }` for tiny icons.
 - Screenshots: GUI scale 2 or 3, English game language, no personal player names or server names in the shot.
 - Charts: SVG with a light background. Keep the colours readable in dark mode (the site rounds the corners).

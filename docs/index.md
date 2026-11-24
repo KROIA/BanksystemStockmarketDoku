@@ -10,8 +10,15 @@ hide:
 
 A bank and a stock market for your Minecraft server: one shared economy, played with real items.
 
-[Download BankSystem](https://www.curseforge.com/minecraft/mc-mods/banksystem){ .md-button .md-button--primary }
-[Download StockMarket](https://www.curseforge.com/minecraft/mc-mods/stockmarket){ .md-button .md-button--primary }
+<div class="download-buttons" markdown>
+
+[:simple-curseforge: BankSystem on CurseForge](https://www.curseforge.com/minecraft/mc-mods/banksystem){ .md-button .md-button--primary }
+[:simple-modrinth: BankSystem on Modrinth](https://modrinth.com/mod/kroia_banksystem){ .md-button .md-button--primary }
+
+[:simple-curseforge: StockMarket on CurseForge](https://www.curseforge.com/minecraft/mc-mods/stockmarket){ .md-button .md-button--primary }
+[:simple-modrinth: StockMarket on Modrinth](https://modrinth.com/mod/kroia_stockmarket){ .md-button .md-button--primary }
+
+</div>
 
 <figure markdown="span">
   ![A bank and trading corner with a Bank Terminal, an ATM, a Stock Market Block and wall displays showing a balance history and a price chart](assets/images/placeholder.svg){ width="800" }
