@@ -2,44 +2,69 @@
 
 Every image that [structure.md](structure.md) plans, grouped by who makes it. File names are paths under `docs/assets/images/`. Until an image exists, its page shows a placeholder (see the end of this file).
 
-Totals: 20 for you to take (+1 optional), 46 plain screens scripted by the mod sessions, 4 diagrams by the docs agent, recipe images from the export command, and a few reused files.
+Totals: 46 plain screens (section 2) and 18 pictures and GIFs in the world (section 1), all scripted, plus 1 optional GIF. For you: the Discord feed picture and building the home corner once. 4 diagrams (done), recipe images from the export command, and a few reused files.
 
-## Rules for screenshots you take
+User decision 2026-11-24: script every image except the Discord feed. Tracker items:
+- BS-288 (24 BankSystem plain screens) and SM-358 (22 StockMarket plain screens): section 2.
+- BS-291 (BankSystem pictures in the world and 1 GIF) and SM-361 (StockMarket and shared pictures in the world, 1–2 GIFs): section 1.
+- TK-14: the test kit pieces these still miss (GIF recording with a drawn pointer, hover, crop, using an item on a block, extra mods in a cell, on-demand suites).
 
-- **Window 1280×720, GUI scale 2,** English, vanilla resource pack. The home picture is the exception: 1920×1080.
-- **In the world:** HUD off (F1), noon and clear weather (`/time set noon`, `/weather clear`), no overlays of other mods (JEI, minimap).
-- **Names are invented:** players **Tavrik**, **Quenby** and **Brindle** (the same as in the Audit Tool pictures), the company **Acme Mining**, the accounts **Savings** and **Farm Co-op**. Never a real player name, never "Dev".
+## Rules for every picture
+
+- **Window 1280×720, GUI scale 2,** English, vanilla resource pack. This includes the home picture.
+- **In the world:** HUD hidden unless the row says "HUD on", noon and clear weather, no overlays of other mods (JEI, minimap).
+- **Names are invented:** players **Tavrik**, **Quenby** and **Brindle** (the same as in the Audit Tool pictures), the company **Acme Mining**, the accounts **Savings** (Tavrik) and **Farm Co-op** (Tavrik and Quenby). Never a real player name, never "Dev".
 - **Numbers look real** but round: 12'450.00 $, 64 iron ingots.
-- **GIFs:** one action each, 5–10 seconds. Record the window with OBS, put the mp4 into `GifCreator/videos/` and run `convert.bat` (10 frames per second). Keep a GIF under about 5 MB.
+- **GIFs:** one action each, 5–10 seconds, 10 frames per second, under about 5 MB (scaled down to about 800 px wide if needed; the pages show them at 600 px). A drawn mouse pointer shows where the script clicks.
 - Save each file under the exact name below. PNG for still images.
 
-## 1. Taken by you
+## 1. In the world, GIFs and outside the game (scripted: BS-291, SM-361)
 
-| # | File | Page | What to show |
+### Common scene
+
+- **Place:** build on a calm floor (e.g. polished andesite or oak planks) with a wall behind (stone bricks or dark oak), so no sky line, void or test-area border shows. No mobs except where listed.
+- **Camera:** `/tp @s <x> <y> <z> <yaw> <pitch>`, 3–5 blocks from the subject, about eye level, 10–25° down unless the row says otherwise. Everything the row lists must be in the picture.
+- **Settled markets:** about 10 markets (diamond, iron, gold, emerald, coal, copper, redstone, lapis, wheat, oak log) with the default plugins, run with `/tick sprint` until the charts show several hours of candles. The same world can serve the plain screens of section 2.
+- **History by real time** (balance history, company statistics) can't be fast-forwarded: write invented history directly through a dev-only hook.
+- These shots take minutes. They run on demand (`--only <topic>`), never in the normal test runs.
+
+### BankSystem (BS-291)
+
+| File | Page | Scene | Needs |
 |---|---|---|---|
-| 1 | `shared/home-hero.png` | Home | A small bank-and-market corner: Bank Terminal, ATM, Stock Market Block, a 3×2 Bank Display with a balance history, a Stock Market Display with a chart, a money stockpile on the counter. 1920×1080. Take it last, when the rest looks right. |
-| 2 | `shared/program-terminal.gif` | Getting started | Holding **Banking Software**, right-click a **Terminal Block**: it turns into a Bank Terminal. Then **Trading Software** on a second Terminal Block: it becomes a Stock Market Block. About 8 s. |
-| 3 | `shared/terminal-family.png` | How the two mods work together | Terminal Block, Bank Terminal Block, ATM and Stock Market Block in a row, front view. |
-| 4 | `banksystem/blocks-overview.png` | BankSystem overview | Every BankSystem block placed: Terminal, Bank Terminal, ATM, Upload and Download blocks with chests, Bank Display, Share Stamper, a money stockpile. Replaces the old `overview.png`, which shows a player name. |
-| 5 | `banksystem/bank-terminal-deposit.gif` | Bank Terminal, Getting started | Open the Bank Terminal, **Send items to bank** with a stack of iron, then take 10 back with the amount buttons. About 8 s. |
-| 6 | `banksystem/money-items.png` | Money and the ATM | All banknotes (5 to 1'000'000) and the coins in a row, in item frames or in the inventory. |
-| 7 | `banksystem/money-stockpile.png` | Money and the ATM | A money stockpile on a table, close up. |
-| 8 | `banksystem/automation-setup.png` | Automation | Hopper into a Bank Upload Block with a lever; a Bank Download Block feeding a chest. Redstone visible. |
-| 9 | `banksystem/display-in-world.png` | Bank Display | A 3×2 Bank Display on a wall showing **Balance History**. |
-| 10 | `banksystem/share-items.png` | Shares | The inventory with two or three Company Shares of different designs, the tooltip of one open (shows the supply). |
-| 11 | `banksystem/currency-bindings.png` | Currency bindings | The **Currency Bindings** screen with one bound slot. Needs Create: Numismatics or Lightman's Currency installed. |
-| 12 | `banksystem/currency-bind-dialog.png` | Currency bindings | The **Bind...** dialog, picking the external account. Same setup as #11. |
-| 13 | `stockmarket/trading-screen.gif` | Trading basics | Open the Stock Market Block, pick a market in the favourites bar, place a small market buy, the trade shows up in **My History**. About 10 s. Replaces the old `StockMarketTerminal.gif`. |
-| 14 | `stockmarket/news-toast.png` | Market news | Playing in the world with a news popup in the corner (**Enable news popups** on). HUD on for this one. |
-| 15 | `stockmarket/villager-trade.png` | Villager trading | A villager's trade screen with prices in money. |
-| 16 | `stockmarket/display-in-world.png` | Stock Market Display, StockMarket overview | A 3×2 Stock Market Display with a price chart, next to a Stock Market Block. |
-| 17 | `stockmarket/web-interface.png` | Web interface | The browser page with one market: chart, order book, recent trades. Crop the address bar if it shows a server address. |
-| 18 | `shared/discord-feed.png` | Discord feed | A Discord channel with 4–5 feed messages (a buy, a sell, a deposit, an alert), sent to a test webhook. |
-| 19 | `shared/alert-chat.png` | Alerts and suspicion flags | Chat with one BankSystem suspicion alert and one StockMarket profit alert. HUD on, cropped to the chat. |
-| 20 | `stockmarket/dev/example-plugin.png` | Developers → Custom plugins | **Plugin Management** with the example plugin (`PriceFloorPlugin`) added and its settings open. Needs the example plugin mod installed. |
-| 21 | `shared/load-refused.png` *(optional)* | Installation and updates | The "BankSystem did not load this world" screen. Only if it happens anyway; the page works without it. |
+| `banksystem/blocks-overview.png` | BankSystem overview | A small bank room: Terminal Block, Bank Terminal Block, ATM, a Bank Upload Block fed by a hopper, a Bank Download Block filling a chest, a 3×2 Bank Display on the back wall showing **Balance History**, a Share Stamper, a Money Stockpile on a counter. Camera at the entrance, about 20° down. | |
+| `banksystem/money-items.png` | Money and the ATM | Every coin (**1 Cent** to **50 Cent**, **Dollar**) and every banknote (**5 Dollar** to **1'000'000 Dollar**) in item frames on a wall, sorted by value, coins in the top row. Camera straight in front. | |
+| `banksystem/money-stockpile.png` | Money and the ATM | A Money Stockpile on a counter (e.g. smooth stone slabs): coin piles and a few upright banknotes. Close up, about 2 blocks away, 30° down. | |
+| `banksystem/automation-setup.png` | Automation | Chest → hopper → Bank Upload Block with a lever on it, switched on. Next to it a Bank Download Block → hopper → chest, powered through visible redstone dust. Both connected to Savings. Camera diagonal, 25° down. | |
+| `banksystem/display-in-world.png` | Bank Display | A 3×2 Bank Display on a stone brick wall showing **Balance History** of Savings over 7 days. Camera centred in front, about 4 blocks away. | |
+| `banksystem/share-items.png` | Shares | The inventory screen with two or three Company Shares of different designs (Acme Mining and one more company). The mouse rests on one, so its tooltip with the supply shows. | TK-14: hover |
+| `banksystem/bank-terminal-deposit.gif` | Bank Terminal, Getting started | The Bank Terminal of Savings, 64 iron ingots in its slots: click **Send items to bank**. Then **+10** on iron and **Receive items from bank**. About 8 s. | TK-14: GIF, pointer |
+| `banksystem/currency-bindings.png` | Currency bindings | **Currency Bindings** of Tavrik's personal account: the Spur slot bound to Tavrik's Numismatics account, with a balance. | Numismatics in the cell (TK-14) |
+| `banksystem/currency-bind-dialog.png` | Currency bindings | The **Bind...** dialog on the Spur slot, **Pick an account** showing Tavrik's Numismatics account. | same |
 
-## 2. Plain screens: scripted (BS-288, SM-358)
+### StockMarket and shared (SM-361)
+
+The shared pictures show both mods, so they are taken in the StockMarket cells, which load BankSystem too.
+
+| File | Page | Scene | Needs |
+|---|---|---|---|
+| `shared/home-hero.png` | Home | Your corner, placed from `planning/structures/home-hero.nbt` with `/place template`. The script fills the displays: the Bank Display with Savings' **Balance History**, the Stock Market Display with the diamond chart. Camera at the armor stand named `camera`, which is removed before the shot. Without the file: the blocks-overview room plus a Stock Market Block and a Stock Market Display. | the structure file (your part) |
+| `shared/terminal-family.png` | How the two mods work together | Terminal Block, Bank Terminal Block, ATM and Stock Market Block in a row, one block apart, fronts to the camera. Camera in front, about 4 blocks away, 10° down. | |
+| `shared/program-terminal.gif` | Getting started | Two Terminal Blocks side by side, HUD on (the held item shows). Holding Banking Software, right-click the first: it becomes a Bank Terminal Block. Switch to Trading Software, right-click the second: it becomes a Stock Market Block. About 8 s. | TK-14: GIF, use item on block |
+| `shared/alert-chat.png` | Alerts and suspicion flags | HUD on. With low thresholds, trigger one BankSystem suspicion alert and one StockMarket **Profit alert**, so both show in chat. Cropped to the chat. | TK-14: crop |
+| `stockmarket/display-in-world.png` | Stock Market Display, StockMarket overview | A 3×2 Stock Market Display on a wall with the diamond chart, a Stock Market Block in front of it. Camera diagonal. | |
+| `stockmarket/news-toast.png` | Market news | HUD on, **Enable news popups** ticked, standing in the terminal-family scene. Start a news event and shoot while its popup is in the top-right corner. | |
+| `stockmarket/villager-trade.png` | Villager trading | A villager with several trades (e.g. a toolsmith) and prices in money, its trade screen open. | |
+| `stockmarket/web-interface.png` | Web interface | **Web interface (read-only)** on. While the server runs, a headless browser (e.g. `firefox --headless --screenshot --window-size=1280,720 <url>`) opens `http://127.0.0.1:<port>/` showing one market (diamond): chart, order book, recent trades. | a browser on the test PC |
+| `stockmarket/dev/example-plugin.png` | Developers → Your first plugin | **Plugin Management** with the example plugin (`PriceFloorPlugin`) added to diamond, its entry open with its settings form. | the example plugin jar in the cell (TK-14) |
+| `stockmarket/trading-screen.gif` *(optional)* | Trading basics | Open a Stock Market Block, pick diamond in the favourites bar, place a small market buy; the trade shows in **My History**. About 10 s. Replaces the old `StockMarketTerminal.gif`. | TK-14: GIF, pointer |
+
+### Your part
+
+1. **The home corner, built once.** In a creative world with both mods, build a small bank and trading corner: Bank Terminal Block, ATM, Stock Market Block, a 3×2 Bank Display, a 3×2 Stock Market Display, a Money Stockpile on a counter. The displays can stay unconfigured; the script fills them. Place an armor stand named `camera` (name tag) where the picture should be taken from, facing the scene. Save everything with a structure block in **Save** mode, **Include entities** on (for the armor stand), at most 48×48×48. Then copy `<world>/generated/minecraft/structures/<name>.nbt` to `planning/structures/home-hero.nbt` in this repo.
+2. **`shared/discord-feed.png`** (Discord feed page): a Discord channel with 4–5 feed messages (a buy, a sell, a deposit, an alert), sent to a test webhook. Crop to the messages; no server name, no real names.
+
+## 2. Plain screens (scripted: BS-288, SM-358)
 
 These show one screen with no movement. TestKit can take them in a client GUI suite (`Screenshots.take(...)`, done in TK-4): fixed 1280×720 window, GUI scale 2, HUD hidden, invented data. BankSystem already writes `banksystem/bank_account_selection.png` this way. Scripted shots can be retaken in one run whenever a screen changes, and later in German for the German pages. Decided 2026-11-24: the BankSystem session scripts its 24 (BS-288), the StockMarket session its 22 (SM-358).
 
