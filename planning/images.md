@@ -51,11 +51,12 @@ Built by the user on 2026-11-24: world `DemoCorner` (superflat, Prism instance "
   - x 20–22: 3×2 **Stock Market Display** with a price chart.
 - **Not in the corner:** ATM, a plain Terminal Block, a villager. The script places them where a row needs them.
 
-Before the corner goes into the repo as `planning/structures/home-hero.nbt`:
+**The structure file** `planning/structures/home-hero.nbt` (vanilla structure template, DataVersion 3955, 21×6×20, air included) was converted from the world on 2026-11-24 with `planning/structures/export_corner.py`. Run it again after changing the corner: `python planning/structures/export_corner.py "<world dir>" planning/structures/home-hero.nbt`.
 
-- The Bank Terminal Block stores the UUID of the player who used it. Remove its `PlayerData`.
-- Display blocks point to their screen's main block by absolute coordinates (`ctrlX/Y/Z`). Place the structure at the same origin (6, -60, -13), or the script rebuilds the displays.
-- The displays' settings use market IDs of that world. The script sets every display again (Savings' **Balance History** on the Bank Displays, diamond, gold, iron and emerald charts on the Stock Market Displays).
+- **No player data:** the Bank Terminal Block's `PlayerData` (the builder's UUID) is emptied, and the item frames' own UUIDs are left out.
+- **Place it at its origin:** copy it to `<test world>/generated/docs/structures/home-hero.nbt` and run `/place template docs:home-hero 6 -60 -13` in a superflat world. Display blocks point to their screen's main block by absolute coordinates (`ctrlX/Y/Z`), so anywhere else the script must rebuild the displays.
+- **Set the displays again:** their settings use market IDs of the old world (Savings' **Balance History** on the Bank Displays; diamond, gold, iron and emerald charts on the Stock Market Displays).
+- **Refill the Money Stockpile:** it stores BankSystem's internal item numbers of the old world, which can point to other items in a new world.
 
 **Camera spots.** Feet position for `/tp`, eyes are 1.62 higher. Yaw 0 looks south, 90 west. Start values, worked out from the block positions: fine-tune them in the first run.
 
