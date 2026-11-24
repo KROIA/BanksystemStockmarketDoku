@@ -4,7 +4,9 @@
 #   docs/assets/images/stockmarket/news/charts/  small effect curves (shapes from NewsImpactEnvelope)
 #   docs/admin/stockmarket/news/default-events.md  the event tables with each event's JSON, the event
 #                                                count and the admin-only list
-# The "Storylines" table stays hand-written; the script names chained events it doesn't mention.
+#   docs/admin/stockmarket/news/default-events.de.md  the same in German: the events' de_de headlines,
+#                                                German item names from Minecraft's de_de.json
+# The rest of both pages stays hand-written; the script names chained events Storylines doesn't mention.
 # Usage: python planning/news-icons/sync_default_events.py [StockMarket repo] [minecraft-1.21.1-client.jar]
 #   defaults: ../StockMarket/MC_1.21.1_StockMarket next to the Docs folder, the Prism Launcher client jar.
 # Check: run it twice; the second run must leave `git status` unchanged. Then mkdocs build --strict.
@@ -18,6 +20,10 @@ JAR = sys.argv[2] if len(sys.argv) > 2 else os.path.join(os.environ.get("APPDATA
 NEWS = os.path.join(REPO, "common", "src", "main", "resources", "news")
 OUT = os.path.join(DOCS, "docs", "assets", "images", "stockmarket", "news")
 PAGE = os.path.join(DOCS, "docs", "admin", "stockmarket", "news", "default-events.md")
+# Minecraft's German names: 1.21.1 uses asset index 17 in Prism's shared asset store
+ASSETS = os.path.join(os.environ.get("APPDATA", ""), "PrismLauncher", "assets")
+_h = json.load(open(os.path.join(ASSETS, "indexes", "17.json"), encoding="utf-8"))["objects"]["minecraft/lang/de_de.json"]["hash"]
+MC_DE = json.load(open(os.path.join(ASSETS, "objects", _h[:2], _h), encoding="utf-8"))
 IMG = "../../../assets/images/stockmarket/news"   # as the page links it
 
 # Tags and patterns get one example item as their icon
@@ -132,20 +138,61 @@ def write_charts():
     open(f"{OUT}/charts/story.svg", "w").write(svg([(2 + 60 * x, 16 - 12 * y) for x, y in st], "#5c6bc0", 16))
 
 # ---- page cells
-KINDS = {"shock": "moves at once, holds briefly, then fades back quickly",
-         "trend": "moves slowly, holds for a long time, then ramps back down",
-         "crash": "moves at once, holds briefly, then recovers very slowly",
-         "permanent": "moves to a new level and stays there"}
+def slug(s):   # Python-Markdown's toc slugify, for the English anchors the German headings keep
+    return re.sub(r"[-\s]+", "-", re.sub(r"[^\w\s-]", "", s).strip().lower())
+
+def de_item(shown):
+    return MC_DE.get(f"item.minecraft.{shown}") or MC_DE.get(f"block.minecraft.{shown}") or shown
+
+EN = dict(lang="en_us", page=PAGE, head=["Picture", "Headline", "ID", "Markets", "Effect"],
+          item=lambda s: s.replace("_", " ").capitalize(), example="{nice}, an example of {name}",
+          kinds={"shock": "moves at once, holds briefly, then fades back quickly",
+                 "trend": "moves slowly, holds for a long time, then ramps back down",
+                 "crash": "moves at once, holds briefly, then recovers very slowly",
+                 "permanent": "moves to a new level and stays there"},
+          chart_alt=lambda kind, up, desc: f"{kind.capitalize()} chart: the price {'rises' if up else 'falls'}, {desc}",
+          permanent=", permanent", story_alt="Story chart: several steps up and down", story="story: ", or_=" or ",
+          admin="admin only", requires="requirements", weight0="weight 0", chain="chain → ", undoes="undoes `{}`",
+          before="news before the price moves", after="news after the price moves",
+          either="news before or after the price moves",
+          heading=lambda c, n: f"### {c.capitalize()} ({n})",
+          events=r"(## The events\n\n).*?(?=## Storylines)", stories=("## Storylines", "## Events that never fire"),
+          count=(r"StockMarket ships \d+ news events", "StockMarket ships {} news events"),
+          words="No One Two Three Four Five Six Seven Eight Nine Ten Eleven Twelve".split(),
+          admin_line=(r"\S+ events are admin only: [^.]*\.", "{} events are admin only: {} and {}."))
+CATS_DE = {"commodities": "Rohstoffe", "markets": "Märkte", "politics": "Politik", "rumors": "Gerüchte",
+           "crime": "Kriminalität", "technology": "Technologie", "economy": "Wirtschaft", "disaster": "Katastrophen",
+           "labor": "Arbeit", "recovery": "Erholung", "cultural": "Kultur", "conflict": "Konflikte"}
+def de_heading(c, n):
+    if c not in CATS_DE:
+        sys.exit(f"new category '{c}': add its German name to CATS_DE")
+    return f"### {CATS_DE[c]} ({n}) {{ #{slug(f'{c.capitalize()} ({n})')} }}"
+DE = dict(lang="de_de", page=PAGE.replace(".md", ".de.md"), head=["Bild", "Schlagzeile", "ID", "Märkte", "Wirkung"],
+          item=de_item, example="{nice}, ein Beispiel für {name}",
+          kinds={"shock": "bewegt sich sofort, hält kurz und geht dann schnell zurück",
+                 "trend": "bewegt sich langsam, hält lange und geht dann langsam zurück",
+                 "crash": "bewegt sich sofort, hält kurz und erholt sich dann sehr langsam",
+                 "permanent": "geht auf ein neues Niveau und bleibt dort"},
+          chart_alt=lambda kind, up, desc: f"Chart {'dauerhaft' if kind == 'permanent' else kind}: Der Preis {'steigt' if up else 'fällt'}, {desc}",
+          permanent=", dauerhaft", story_alt="Chart Geschichte: mehrere Schritte auf und ab", story="Geschichte: ", or_=" oder ",
+          admin="nur für Admins", requires="Bedingungen", weight0="Gewicht 0", chain="Kette → ", undoes="hebt `{}` auf",
+          before="News vor der Preisbewegung", after="News nach der Preisbewegung",
+          either="News vor oder nach der Preisbewegung", heading=de_heading,
+          events=r"(## [^\n]*\{ #the-events \}\n\n).*?(?=## [^\n]*\{ #storylines \})",
+          stories=("{ #storylines }", "{ #events-that-never-fire-at-random }"),
+          count=(r"StockMarket liefert \d+ News-Ereignisse", "StockMarket liefert {} News-Ereignisse"),
+          words="Keine Ein Zwei Drei Vier Fünf Sechs Sieben Acht Neun Zehn Elf Zwölf".split(),
+          admin_line=(r"\S+ Ereignisse sind nur für Admins: [^.]*\.", "{} Ereignisse sind nur für Admins: {} und {}."))
 icons = set()
 
-def market(m):
+def market(m, L):
     name = m["item"].removeprefix("minecraft:")
     shown = STAND_INS.get(name, name)
     if ":" in shown or "*" in shown or shown.startswith("#"):
         sys.exit(f"no icon for {m['item']}: add an example item to STAND_INS")
     icons.add(shown)
-    nice = shown.replace("_", " ").capitalize()
-    alt = f"{nice}, an example of {name}" if name in STAND_INS else nice
+    nice = L["item"](shown)
+    alt = L["example"].format(nice=nice, name=name) if name in STAND_INS else nice
     w = m.get("weightFactor", 1.0)
     factor = "" if w == 1 else f" ×{w:g}".replace("-", "−")
     return f'![{alt}]({IMG}/items/{shown}.png){{ .item-icon .no-zoom width="32" }} `{name}`{factor}'
@@ -153,10 +200,10 @@ def market(m):
 def chart(file, alt):
     return f'![{alt}]({IMG}/charts/{file}.svg){{ .effect-chart .no-zoom width="64" }}'
 
-def effect(e):
+def effect(e, L):
     if "sequences" in e:
-        lines = [chart("story", "Story chart: several steps up and down"),
-                 "story: " + " or ".join(f"`{s['name']}`" for s in e["sequences"])]
+        lines = [chart("story", L["story_alt"]),
+                 L["story"] + L["or_"].join(f"`{s['name']}`" for s in e["sequences"])]
     else:
         im = e["impact"]
         kind = "permanent" if im.get("reversal") == "none" else im["type"]
@@ -164,37 +211,36 @@ def effect(e):
         pct = round(abs(im["peakFactor"]) * 100)
         d = "up" if up else "down"
         arrows = f":material-arrow-{d}-bold:{{ .news-{d} }}" * (1 if pct < 25 else 2 if pct < 40 else 3)
-        text = ("+" if up else "−") + f"{pct}%" + (", permanent" if kind == "permanent" else f" {kind}")
-        lines = [chart(f"{kind}-{d}", f"{kind.capitalize()} chart: the price {'rises' if up else 'falls'}, {KINDS[kind]}"),
+        text = ("+" if up else "−") + f"{pct}%" + (L["permanent"] if kind == "permanent" else f" {kind}")
+        lines = [chart(f"{kind}-{d}", L["chart_alt"](kind, up, L["kinds"][kind])),
                  f"{arrows} {text}"]
     notes = []
-    if e.get("adminOnly"): notes.append("admin only")
-    if e.get("requires"): notes.append("requirements")
-    if e.get("weight") == 0: notes.append("weight 0")
-    if e.get("chains"): notes.append("chain → " + ", ".join(f"`{c['eventId']}`" for c in e["chains"]))
-    if e.get("undoes"): notes.append(f"undoes `{e['undoes']}`")
+    if e.get("adminOnly"): notes.append(L["admin"])
+    if e.get("requires"): notes.append(L["requires"])
+    if e.get("weight") == 0: notes.append(L["weight0"])
+    if e.get("chains"): notes.append(L["chain"] + ", ".join(f"`{c['eventId']}`" for c in e["chains"]))
+    if e.get("undoes"): notes.append(L["undoes"].format(e["undoes"]))
     delay = e.get("announceDelayMs")
     if isinstance(delay, (int, float)):
         delay = {"min": delay, "max": delay}
     if delay and (delay["min"] or delay["max"]):   # delay >= 0: headline first, < 0: price first
-        notes.append("news before the price moves" if delay["min"] >= 0 else
-                     "news after the price moves" if delay["max"] < 0 else "news before or after the price moves")
+        notes.append(L["before"] if delay["min"] >= 0 else L["after"] if delay["max"] < 0 else L["either"])
     if notes:
         lines.append("; ".join(notes))
     return "<br>".join(lines)
 
-def rows(e, raw):
-    h = e["headline"]["en_us"]
+def rows(e, raw, L):
+    h = e["headline"][L["lang"]]
     cells = [f'![{h}]({IMG}/events/{e["picture"]}){{ .news-pic width="96" loading="lazy" }}', h,
              f'`{e["id"]}`<br><details class="json-toggle"><summary>JSON</summary></details>',
-             "<br>".join(market(m) for m in e["markets"]), effect(e)]
+             "<br>".join(market(m, L) for m in e["markets"]), effect(e, L)]
     return ("<tr markdown>\n" + "".join(f'<td markdown="span">{c}</td>\n' for c in cells) + "</tr>\n"
             '<tr class="event-json" markdown>\n<td colspan="5" markdown="block">\n\n'
             f"```json\n{raw}\n```\n\n</td>\n</tr>\n")
 
-def table(events):
-    return ("<table markdown>\n<thead>\n<tr><th>Picture</th><th>Headline</th><th>ID</th><th>Markets</th><th>Effect</th></tr>\n"
-            "</thead>\n<tbody markdown>\n" + "".join(rows(e, raw) for e, raw in events) + "</tbody>\n</table>\n")
+def table(events, L):
+    return ("<table markdown>\n<thead>\n<tr>" + "".join(f"<th>{h}</th>" for h in L["head"]) + "</tr>\n"
+            "</thead>\n<tbody markdown>\n" + "".join(rows(e, raw, L) for e, raw in events) + "</tbody>\n</table>\n")
 
 # ---- read the shipped events, in index.json order
 ids = json.load(open(f"{NEWS}/index.json", encoding="utf-8"))
@@ -209,7 +255,7 @@ if unlisted:
 cats = {}
 for e, raw in events:
     cats.setdefault(e["category"], []).append((e, raw))
-block = "".join(f"### {c.capitalize()} ({len(es)})\n\n{table(es)}\n" for c, es in cats.items())
+blocks = {L["lang"]: "".join(f"{L['heading'](c, len(es))}\n\n{table(es, L)}\n" for c, es in cats.items()) for L in (EN, DE)}
 
 # ---- pictures, icons, charts
 os.makedirs(f"{OUT}/events", exist_ok=True)
@@ -231,27 +277,28 @@ for folder, keep in (("events", used), ("items", {f"{i}.png" for i in icons})):
         print("removed", folder, f)
 write_charts()
 
-# ---- page
-with open(PAGE, encoding="utf-8", newline="") as f:
-    t = f.read()
-nl = "\r\n" if "\r\n" in t else "\n"
-t = t.replace("\r\n", "\n")
-t = re.sub(r"(## The events\n\n).*?(?=## Storylines)", lambda m: m.group(1) + block, t, flags=re.S)
-t = re.sub(r"StockMarket ships \d+ news events", f"StockMarket ships {len(events)} news events", t)
+# ---- pages
 admin = [f"`{e['id']}`" for e, _ in events if e.get("adminOnly")]
-WORDS = "No One Two Three Four Five Six Seven Eight Nine Ten Eleven Twelve".split()
-if len(admin) >= 2:
-    count = WORDS[len(admin)] if len(admin) < len(WORDS) else str(len(admin))
-    t = re.sub(r"\S+ events are admin only: [^.]*\.", f"{count} events are admin only: {', '.join(admin[:-1])} and {admin[-1]}.", t)
-else:
-    print("fewer than two admin-only events: edit 'Events that never fire at random' by hand")
-with open(PAGE, "w", encoding="utf-8", newline="") as f:
-    f.write(t.replace("\n", nl))
-
-story = t[t.index("## Storylines"):t.index("## Events that never fire")]
-linked = {e["id"] for e, _ in events if e.get("chains") or e.get("undoes")}
-linked |= {c["eventId"] for e, _ in events for c in e.get("chains", [])} | {e["undoes"] for e, _ in events if e.get("undoes")}
-missing = sorted(i for i in linked if f"`{i}`" not in story)
-if missing:
-    print("Storylines doesn't mention:", ", ".join(missing))
+for L in (EN, DE):
+    with open(L["page"], encoding="utf-8", newline="") as f:
+        t = f.read()
+    nl = "\r\n" if "\r\n" in t else "\n"
+    t = t.replace("\r\n", "\n")
+    t, n = re.subn(L["events"], lambda m: m.group(1) + blocks[L["lang"]], t, flags=re.S)
+    if n != 1:
+        sys.exit(f"{L['page']}: the events section between its two headings was not found")
+    t = re.sub(L["count"][0], L["count"][1].format(len(events)), t)
+    if len(admin) >= 2:
+        count = L["words"][len(admin)] if len(admin) < len(L["words"]) else str(len(admin))
+        t = re.sub(L["admin_line"][0], L["admin_line"][1].format(count, ", ".join(admin[:-1]), admin[-1]), t)
+    else:
+        print("fewer than two admin-only events: edit 'Events that never fire at random' by hand")
+    with open(L["page"], "w", encoding="utf-8", newline="") as f:
+        f.write(t.replace("\n", nl))
+    story = t[t.index(L["stories"][0]):t.index(L["stories"][1])]
+    linked = {e["id"] for e, _ in events if e.get("chains") or e.get("undoes")}
+    linked |= {c["eventId"] for e, _ in events for c in e.get("chains", [])} | {e["undoes"] for e, _ in events if e.get("undoes")}
+    missing = sorted(i for i in linked if f"`{i}`" not in story)
+    if missing:
+        print(f"{os.path.basename(L['page'])}: Storylines doesn't mention:", ", ".join(missing))
 print(f"{len(events)} events, {len(icons)} icons")

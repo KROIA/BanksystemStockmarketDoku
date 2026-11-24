@@ -54,8 +54,8 @@ plugins:
       zoomable: true
       skip_classes:
         - no-zoom
-  # German is built; pages without a page.de.md show the English text. To translate:
-  # write page.de.md next to page.md and add nav_translations below.
+  # German pages are page.de.md next to page.md (rules: planning/translation/README.md);
+  # a page without one shows the English text. Nav section names are translated below.
   - i18n:
       docs_structure: suffix
       fallback_to_default: true
@@ -68,6 +68,39 @@ plugins:
         - locale: de
           name: Deutsch
           build: true
+          site_description: Spieler-, Admin- und Entwicklerdokumentation für die Minecraft-Mods StockMarket und BankSystem.
+          theme:
+            palette:
+              - media: "(prefers-color-scheme: light)"
+                scheme: default
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/weather-night
+                  name: Zum dunklen Modus wechseln
+              - media: "(prefers-color-scheme: dark)"
+                scheme: slate
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/weather-sunny
+                  name: Zum hellen Modus wechseln
+          admonition_translations:
+            note: Hinweis
+            tip: Tipp
+            warning: Warnung
+            danger: Gefahr
+          nav_translations:
+            Home: Startseite
+            Player Guide: Spielerhandbuch
+            Start here: Einstieg
+            Companies: Unternehmen
+            Server Admin: Server-Admin
+            Setup: Einrichtung
+            Integrations: Integrationen
+            Audit and anti-cheat: Audit und Anti-Cheat
+            Developers: Entwickler
+            Custom plugins: Eigene Plugins
 
 markdown_extensions:
   - admonition

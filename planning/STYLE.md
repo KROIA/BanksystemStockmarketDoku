@@ -248,12 +248,13 @@ description: "One sentence."   # shown in search results and link previews
 - `description` is one sentence, under 160 characters.
 - Optional: `hide: [toc]` on short pages, `hide: [navigation]` on the home page.
 
-## 10. Translations (German later)
+## 10. Translations
 
 - English pages are `page.md`. A German page is `page.de.md` in the same folder. Images are shared.
 - Missing German pages fall back to English automatically.
 - Nav titles are translated in `mkdocs.yml` under the `de` language's `nav_translations`.
 - Write English with translation in mind: short sentences, no idioms, no puns, GUI names in bold so the translator can swap them for the German `de_de.json` names.
+- Every page has a German twin. When you change an English page, change its `page.de.md` in the same commit. Rules, word list and the two scripts (`check.py`, `add_ids.py`): `planning/translation/README.md`.
 
 ## 11. What never goes on the site
 
