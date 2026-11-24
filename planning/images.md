@@ -16,11 +16,11 @@ User decision 2026-11-24: script every image except the Discord feed. Tracker it
 
 ## Rules for every picture
 
-- **Window 1920×1080, GUI scale 2** for every picture, BankSystem and StockMarket (user decision 2026-11-24: at 1280×720 buttons overlapped). English, vanilla resource pack. The pages show every picture at 600 px wide and open the full size on click.
+- **Window 1920×1080, GUI scale 2** for every picture, BankSystem and StockMarket (user decision 2026-11-24: at 1280×720 buttons overlapped). English, vanilla resource pack. The pages stretch every picture to the text width (recipes and block icons excepted) and open the full size on click.
 - **In the world:** HUD hidden unless the row says "HUD on", noon and clear weather, no overlays of other mods (JEI, minimap).
 - **Names are invented:** players **Tavrik**, **Quenby** and **Brindle** (the same as in the Audit Tool pictures), the company **Acme Mining**, the accounts **Savings** (Tavrik) and **Farm Co-op** (Tavrik and Quenby). Never a real player name, never "Dev".
 - **Numbers look real** but round: 12'450.00 $, 64 iron ingots.
-- **GIFs:** one action each, 5–10 seconds, 10 frames per second, under about 5 MB (scaled down to about 800 px wide if needed; the pages show them at 600 px). A drawn mouse pointer shows where the script clicks.
+- **GIFs:** one action each, 5–10 seconds, 10 frames per second, under about 5 MB (scaled down to about 800 px wide if needed; the pages stretch them to the text width). A drawn mouse pointer shows where the script clicks.
 - Save each file under the exact name below. PNG for still images.
 
 ## 1. In the world, GIFs and outside the game (scripted: BS-291, SM-361)
