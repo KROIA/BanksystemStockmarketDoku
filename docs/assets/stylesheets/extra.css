@@ -28,3 +28,20 @@
 .md-header__inner > [data-md-component="palette"] ~ :not(.md-header__option) {
   order: 1;
 }
+
+/* Default events table: item icons, effect charts, direction arrows */
+.md-typeset img.item-icon {
+  vertical-align: middle;
+}
+.md-typeset td:has(> img.item-icon) {
+  white-space: nowrap;
+}
+.md-typeset img.effect-chart {
+  vertical-align: middle;
+}
+.md-typeset .news-up {
+  color: #1f9d55;
+}
+.md-typeset .news-down {
+  color: #e03e3e;
+}

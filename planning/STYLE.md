@@ -205,7 +205,7 @@ Don't use `!!! example`, `!!! question` or collapsible boxes (`???`) unless the 
 
 - **Width 600** by default. **Recipes 350.** Small block icons 100. Small order book animations 350.
 - Every image except width 350 and 100 is stretched to the full text width by `extra.css` (user decision 2026-11-24); the width on the page is only the fallback. So give an image width 350 only when it should stay small (recipes, small animations).
-- Exception to the figure rule: thumbnails in a table cell, like the news pictures in the default events table, are plain images with `{ width="64" loading="lazy" }` and the row's headline as alt text.
+- Exception to the figure rule: images in a table cell are plain images. Default events table: news pictures `{ width="96" loading="lazy" }` with the headline as alt text; item icons `{ .item-icon .no-zoom width="32" }`; effect charts `{ .effect-chart .no-zoom width="64" }`; arrows `:material-arrow-up-bold:{ .news-up }` / `:material-arrow-down-bold:{ .news-down }` (1 under 25%, 2 from 25%, 3 from 40%). Icons and charts come from `planning/news-icons/make_news_icons.py` (needs the 1.21.1 client jar).
 - All images can be clicked to zoom (glightbox). Add `{ .no-zoom }` for tiny icons.
 - Screenshots: GUI scale 2 or 3, English game language, no personal player names or server names in the shot.
 - Charts: SVG with a light background. Keep the colours readable in dark mode (the site rounds the corners).
