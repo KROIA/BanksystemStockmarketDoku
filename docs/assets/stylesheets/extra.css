@@ -45,19 +45,14 @@
 .md-typeset .news-down {
   color: #e03e3e;
 }
-/* Default events table: the news picture fills its cell (4px gap) without making the row taller */
+/* Default events table: every news picture 112 px, 4 px from the cell border;
+   a row is then as tall as a row with three markets */
 .md-typeset td:has(img.news-pic) {
-  position: relative;
-  width: 128px;
-  height: 112px;
-  padding: 0;
+  width: 112px;
+  padding: 4px;
 }
 .md-typeset td img.news-pic {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  width: calc(100% - 8px);
-  height: calc(100% - 8px);
-  object-fit: contain;
-  object-position: center top;
+  display: block;
+  width: 112px;
+  height: 112px;
 }
