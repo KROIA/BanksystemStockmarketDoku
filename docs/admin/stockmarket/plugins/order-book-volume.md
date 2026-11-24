@@ -18,7 +18,7 @@ For every price level the plugin works out a **target volume**. The real volume 
 - **Fair price.** The book is centred on the fair price, not on the last traded price. The fair price is the equilibrium price of the [Net Flow plugin](net-flow.md), which follows net player buying and selling. Without that plugin it is the market's default price. So a fast dump does not drag the book down with it: buying back after the dump meets the same depth the dump sold into.
 - **Target Price Bot.** The bot sizes its orders from the depth, so a deeper book doesn't slow the bot down. It does slow down players: they need more items to move the price.
 - **Abundance.** The item's **Abundance** sets the depth. The book is sized so that a reference order of `max(64, 64 × Abundance)` items moves the price by about the same percentage on every market. The market's **Max order size** does not change the depth.
-- **Run order.** Keep this plugin after the plugins that move the price (by default it runs last). See [Plugins](index.md).
+- **Run order.** Keep this plugin after the Net Flow plugin, whose fair price it uses, and before the Target Price Bot, which sizes its orders from the depth. That is the default order. See [Plugins](index.md).
 
 ## Changing the settings
 
@@ -180,7 +180,7 @@ Every plugin has these controls in its entry of the Plugin Management screen:
 | **Auto-subscribe** | New markets are subscribed automatically. Markets created with **Ignore Plugin Autosubscribe** are skipped. |
 | **Logger** | Writes the plugin's messages to the server log. |
 | **Market subscriptions** | Only subscribed markets get virtual volume. Subscribing a market resets its volume to the target. |
-| **Position in the list** | Run it after the plugins that move the price (default: last). |
+| **Position in the list** | After the Net Flow plugin and before the Target Price Bot (the default). |
 
 ## Related pages
 

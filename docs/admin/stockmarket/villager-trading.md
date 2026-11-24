@@ -25,7 +25,7 @@ By default, trades of items without a market keep their emeralds. Two settings c
 
 | Setting | Effect |
 |---|---|
-| **Replace emeralds for unlisted items** | These trades are paid in money too: the number of emeralds times the emerald market price, without margin. Needs an emerald market. The emerald price is rounded to two digits, such as 12.00, so prices don't change with every small move. |
+| **Replace emeralds for unlisted items** | These trades are paid in money too: the number of emeralds times the emerald market price, without margin. Needs an emerald market. The emerald price is rounded to two significant digits, such as 12.00, so prices don't change with every small move. |
 | **Use preset prices for villagers** | Only with the setting above. These trades use the item's [preset](presets.md) price instead, even if it has no market. Items without a preset price fall back to the emerald price. |
 
 Both take effect the next time a player opens a villager's trades.

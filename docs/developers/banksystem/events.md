@@ -46,6 +46,7 @@ Each event fires on one side (master, slave or both) and on one thread:
 - **Server thread.** Most events. You may touch game state directly.
 - **Network thread.** The four connection events fire on a network thread. Don't block in the listener, and don't touch game state there: pass the work to the server thread first, for example with `server.execute(() -> …)`.
 - **Writer's thread.** Ledger rows and suspicion flags fire on whichever thread wrote the row: the server thread, a request handler thread (calls forwarded from a slave) or the database thread (periodic checks). Keep these listeners fast and thread-safe, and pass game-state work to the server thread.
+- **Caller's thread.** `getAccountFreezeChangedEvent()` fires on the thread that froze or unfroze the account. Pass game-state work to the server thread.
 
 When in doubt, pass the work to the server thread.
 

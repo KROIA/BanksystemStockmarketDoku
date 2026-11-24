@@ -96,7 +96,7 @@ Scales every news effect on this market, including the lasting change of permane
 **Tuning tips:**
 
 - `0.3` to `0.7` for everyday items that should react to news only a little.
-- `1.5` to `2` for items players should speculate on. Crashes get much deeper: from about `2.5`, a −40 % crash hits the lower limit.
+- `1.5` to `2` for items players should speculate on. Crashes get much deeper: from `2.25`, a −40 % crash hits the lower limit.
 - `0` instead of turning **News enabled** off, if events for this market should still fire and show headlines, but its price must not move.
 - Negative values turn good news into bad news for this market. If only one event should work the other way round, give the item a negative weight in that event instead.
 

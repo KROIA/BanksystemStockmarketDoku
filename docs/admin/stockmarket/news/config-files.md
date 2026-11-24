@@ -1,6 +1,6 @@
 ---
 title: News config files
-description: Where the news event files live, which files the server loads and in which order, how the shipped events update themselves, and how old installs are migrated.
+description: Where the news event files live, the order the server loads them in, and how shipped events and old installs are updated.
 ---
 
 # News config files

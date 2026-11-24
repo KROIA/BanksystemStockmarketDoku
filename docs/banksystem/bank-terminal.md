@@ -85,9 +85,9 @@ The **History** button at the top right opens a chart of your account's balances
 
 | Message | What it means | What to do |
 |---|---|---|
-| *<Item> is not allowed to be stored in the bank* | The server doesn't allow this item in the bank. | Keep it, or ask your admin. |
-| *The condition of <item> prevents banking it* | The item is in a state the bank can't store, for example spoiled food from another mod. | Keep it in your inventory. |
-| *Crafted <item> could not be deposited into the bank and was moved to your inventory* | **Auto-deposit output** was on, but the bank can't store this item. | Nothing: the item is in your inventory. |
+| *… is not allowed to be stored in the bank* | The server doesn't allow this item in the bank. | Keep it, or ask your admin. |
+| *The condition of … prevents banking it* | The item is in a state the bank can't store, for example spoiled food from another mod. | Keep it in your inventory. |
+| *Crafted … could not be deposited into the bank and was moved to your inventory* | **Auto-deposit output** was on, but the bank can't store this item. | Nothing: the item is in your inventory. |
 | The **Use Bank Items** checkbox is greyed out | You don't have **Allowed to withdraw** on this account. | Pick another account, or ask a manager for the right. |
 | A chat message says the account is frozen | An admin has frozen the account. Nothing can move in or out. | Ask an admin. Your items stay where they are. |
 

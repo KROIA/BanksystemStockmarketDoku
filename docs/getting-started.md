@@ -91,8 +91,8 @@ The items appear in the Bank Terminal Inventory slots. Move them into your inven
 
 | Message | What it means | What to do |
 |---|---|---|
-| *<Item> is not allowed to be stored in the bank* | The server doesn't allow this item in the bank. | Ask your admin, or check whether the item has a market. |
-| *The condition of <item> prevents banking it* | The item is in a state the bank can't store, for example spoiled food from another mod. | Keep it in your inventory. |
+| *… is not allowed to be stored in the bank* | The server doesn't allow this item in the bank. | Ask your admin, or check whether the item has a market. |
+| *The condition of … prevents banking it* | The item is in a state the bank can't store, for example spoiled food from another mod. | Keep it in your inventory. |
 | Damaged or enchanted items stay in the slots | The bank only stores items in their plain state. | Take them back into your inventory. |
 | The market you want isn't in the list | Nobody has created a market for that item. | Ask your admin. Only admins create markets. |
 
