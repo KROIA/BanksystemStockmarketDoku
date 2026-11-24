@@ -319,8 +319,7 @@ What the parts do:
 7. Click a market icon in the plugin's entry, type a **Min Price** and click **Apply**.
 
 <figure markdown="span">
-  ![The Plugin Management screen with the example price floor plugin and its settings](../../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/dev/example-plugin.png</figcaption>
+  ![Plugin Management with diamond on the chart: the PriceFloorPlugin entry at the bottom of the list is enabled, has diamond added, and its form shows Min Price 144 with an Apply button](../../../assets/images/stockmarket/dev/example-plugin.png){ width="600" }
 </figure>
 
 When the market's price falls below the floor, the plugin sets the target price to the floor, and the Target Price Bot buys the price back up.
