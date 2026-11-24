@@ -56,3 +56,49 @@
   width: 112px;
   height: 112px;
 }
+/* Default events table: the JSON button under the ID opens the event's file in the row below */
+.md-typeset details.json-toggle {
+  display: inline-block;
+  margin: 0.5em 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0.2rem;
+  box-shadow: none;
+  background: none;
+  font-size: inherit;
+}
+.md-typeset details.json-toggle > summary {
+  margin: 0;
+  padding: 0.15em 1.8em 0.15em 0.7em;
+  border-radius: 0.2rem;
+  background-color: var(--md-code-bg-color);
+  color: var(--md-accent-fg-color);
+  font-weight: 400;
+}
+.md-typeset details.json-toggle > summary::before {
+  display: none;
+}
+.md-typeset details.json-toggle > summary::after {
+  top: 0.15em;
+  right: 0.3em;
+  width: 1.2em;
+  height: 1.2em;
+}
+.md-typeset tr.event-json {
+  display: none;
+}
+.md-typeset tr:has(details.json-toggle[open]) + tr.event-json {
+  display: table-row;
+}
+.md-typeset tr.event-json > td {
+  max-width: 0; /* the JSON never widens the table */
+  padding: 0 0.8em 0.8em;
+  border-top: 0;
+}
+.md-typeset tr.event-json .highlight,
+.md-typeset tr.event-json pre {
+  margin: 0;
+}
+.md-typeset tr.event-json code {
+  overflow-x: auto; /* long lines scroll inside the viewer */
+}
