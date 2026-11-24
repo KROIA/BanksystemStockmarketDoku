@@ -16,7 +16,7 @@ User decision 2026-11-24: script every image except the Discord feed. Tracker it
 
 ## Rules for every picture
 
-- **Window 1280×720, GUI scale 2,** English, vanilla resource pack. This includes the home picture.
+- **Window size:** StockMarket and shared pictures 1920×1080 (StockMarket session, 2026-11-24: at 1280×720 buttons overlapped), BankSystem pictures 1280×720 (TestKit default) unless the user decides otherwise. Always GUI scale 2, English, vanilla resource pack. This includes the home picture. The pages show every picture at 600 px wide and open the full size on click, so both sizes work without layout changes.
 - **In the world:** HUD hidden unless the row says "HUD on", noon and clear weather, no overlays of other mods (JEI, minimap).
 - **Names are invented:** players **Tavrik**, **Quenby** and **Brindle** (the same as in the Audit Tool pictures), the company **Acme Mining**, the accounts **Savings** (Tavrik) and **Farm Co-op** (Tavrik and Quenby). Never a real player name, never "Dev".
 - **Numbers look real** but round: 12'450.00 $, 64 iron ingots.
@@ -60,7 +60,7 @@ The shared pictures show both mods, so they are taken in the StockMarket cells, 
 | `stockmarket/display-in-world.png` | Stock Market Display, StockMarket overview | A 3×2 Stock Market Display on a wall with the diamond chart, a Stock Market Block in front of it. Camera diagonal. | |
 | `stockmarket/news-toast.png` | Market news | HUD on, **Enable news popups** ticked, standing in the terminal-family scene. Start a news event and shoot while its popup is in the top-right corner. | |
 | `stockmarket/villager-trade.png` | Villager trading | A villager with several trades (e.g. a toolsmith) and prices in money, its trade screen open. | |
-| `stockmarket/web-interface.png` | Web interface | **Web interface (read-only)** on. While the server runs, a headless browser (e.g. `firefox --headless --screenshot --window-size=1280,720 <url>`) opens `http://127.0.0.1:<port>/` showing one market (diamond): chart, order book, recent trades. | a browser on the test PC |
+| `stockmarket/web-interface.png` | Web interface | **Web interface (read-only)** on. While the server runs, a headless browser (e.g. `firefox --headless --screenshot --window-size=1920,1080 <url>`) opens `http://127.0.0.1:<port>/` showing one market (diamond): chart, order book, recent trades. | a browser on the test PC |
 | `stockmarket/dev/example-plugin.png` | Developers → Your first plugin | **Plugin Management** with the example plugin (`PriceFloorPlugin`) added to diamond, its entry open with its settings form. | the example plugin jar in the cell (TK-14) |
 | `stockmarket/trading-screen.gif` *(optional)* | Trading basics | Open a Stock Market Block, pick diamond in the favourites bar, place a small market buy; the trade shows in **My History**. About 10 s. Replaces the old `StockMarketTerminal.gif`. | TK-14: GIF, pointer |
 
@@ -71,7 +71,7 @@ The shared pictures show both mods, so they are taken in the StockMarket cells, 
 
 ## 2. Plain screens (scripted: BS-288, SM-358)
 
-These show one screen with no movement. TestKit can take them in a client GUI suite (`Screenshots.take(...)`, done in TK-4): fixed 1280×720 window, GUI scale 2, HUD hidden, invented data. BankSystem already writes `banksystem/bank_account_selection.png` this way. Scripted shots can be retaken in one run whenever a screen changes, and later in German for the German pages. Decided 2026-11-24: the BankSystem session scripts its 24 (BS-288), the StockMarket session its 22 (SM-358).
+These show one screen with no movement. TestKit can take them in a client GUI suite (`Screenshots.take(...)`, done in TK-4): fixed window (StockMarket 1920×1080, BankSystem 1280×720), GUI scale 2, HUD hidden, invented data. BankSystem already writes `banksystem/bank_account_selection.png` this way. Scripted shots can be retaken in one run whenever a screen changes, and later in German for the German pages. Decided 2026-11-24: the BankSystem session scripts its 24 (BS-288), the StockMarket session its 22 (SM-358).
 
 ### BankSystem (24)
 
