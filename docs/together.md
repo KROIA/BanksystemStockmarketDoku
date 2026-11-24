@@ -40,7 +40,7 @@ StockMarket has no money of its own. Every trade uses a [BankSystem bank account
 You can trade with any account where you are **Allowed to deposit** and **Allowed to withdraw**. That includes shared accounts, for example one you run with friends. Pick the account with the account button at the top of the trading screen.
 
 !!! note "Frozen accounts"
-    An admin can freeze a bank account. A frozen account can't trade until the admin unfreezes it.
+    An admin can freeze a bank account. Its open orders are cancelled, and it can't trade until the admin unfreezes it.
 
 Every item that has a market can go into the bank, even if the admin never allowed it by hand.
 

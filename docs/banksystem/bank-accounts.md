@@ -86,7 +86,7 @@ Your personal account can't be deleted. Neither can a company's account: while a
 
 ## Frozen accounts
 
-An admin can freeze an account. The management screen then shows a grey **Frozen** marker. While an account is frozen, nothing moves in or out: no deposits, withdrawals, transfers, payouts or trades. You keep what is in it, and you can still look at it. Ask an admin to unfreeze it.
+An admin can freeze an account. The management screen then shows a grey **Frozen** marker. While an account is frozen, nothing moves in or out: no deposits, withdrawals, transfers, payouts or trades. Your open orders on the stock market are cancelled, and what they had reserved goes back into the account. You keep what is in it, and you can still look at it. Ask an admin to unfreeze it.
 
 ## If something goes wrong
 

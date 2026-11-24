@@ -54,7 +54,7 @@ Before you tick **Unlock**:
 
 ## Freezing an account
 
-A frozen account keeps everything in it, but nothing moves in or out: no deposits, withdrawals, cash, transfers, automation blocks, crafting with bank items, payouts or dividends. Players get a chat message, and the account shows a grey **Frozen** marker. Your admin edits still work, and StockMarket can still settle orders that were already open.
+A frozen account keeps everything in it, but nothing moves in or out: no deposits, withdrawals, cash, transfers, automation blocks, crafting with bank items, payouts or dividends. Players get a chat message, and the account shows a grey **Frozen** marker. Your admin edits still work. If StockMarket is installed, freezing also cancels every open order of the account, Item / Item orders included, and the money and items they had reserved go back into the account. New orders are refused until you unfreeze it.
 
 Freeze an account in the management screen, or by command:
 

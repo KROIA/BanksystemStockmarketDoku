@@ -31,7 +31,7 @@ All trades go through your bank account:
 You can trade with any account where you have both the **deposit** and the **withdraw** permission, for example a shared account with friends. Click the account button at the top of the trading screen to pick one. Accounts you can't trade with are greyed out. The **Bank Balance** in the top bar shows what the chosen account holds.
 
 !!! note "Frozen accounts"
-    If an admin has frozen your bank account, you can't trade with it. You get the message *"This bank account is frozen by an admin and cannot trade"*.
+    If an admin has frozen your bank account, you can't trade with it. You get the message *"This bank account is frozen by an admin and cannot trade"*. Its open orders were cancelled when it was frozen, and their money and items are back in the account.
 
 ## The trading screen
 
