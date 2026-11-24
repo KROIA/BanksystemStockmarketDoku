@@ -35,8 +35,7 @@ The **Bank Terminal Block** is where items go into the bank and come back out.
 The software is not used up. Keep it: you can program more blocks with it later.
 
 <figure markdown="span">
-  ![Right-clicking a Terminal Block with Banking Software turns it into a Bank Terminal, and Trading Software turns another one into a Stock Market Block](assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: shared/program-terminal.gif</figcaption>
+  ![Right-clicking a Terminal Block with Banking Software turns it into a Bank Terminal, and Trading Software turns another one into a Stock Market Block](assets/images/shared/program-terminal.gif){ width="600" }
 </figure>
 
 ## 3. Put items into the bank

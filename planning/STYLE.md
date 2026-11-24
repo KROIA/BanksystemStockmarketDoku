@@ -199,7 +199,7 @@ Don't use `!!! example`, `!!! question` or collapsible boxes (`???`) unless the 
 
   ```markdown
   <figure markdown="span">
-    ![The trading screen with the price chart on the left](../assets/images/stockmarket/StockMarketTerminal.gif){ width="600" }
+    ![The trading screen with the price chart on the left](../assets/images/stockmarket/trading-screen.gif){ width="600" }
   </figure>
   ```
 

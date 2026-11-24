@@ -38,7 +38,7 @@ You can trade with any account where you have both the **deposit** and the **wit
 Right-click the Stock Market Block to open the trading screen.
 
 <figure markdown="span">
-  ![The trading screen with the price chart on the left and the trading panel on the right](../assets/images/stockmarket/StockMarketTerminal.gif){ width="600" }
+  ![Opening the trading screen at a Stock Market Block, picking diamond and buying one; the trade then shows under My History](../assets/images/stockmarket/trading-screen.gif){ width="600" }
 </figure>
 
 The screen has three parts:

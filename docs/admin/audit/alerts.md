@@ -8,8 +8,7 @@ description: "BankSystem's suspicion flags and StockMarket's profit and pump-and
 Both mods watch for patterns that often mean cheating or an exploit, and warn the admins in chat. An alert is a hint to look closer, not proof. Neither mod blocks a player or takes anything back on its own.
 
 <figure markdown="span">
-  ![Chat with a BankSystem suspicion alert and a StockMarket profit alert](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: shared/alert-chat.png</figcaption>
+  ![Chat with a BankSystem suspicion alert and a StockMarket profit alert](../../assets/images/shared/alert-chat.png){ width="600" }
 </figure>
 
 ## BankSystem flags

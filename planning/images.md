@@ -69,7 +69,7 @@ Built by the user on 2026-11-24: world `DemoCorner` (superflat, Prism instance "
 | `banksystem/display-in-world` | 15.0 -59 1.5 | 0 | -6 | 2×2 Bank Display: Balance History |
 | `stockmarket/display-in-world` *(tuned)* | 23.99 -58.82 -2.37 | 17 | -1 | FOV 30, FOV effects off; 3×2 display: diamond chart, Stock Market Block below it |
 | `banksystem/money-stockpile` | 12.5 -59 3.0 | 0 | 20 | |
-| `shared/program-terminal.gif` | 11.5 -59 1.5 | 90 | 3 | Terminal Blocks on the counter at (7, -58, 1) and (7, -58, 2), facing east; HUD on |
+| `shared/program-terminal.gif` | 11.5 -59 1.5 | 90 | 3 | Terminal Blocks on the counter at (7, -58, 3) and (7, -58, 2), each below its software item frame, facing east; HUD on; the camera pans right between the two |
 
 ### BankSystem (BS-291)
 
@@ -100,7 +100,7 @@ The shared pictures show both mods, so they are taken in the StockMarket cells, 
 | `stockmarket/villager-trade.png` | Villager trading | A villager with several trades (e.g. a toolsmith) and prices in money, its trade screen open. Daylight, cropped to the trade window (560×340). | |
 | `stockmarket/web-interface.png` | Web interface | **Web interface (read-only)** on. While the server runs, a headless browser (e.g. `firefox --headless --screenshot --window-size=1920,1080 <url>`) opens `http://127.0.0.1:<port>/` showing one market (diamond): chart, order book, recent trades. | a browser on the test PC |
 | `stockmarket/dev/example-plugin.png` | Developers → Your first plugin | **Plugin Management** with the example plugin (`PriceFloorPlugin`) added to diamond, its entry open with its settings form. | the example plugin jar in the cell (TK-14) |
-| `stockmarket/trading-screen.gif` *(optional)* | Trading basics | Open a Stock Market Block, pick diamond in the favourites bar, place a small market buy; the trade shows in **My History**. About 10 s. Replaces the old `StockMarketTerminal.gif`. | TK-14: GIF, pointer |
+| `stockmarket/trading-screen.gif` *(optional, done)* | Trading basics | Open a Stock Market Block, pick diamond in the favourites bar, place a small market buy; the trade shows in **My History**. About 10 s. Replaces the old `StockMarketTerminal.gif`. | TK-14: GIF, pointer |
 
 ### Your part
 
