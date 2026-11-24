@@ -63,8 +63,7 @@ To read the facts of any company without opening a screen, type `/company info "
 ### Overview
 
 <figure markdown="span">
-  ![The Overview tab of Company Management](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/company-overview.png</figcaption>
+  ![The Overview tab of Company Management](../assets/images/banksystem/company-overview.png){ width="600" }
 </figure>
 
 The tab lists the **Name**, **Company ID**, **Bank Account**, **Max supply**, how many shares are **Issued**, the number of **Holders** and the **Founders** (marked with a ★).
@@ -74,8 +73,7 @@ Managers can also write a **Description** that every player can read, and pick t
 ### Workers
 
 <figure markdown="span">
-  ![The Workers tab with two workers](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/company-workers.png</figcaption>
+  ![The Workers tab with Quenby, Brindle and the founder Tavrik](../assets/images/banksystem/company-workers.png){ width="600" }
 </figure>
 
 - **Add Worker** picks a player. New workers start with **Allowed to deposit** only.
@@ -88,8 +86,7 @@ Founders can't be removed here. Hand over the founder role in the Danger Zone in
 ### Statistics
 
 <figure markdown="span">
-  ![The Statistics tab with the company's balance and cash flow over seven days](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/company-statistics.png</figcaption>
+  ![The Statistics tab with the company's balance and cash flow over seven days](../assets/images/banksystem/company-statistics.png){ width="600" }
 </figure>
 
 Pick a time span (**24h**, **7d**, **30d**, **90d** or **All Time**) and the tab shows:

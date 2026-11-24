@@ -18,8 +18,7 @@ The Audit screen lists every balance change of one account, newest first. Open i
 or with **Audit** in the [management screen](../banksystem/accounts.md) of an account. A player name opens their personal account.
 
 <figure markdown="span">
-  ![The Audit screen with the transactions of the last 24 hours](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/audit-screen.png</figcaption>
+  ![The Audit screen with the transactions of the last 24 hours](../../assets/images/banksystem/audit-screen.png){ width="600" }
 </figure>
 
 | Column | Shows |
@@ -54,8 +53,7 @@ Entries made at a block (Bank Terminal, ATM, automation blocks, Share Stamper) a
 opens the balance chart of any account, the same chart players see, with its total wealth line. The account's suspicion flags show as red markers. Hover a marker to see what was flagged.
 
 <figure markdown="span">
-  ![The Balance History chart with two suspicion flag markers](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/balance-history-flags.png</figcaption>
+  ![The Balance History chart with two suspicion flag markers](../../assets/images/banksystem/balance-history-flags.png){ width="600" }
 </figure>
 
 ## The whole server

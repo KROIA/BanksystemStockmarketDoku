@@ -13,7 +13,7 @@ BankSystem money is counted in dollars and cents. Most of the time it is just a 
 - **In your hand**, money is items: coins from **1 Cent** to **50 Cent** plus the **Dollar** coin, and banknotes from **5 Dollar** up to **1'000'000 Dollar**.
 
 <figure markdown="span">
-  ![All banknotes and coins of BankSystem in a row](../assets/images/banksystem/money-items.png){ width="600" }
+  ![All BankSystem coins and banknotes in item frames on a wall, from 1 Cent up to 1'000'000 Dollar](../assets/images/banksystem/money-items.png){ width="600" }
 </figure>
 
 To put cash back into the bank, use a [Bank Terminal](bank-terminal.md) like for any item: put the notes and coins into the slots and click **Send items to bank**. They count at their face value. Or use the ATM's **Convert** tab, see below.
@@ -34,8 +34,7 @@ Right-click the ATM to open it. It has two tabs. The account button between them
 ### Withdraw: take out cash
 
 <figure markdown="span">
-  ![The ATM's Withdraw tab with a combination of banknotes picked](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/atm-withdraw.png</figcaption>
+  ![The ATM's Withdraw tab with a combination of banknotes picked](../assets/images/banksystem/atm-withdraw.png){ width="600" }
 </figure>
 
 1. Pick how many of each banknote and coin you want, with the **+** and **−** buttons or by typing the number.
@@ -48,27 +47,26 @@ Notes you can't afford are greyed out.
 
 The **Convert** tab changes notes into other notes of the same value, for example one 100 Dollar note into five 20 Dollar notes. It doesn't touch your bank account unless you ask it to.
 
-1. Click **Deposit money from inventory**. All notes and coins you carry move into the ATM's cache. **Cache** shows the total.
+1. Click **Deposit money from inventory**. All notes and coins you carry move into the ATM's cache. **Available for withdrawal** shows the total.
 2. Pick the notes and coins you want and take them out.
 3. If something is left in the cache, click **Deposit remainder to bank** to put it into the selected account, or **Drop remainder** to get it at your feet in as few notes as possible.
 
 <figure markdown="span">
-  ![The ATM's Convert tab with money in the cache](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/atm-convert.png</figcaption>
+  ![The ATM's Convert tab with money in the cache](../assets/images/banksystem/atm-convert.png){ width="600" }
 </figure>
 
 If you close the screen with money still in the cache, the ATM drops it at your feet. Nothing is lost.
 
 ## The Money Stockpile
 
-You can put cash in the world as a pile. Hold banknotes or coins and right-click a block: a **Money Stockpile Block** appears next to it. Coins stack up as piles, banknotes stand upright.
+You can put cash in the world as a pile. Hold banknotes or coins and right-click a block: a **Money Stockpile Block** appears next to it. Coins and banknotes lie in stacks, one stack per value.
 
 - Right-click the pile with more money to add to it.
 - Right-click it with an empty hand to take money back.
 - Break it to get all the money back.
 
 <figure markdown="span">
-  ![A pile of banknotes and coins on a table](../assets/images/banksystem/money-stockpile.png){ width="600" }
+  ![A Money Stockpile of banknote and coin stacks on a stone block](../assets/images/banksystem/money-stockpile.png){ width="600" }
 </figure>
 
 !!! warning "Piles are not in the bank"

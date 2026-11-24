@@ -44,11 +44,10 @@ The software is not used up. Keep it: you can program more blocks with it later.
 2. Move your iron ingots from your inventory into those slots.
 3. Click **Send items to bank**.
 
-The iron leaves the slots and shows up in the item list on the left, with its balance.
+The iron leaves the slots, and its balance in the item list on the left goes up.
 
 <figure markdown="span">
-  ![Sending a stack of iron to the bank at the Bank Terminal and taking ten back](assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/bank-terminal-deposit.gif</figcaption>
+  ![Sending a stack of iron to the bank at the Bank Terminal and taking ten back](assets/images/banksystem/bank-terminal-deposit.gif){ width="600" }
 </figure>
 
 Not every item can go into the bank. Iron ingots, gold ingots, diamonds, emeralds, coal and every item that has a market always can. Your server admin may allow more. Items that can't be banked stay in the slots, so you don't lose them.

@@ -10,8 +10,7 @@ BankSystem gives every player a bank account for money and items. You put items 
 BankSystem is also the wallet for [StockMarket](../stockmarket/index.md). New to both mods? Start with [Getting started](../getting-started.md).
 
 <figure markdown="span">
-  ![All BankSystem blocks placed in a small bank room](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/blocks-overview.png</figcaption>
+  ![A small bank room with two Bank Displays, a Money Stockpile, a Share Stamper, a Bank Terminal, an ATM, a Terminal Block and a Bank Upload and Download Block with chests](../assets/images/banksystem/blocks-overview.png){ width="600" }
 </figure>
 
 ## What you can do

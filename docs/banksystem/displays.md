@@ -8,8 +8,7 @@ description: Build a screen from Bank Display blocks and show the balances or th
 The **Bank Display** shows a bank account on a wall: either its current balances or a chart of how they changed. Put several displays together to build one large screen. For the recipe, see [Blocks and recipes](blocks-and-recipes.md).
 
 <figure markdown="span">
-  ![A wall of Bank Display blocks showing the balance history of an account](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/display-in-world.png</figcaption>
+  ![A wall of Bank Display blocks showing the balance history of an account](../assets/images/banksystem/display-in-world.png){ width="600" }
 </figure>
 
 ## Building a screen
@@ -30,8 +29,7 @@ A display you add next to a configured screen takes over its settings, so the wh
 If you close the window without **Apply**, a popup asks whether to **Save** or **Discard** your changes.
 
 <figure markdown="span">
-  ![The Configure Display screen of a Bank Display](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/display-config.png</figcaption>
+  ![The Configure Display screen of a Bank Display](../assets/images/banksystem/display-config.png){ width="600" }
 </figure>
 
 | Display Type | Shows | Updates |

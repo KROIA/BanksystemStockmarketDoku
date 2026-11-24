@@ -29,8 +29,7 @@ The block deposits in the name of the player who connected it. That player needs
 The block skips damaged and enchanted items. They stay in the block, or drop on the ground with **Drop items if not bankable** ticked.
 
 <figure markdown="span">
-  ![The Bank Upload Block screen connected to an account](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/upload-block.png</figcaption>
+  ![The Bank Upload Block screen connected to an account](../assets/images/banksystem/upload-block.png){ width="600" }
 </figure>
 
 ## Bank Download Block
@@ -49,8 +48,7 @@ The Download Block keeps a set amount of items in its own inventory. When a hopp
 Next to each order, **Balance** shows how many of the item are in the bank. The **X** removes the order when you save.
 
 <figure markdown="span">
-  ![The Bank Download Block screen with two withdraw orders](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/download-block.png</figcaption>
+  ![The Bank Download Block screen with two withdraw orders](../assets/images/banksystem/download-block.png){ width="600" }
 </figure>
 
 !!! tip "Keep a reserve"

@@ -14,8 +14,7 @@ You need the BankSystem admin flag for everything on this page, see [Admins and 
 Run `/banksystem manage`. The **Bank Settings** screen opens.
 
 <figure markdown="span">
-  ![The Bank Settings screen with the list of bankable items](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/bank-settings.png</figcaption>
+  ![The Bank Settings screen with the list of bankable items](../../assets/images/banksystem/bank-settings.png){ width="600" }
 </figure>
 
 - **Banking items** on the left lists every allowed item. Click one to see its **Total supply** (all players' balances together) and **Total locked** (reserved in open market orders), and every account that holds it.

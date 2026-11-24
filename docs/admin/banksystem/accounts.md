@@ -12,14 +12,13 @@ As a BankSystem admin you can open any bank account and change what is in it. Yo
 Use one of these:
 
 - `/bank <player> manage` opens the player's personal account.
-- In the [Bank Settings](bankable-items.md#the-bank-settings-screen) screen, select an item and click **Manage** next to a player.
+- In the [Bank Settings](bankable-items.md#the-bank-settings-screen) screen, select an item and click **Manage** next to an account.
 - In creative mode, right-click a player while holding **Banking Software**. This also needs the permission `banksystem.admin.software`.
 
 The screen is the same [management screen](../../banksystem/bank-accounts.md#the-management-screen) players see, with extra admin controls. To only look at a balance, use `/bank <player> show`.
 
 <figure markdown="span">
-  ![The Account Management screen in admin mode with balance fields, Freeze and Audit](../../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/account-admin-mode.png</figcaption>
+  ![The Account Management screen in admin mode with balance fields, Freeze and Audit](../../assets/images/banksystem/account-admin-mode.png){ width="600" }
 </figure>
 
 ## What you can change

@@ -10,8 +10,7 @@ The **Bank Terminal Block** is where items go into your bank account and come ba
 To make one, right-click a **Terminal Block** with **Banking Software**. See [Blocks and recipes](blocks-and-recipes.md).
 
 <figure markdown="span">
-  ![The Bank Terminal with the item banks of the account and the player inventory](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/bank-terminal.png</figcaption>
+  ![The Bank Terminal with the item banks of the account and the player inventory](../assets/images/banksystem/bank-terminal.png){ width="600" }
 </figure>
 
 ## The screen
@@ -43,8 +42,7 @@ Everything in the slots goes into the selected account. Items that can't be stor
 The items appear in the Bank Terminal Inventory slots. Move them into your inventory.
 
 <figure markdown="span">
-  ![Sending a stack of iron to the bank at the Bank Terminal and taking ten back](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/bank-terminal-deposit.gif</figcaption>
+  ![Sending a stack of iron to the bank at the Bank Terminal and taking ten back](../assets/images/banksystem/bank-terminal-deposit.gif){ width="600" }
 </figure>
 
 !!! warning "Don't leave items in the slots"
@@ -64,8 +62,7 @@ The terminal remembers both checkboxes for you. Items left in the grid go back t
 To craft an item without knowing its recipe, click its icon in the bank list. If exactly one of its recipes can be paid for (from the bank with **Use Bank Items** on, otherwise from your inventory), the terminal sets it up in the grid. Otherwise the **Recipe selection** window lists the recipes to pick from.
 
 <figure markdown="span">
-  ![The crafting view of the Bank Terminal with Use Bank Items and Auto-deposit output turned on](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/bank-terminal-crafting.png</figcaption>
+  ![The crafting view of the Bank Terminal with Use Bank Items and Auto-deposit output turned on](../assets/images/banksystem/bank-terminal-crafting.png){ width="600" }
 </figure>
 
 ### With JEI
@@ -78,11 +75,10 @@ The **History** button at the top right opens a chart of your account's balances
 
 - The buttons **1h**, **6h**, **1d**, **7d**, **30d** and **all** set the time span.
 - Drag to move the chart, scroll to zoom. ++space++ fits the view to the data, ++ctrl+space++ jumps back to now.
-- The search box and the checkboxes next to each item turn lines on and off. The chart remembers your choice.
+- Type in the **Filter** box to narrow the item list. Click an item to turn its line on or off. The chart remembers your choice.
 
 <figure markdown="span">
-  ![The Balance History chart of an account over seven days](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/balance-history.png</figcaption>
+  ![The Balance History chart of an account over seven days](../assets/images/banksystem/balance-history.png){ width="600" }
 </figure>
 
 ## If something goes wrong

@@ -28,8 +28,7 @@ Below, each payout has one row with its **Target**, **Amount**, **Interval**, th
 6. Click **Save**.
 
 <figure markdown="span">
-  ![The Edit Payout window set to pay a wage every Minecraft day](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/payout-edit.png</figcaption>
+  ![The Edit Payout window set to pay a wage every Minecraft day](../assets/images/banksystem/payout-edit.png){ width="600" }
 </figure>
 
 More options in the same window:
@@ -52,8 +51,7 @@ After a server restart, every payout starts a full interval from that moment.
 Every shareholder gets their number of shares times the amount. The result shows right away, for example *Paid 1,250 to 8 holder(s).* The **Dividend History** below lists earlier dividends.
 
 <figure markdown="span">
-  ![The Pay Dividend window with an amount per share](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/pay-dividend.png</figcaption>
+  ![The Pay Dividend window with an amount per share](../assets/images/banksystem/pay-dividend.png){ width="600" }
 </figure>
 
 Rules for dividends:

@@ -9,8 +9,8 @@ User decision 2026-11-24: script every image except the Discord feed. Tracker it
 - BS-291 (BankSystem pictures in the world and 1 GIF) and SM-361 (StockMarket and shared pictures in the world, 1–2 GIFs): section 1.
 - TK-14: the test kit pieces these still miss (GIF recording with a drawn pointer, hover, crop, using an item on a block, extra mods in a cell, on-demand suites).
 
-**Stand-ins from the old docs (2026-11-24).** 13 files below are copies of old pictures from the mod repos, checked for names, IDs and outdated labels. The scripted runs overwrite them under the same name (the StockMarket ones are replaced already, SM-358, 2026-11-24):
-- BankSystem: `money-items`, `money-stockpile`, `automation-setup` (HUD and hand visible), `server-history`, `mod-settings` (shows the **Suspicious activity** group), `share-stamper`, `share-visuals`.
+**Stand-ins from the old docs (2026-11-24).** 13 files below are copies of old pictures from the mod repos, checked for names, IDs and outdated labels. The scripted runs overwrite them under the same name (all of them are replaced, 2026-11-24):
+- BankSystem (replaced): `money-items`, `money-stockpile`, `automation-setup` (HUD and hand visible), `server-history`, `mod-settings` (shows the **Suspicious activity** group), `share-stamper`, `share-visuals`.
 - StockMarket (replaced): `web-interface`, `newspaper`, `news/active`, `news/all-events`, `news/scheduler`, `news/event-details`.
 - Not used: the old `settingsGUI.png` (shows a removed setting), and every old picture with a real player name, "Dev", "Tester_1" or a UUID in it.
 
@@ -58,17 +58,17 @@ Built by the user on 2026-11-24: world `DemoCorner` (superflat, Prism instance "
 - **Set the displays again:** their settings use market IDs of the old world (Savings' **Balance History** on the Bank Displays; on the Stock Market Displays diamond on the 3×2 one and lapis, redstone and emerald on the three 2×1 ones; gold and iron looked flat because of running news events).
 - **Refill the Money Stockpile:** it stores BankSystem's internal item numbers of the old world, which can point to other items in a new world.
 
-**Camera spots.** Feet position for `/tp`, eyes are 1.62 higher. Yaw 0 looks south, 90 west. Rows marked *tuned* are the values the StockMarket run used (2026-11-24); the others are start values worked out from the block positions, to fine-tune in the first run.
+**Camera spots.** Feet position for `/tp`, eyes are 1.62 higher. Yaw 0 looks south, 90 west. Rows marked *tuned* are the values the StockMarket and BankSystem runs used (2026-11-24); the others are start values worked out from the block positions, to fine-tune in the first run.
 
 | File | Position (x y z) | Yaw | Pitch | Before the shot |
 |---|---|---|---|---|
 | `shared/home-hero` *(tuned)* | 27.0 -58.52 1.0 | 69.5 | -4 | FOV 40, FOV effects off |
-| `banksystem/blocks-overview` | 17.5 -57.5 -8.5 (flying) | 49 | 13 | ATM and Terminal Block as for terminal-family |
+| `banksystem/blocks-overview` *(tuned)* | 15.5 -58 -7.0 | 53 | 10 | ATM and Terminal Block as for terminal-family |
 | `banksystem/automation-setup` | 11.5 -59 -3.5 | 127 | 13 | both levers on, both blocks connected to Savings |
 | `shared/terminal-family`, `stockmarket/news-toast` *(tuned)* | 11.5 -59 -2 | 90 | 14 | Terminal Block at (7, -59, -4), ATM at (7, -59, -1) in place of the Share Stamper, both facing east |
-| `banksystem/display-in-world` | 15.0 -59 1.5 | 0 | -6 | 2×2 Bank Display: Balance History |
+| `banksystem/display-in-world` *(tuned)* | 15.0 -58.62 1.5 | 0 | -6 | FOV 50; 2×2 Bank Display: Balance History |
 | `stockmarket/display-in-world` *(tuned)* | 23.99 -58.82 -2.37 | 17 | -1 | FOV 30, FOV effects off; 3×2 display: diamond chart, Stock Market Block below it |
-| `banksystem/money-stockpile` | 12.5 -59 3.0 | 0 | 20 | |
+| `banksystem/money-stockpile` *(tuned)* | 12.5 -58.7 3.6 | 0 | 25 | FOV 50 |
 | `shared/program-terminal.gif` | 11.5 -59 1.5 | 90 | 3 | Terminal Blocks on the counter at (7, -58, 3) and (7, -58, 2), each below its software item frame, facing east; HUD on; the camera pans right between the two |
 
 ### BankSystem (BS-291)

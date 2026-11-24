@@ -75,8 +75,7 @@ Click **Save**. Every share of the company in the world changes to the new look.
 The share's tooltip shows the company name, the supply and, with ++shift++, the description. Right-click with a share in your hand to see the company.
 
 <figure markdown="span">
-  ![Company Shares of different designs in the inventory, one with its tooltip open](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/share-items.png</figcaption>
+  ![Company Shares of different designs in the inventory, one with its tooltip open](../assets/images/banksystem/share-items.png){ width="350" }
 </figure>
 
 The **Shares** tab also lists every Share Stamper bound to the company by its position, with an **Unbind** button.

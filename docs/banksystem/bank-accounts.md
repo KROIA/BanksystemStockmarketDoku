@@ -41,8 +41,7 @@ Open the management screen of your personal account with `/bank manage`. For ano
 The account button at the top of the screen switches to any other account you have access to. Hover over an account in the list to see its number and who can use it.
 
 <figure markdown="span">
-  ![The Account Management screen of a shared account with two users](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/account-management.png</figcaption>
+  ![The Account Management screen of a shared account with two users](../assets/images/banksystem/account-management.png){ width="600" }
 </figure>
 
 ## Sharing an account
@@ -55,8 +54,7 @@ The account button at the top of the screen switches to any other account you ha
 Nothing is stored until you click **Save changes**. If you leave the screen with unsaved changes, a popup asks whether to **Save** or **Discard** them.
 
 <figure markdown="span">
-  ![The Edit Permissions window with Deposit on and Withdraw and Manage off](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/account-permissions.png</figcaption>
+  ![The Edit Permissions window with Deposit on and Withdraw and Manage off](../assets/images/banksystem/account-permissions.png){ width="600" }
 </figure>
 
 ### The three rights

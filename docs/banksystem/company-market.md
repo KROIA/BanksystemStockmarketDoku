@@ -21,8 +21,7 @@ With StockMarket installed, your company's shares can get their own market. Play
 The tab now says *A market exists for this company's shares.* and shows the live price chart. **Open in StockMarket** opens the market in the trading screen.
 
 <figure markdown="span">
-  ![The Market tab of Company Management with an open market](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/company-market-tab.png</figcaption>
+  ![The Market tab of Company Management with an open market](../assets/images/banksystem/company-market-tab.png){ width="600" }
 </figure>
 
 ## How a share market differs
