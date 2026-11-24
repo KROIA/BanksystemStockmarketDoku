@@ -43,7 +43,7 @@ Your allow-list stays saved. If you turn the setting off again, the old list app
 
 ## Items with extra data
 
-The bank tells items apart by their data: enchantments, names, damage and so on. An enchanted sword and a plain sword are two different bank items. Damaged or enchanted items need their own entry, so a plain allow-list entry doesn't accept them.
+The bank tells items apart by their data, for example a name given in an anvil. A renamed item is a different bank item from the plain one, so it needs its own entry: hold it and run `/banksystem allowItemInHand`. Damaged or enchanted items can't be banked at all; the Bank Terminal and the Upload Block skip them.
 
 To keep players from filling the item list, each player can add at most 256 new item variants per server run. Plain items don't count, and admins have no limit. When a player hits the limit, the server log says so once.
 
@@ -91,9 +91,9 @@ my_datapack/data/banksystem/tags/data_component_type/deposit_gated_components.js
 | `minecraft:custom_name` | Renamed and plain items become one item. The name is lost on withdrawal. | Only if players don't mind. |
 | `minecraft:lore` | Items that differ only in lore become one. The lore is lost. | Careful: some mods mark special items with lore. |
 | `minecraft:custom_data` | Items that differ only in mod data become one. The data is lost. | Experts only. Some mods store the whole meaning of an item there. |
-| `minecraft:damage` | A damaged tool comes out repaired. | Don't. If you must, list it as deposit-gated instead, so damaged tools are refused. |
 | `minecraft:repair_cost` | The anvil penalty is reset on withdrawal. | Don't. |
-| `minecraft:enchantments` | Enchanted and plain items become one. Enchantments are lost. | Never. |
+
+Damage and enchantments don't belong in the lists: damaged or enchanted items are refused anyway.
 
 To see which components an item has, hold it and run `/data get entity @s SelectedItem`. Run it twice a few minutes apart: a value that changed by itself belongs to a volatile component.
 

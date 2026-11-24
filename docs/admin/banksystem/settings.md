@@ -62,8 +62,8 @@ Lowering a limit doesn't remove accounts or companies that already exist.
 | Setting | Key | Default | Range | What it does |
 |---|---|---|---|---|
 | **Allow all items** | `ALLOW_ALL_ITEMS` | off | | On: every item can be banked except the built-in blacklist (bedrock, barrier, command blocks, coins below a dollar and a few more). Off: only the items on your allow-list. See [Bankable items](bankable-items.md). |
-| **Additional volatile components** | `ADDITIONAL_VOLATILE_COMPONENTS` | empty | | Item data that the bank ignores, comma-separated, for example `tfc:food`. See [Bankable items](bankable-items.md#items-whose-data-changes). |
-| **Additional deposit-gated components** | `ADDITIONAL_DEPOSIT_GATED_COMPONENTS` | empty | | Item data that the bank ignores but checks on deposit. Same page. |
+| **Additional volatile components** | `ADDITIONAL_VOLATILE_COMPONENTS` | empty | | Item data that the bank ignores, comma-separated, for example `tfc:food`. Needs a restart. See [Bankable items](bankable-items.md#items-whose-data-changes). |
+| **Additional deposit-gated components** | `ADDITIONAL_DEPOSIT_GATED_COMPONENTS` | empty | | Item data that the bank ignores but checks on deposit. Needs a restart. Same page. |
 | **Download block update interval (ticks)** | `BANK_DOWNLOAD_BLOCK_UPDATE_TICK_INTERVAL` | `20` | 1 to 1,200 | Time between two refills of a Bank Download Block. 20 ticks = 1 second. |
 | **Upload block update interval (ticks)** | `BANK_UPLOAD_BLOCK_UPDATE_TICK_INTERVAL` | `20` | 1 to 1,200 | Time between two uploads of a Bank Upload Block. |
 | **Confirm pending item merge (one-shot)** | `CONFIRM_ITEMID_MERGE` | off | | Approves a merge of bank items that the server refused at startup. Applied at the next start, then it switches itself off. |
