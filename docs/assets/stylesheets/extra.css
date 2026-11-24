@@ -332,3 +332,16 @@
   opacity: 0.85;
   background: url("../images/shared/heading-candles.svg") left center / auto 100% repeat-x;
 }
+
+/* Crafting recipes side by side, two per row (one on phones) */
+.md-typeset .recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 1rem;
+  align-items: start;
+}
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .recipe-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

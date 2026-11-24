@@ -53,6 +53,8 @@ The software is not used up. A programmed block drops as itself when you break i
 
 ### Parts
 
+<div class="recipe-grid" markdown>
+
 <figure markdown="span">
   ![Crafting recipe: iron nuggets and ink sacs above a row of paper make 5 Empty Software](../assets/images/banksystem/recipe-software.png){ width="350" }
   <figcaption>Empty Software (makes 5)</figcaption>
@@ -73,7 +75,11 @@ The software is not used up. A programmed block drops as itself when you break i
   <figcaption>Metal Case Block</figcaption>
 </figure>
 
+</div>
+
 ### Software
+
+<div class="recipe-grid" markdown>
 
 <figure markdown="span">
   ![Crafting recipe: Empty Software and a gold ingot side by side make Banking Software](../assets/images/banksystem/recipe-banking-software.png){ width="350" }
@@ -85,7 +91,11 @@ The software is not used up. A programmed block drops as itself when you break i
   <figcaption>ATM Software</figcaption>
 </figure>
 
+</div>
+
 ### Modules
+
+<div class="recipe-grid" markdown>
 
 <figure markdown="span">
   ![Crafting recipe: an iron ingot above a Circuit Board makes a Bank Transmitter Module](../assets/images/banksystem/recipe-bank-transmitter-module.png){ width="350" }
@@ -97,7 +107,11 @@ The software is not used up. A programmed block drops as itself when you break i
   <figcaption>Bank Receiver Module</figcaption>
 </figure>
 
+</div>
+
 ### Blocks
+
+<div class="recipe-grid" markdown>
 
 <figure markdown="span">
   ![Crafting recipe: Metal Case Block on top, redstone beside a Display, a Circuit Board below, iron nuggets in the corners make a Terminal Block](../assets/images/banksystem/recipe-terminal-block.png){ width="350" }
@@ -119,7 +133,11 @@ The software is not used up. A programmed block drops as itself when you break i
   <figcaption>Bank Display</figcaption>
 </figure>
 
+</div>
+
 ### Company
+
+<div class="recipe-grid" markdown>
 
 <figure markdown="span">
   ![Crafting recipe: Metal Case Block on top, redstone beside a piston, a Circuit Board below, iron nuggets in the corners make a Share Stamper](../assets/images/banksystem/recipe-share-stamper.png){ width="350" }
@@ -131,9 +149,13 @@ The software is not used up. A programmed block drops as itself when you break i
   <figcaption>Blank Share (makes 4)</figcaption>
 </figure>
 
+</div>
+
 ### Changing money
 
 You can craft coins and banknotes into larger and smaller ones, from 1 Cent to 1'000'000 Dollar. Two examples:
+
+<div class="recipe-grid" markdown>
 
 <figure markdown="span">
   ![Crafting recipe: five Dollar coins make a 5 Dollar note](../assets/images/banksystem/recipe-money-combine.png){ width="350" }
@@ -144,6 +166,8 @@ You can craft coins and banknotes into larger and smaller ones, from 1 Cent to 1
   ![Crafting recipe: one 5 Dollar note makes five Dollar coins](../assets/images/banksystem/recipe-money-split.png){ width="350" }
   <figcaption>5 Dollar → 5 × Dollar</figcaption>
 </figure>
+
+</div>
 
 Not every step works both ways, and the amounts differ. For example, a 100'000 Dollar note splits into 5 × 20'000, and a 50 Dollar note can't be split into 20 Dollar notes. The table lists every money recipe. A number alone means a Dollar note: **2 × 500** means two 500 Dollar notes. **Dollar** is the Dollar coin.
 
