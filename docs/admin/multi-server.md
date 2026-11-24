@@ -8,8 +8,7 @@ description: "Connecting several servers to one economy: MultiServerConfig.json,
 Several servers, for example a survival and a creative server, can share one economy. One **master** server holds all bank accounts and markets. Every **slave** server forwards its players' requests to the master. A player has the same account and sees the same markets on every server.
 
 <figure markdown="span">
-  ![One master server holding the data and two slave servers connected to it](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: shared/master-slave.svg</figcaption>
+  ![One master server holding the data and two slave servers connected to it](../assets/images/shared/master-slave.svg){ width="600" }
 </figure>
 
 A single server needs none of this. It works on its own out of the box.

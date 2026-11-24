@@ -23,8 +23,7 @@ Each candle covers one time span. It shows four prices:
 A **green** candle closed higher than it opened: the price went up. A **red** candle closed lower: the price went down.
 
 <figure markdown="span">
-  ![One candle with its open, close, high and low price marked](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: stockmarket/candle.svg</figcaption>
+  ![One candle with its open, close, high and low price marked](../assets/images/stockmarket/candle.svg){ width="600" }
 </figure>
 
 The small bars under the candles show how many items were traded in each time span. They have the colour of their candle.
