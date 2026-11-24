@@ -102,3 +102,16 @@
 .md-typeset tr.event-json code {
   overflow-x: auto; /* long lines scroll inside the viewer */
 }
+/* Left menu (wide screens): a tree. The tab title is largest, section titles a bit smaller,
+   and the pages of a section sit indented below its title. */
+@media screen and (min-width: 76.25em) {
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link {
+    font-size: 0.85rem;
+  }
+  .md-nav__item--section .md-nav__item--section > .md-nav__link {
+    font-size: 0.78rem;
+  }
+  [dir=ltr] .md-nav__item--section .md-nav__item--section > .md-nav {
+    margin-left: 0.2rem;
+  }
+}
