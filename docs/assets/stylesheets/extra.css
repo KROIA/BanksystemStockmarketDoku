@@ -1,6 +1,6 @@
 /* Charts and screenshots keep their own (light) background; round them so they sit well in dark mode. */
 .md-typeset figure img {
-  border-radius: 0.3rem;
+  border-radius: 0;
 }
 
 /* Screenshots, GIFs and charts fill the text column; the width on the page is only the fallback.
@@ -132,7 +132,6 @@
 .home-fx .md-typeset figure > a:has(> img.hero) {
   display: block;
   overflow: hidden;
-  border-radius: 0.3rem;
   box-shadow: var(--fx-shadow-high);
 }
 .home-fx .md-typeset img.hero {
@@ -186,4 +185,150 @@
     translate: none;
     transform: none;
   }
+}
+
+/* Mod look, taken from the mods' own screens: dark slate panels (Bank Terminal), candle green
+   and red, the green "Create" button, gold group headings; square bevelled Minecraft panels
+   and buttons; chart-paper grid, pixel candles in the top bar. */
+:root,
+[data-md-color-scheme="default"] {
+  --mc-slate: #343b47;
+  --mc-green: #2d8a4e;
+  --mc-green-bright: #32cc6f;
+  --mc-red: #e74c3c;
+  --mc-gold: #ffd966;
+  --md-primary-fg-color: #343b47;
+  --md-primary-fg-color--light: #4a5363;
+  --md-primary-fg-color--dark: #262b34;
+  --md-primary-bg-color: #fff;
+  --md-primary-bg-color--light: #ffffffb3;
+  --md-accent-fg-color: #a86f00;
+  --md-accent-fg-color--transparent: #a86f001a;
+  --md-accent-bg-color: #fff;
+  --md-accent-bg-color--light: #ffffffb3;
+  --md-typeset-a-color: #237a4a;
+  --mc-panel: #f4f4f4;
+  --mc-edge: #8b8b8b;
+  --mc-bevel: inset 2px 2px 0 #fff, inset -2px -2px 0 #c6c6c6;
+}
+[data-md-color-scheme="slate"] {
+  --md-hue: 218;
+  --md-accent-fg-color: #ffd966;
+  --md-accent-fg-color--transparent: #ffd9661a;
+  --md-accent-bg-color: #1e2229;
+  --md-typeset-a-color: #32cc6f;
+  --mc-panel: #2a3039;
+  --mc-edge: #14171c;
+  --mc-bevel: inset 2px 2px 0 rgb(255 255 255 / 0.07), inset -2px -2px 0 rgb(0 0 0 / 0.35);
+}
+
+/* The open tab is underlined with a candle-green bar */
+.md-tabs__item--active .md-tabs__link {
+  box-shadow: inset 0 -3px 0 var(--mc-green-bright);
+}
+
+/* Cards: Minecraft panels with a bevelled edge */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border: 2px solid var(--mc-edge);
+  border-radius: 0;
+  background: var(--mc-panel);
+  box-shadow: var(--mc-bevel);
+}
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > ul > li:focus-within,
+.md-typeset .grid > .card:hover {
+  border-color: var(--mc-edge);
+  box-shadow: var(--mc-bevel), var(--fx-shadow);
+}
+.home-fx .md-typeset .grid.cards > ul > li:hover {
+  box-shadow: var(--mc-bevel), var(--fx-shadow-high);
+}
+
+/* Buttons: Minecraft buttons, the primary one in the mods' green */
+.md-typeset .md-button {
+  border: 2px solid #000;
+  border-radius: 0;
+  background: #6f6f6f;
+  color: #fff;
+  text-shadow: 2px 2px 0 #3f3f3f;
+  box-shadow: inset 2px 2px 0 rgb(255 255 255 / 0.35), inset -2px -3px 0 rgb(0 0 0 / 0.35);
+}
+.md-typeset .md-button--primary {
+  background: var(--mc-green);
+  border-color: #000;
+  text-shadow: 2px 2px 0 #1b5230;
+}
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  background: #8a8a8a;
+  border-color: #fff;
+  color: #fff;
+}
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+  background: #36a25c;
+}
+
+/* Notes and collapsibles: square, with a 2 px edge */
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 2px;
+  border-radius: 0;
+}
+
+/* Tables: header row in the dark slate of the mods' panels */
+.md-typeset table:not([class]) {
+  border-radius: 0;
+}
+.md-typeset table:not([class]) th {
+  background: var(--mc-slate);
+  color: #fff;
+}
+
+/* Pixel candles along the top bar (title and tabs), faint, behind the text */
+.md-header {
+  isolation: isolate;
+}
+.md-header .md-tabs {
+  background-color: transparent; /* the header behind it has the same colour */
+}
+.md-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.3;
+  background: url("../images/shared/header-candles.svg") right bottom / auto 100% repeat-x;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 45%);
+  mask-image: linear-gradient(90deg, transparent, #000 45%);
+}
+
+/* Chart paper: a faint grid behind every page */
+:root,
+[data-md-color-scheme="default"] {
+  --mc-grid: rgb(0 0 0 / 0.04);
+}
+[data-md-color-scheme="slate"] {
+  --mc-grid: rgb(255 255 255 / 0.03);
+}
+.md-main {
+  background-image:
+    linear-gradient(var(--mc-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--mc-grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Section headings: a small pixel bar in candle green, money gold and candle red */
+.md-typeset h2::after {
+  content: "";
+  display: block;
+  width: 3.6rem;
+  height: 0.25rem;
+  margin-top: 0.35rem;
+  background: linear-gradient(90deg,
+    var(--mc-green-bright) 0 30%, transparent 30% 35%,
+    var(--mc-gold) 35% 65%, transparent 65% 70%,
+    var(--mc-red) 70% 100%);
 }
