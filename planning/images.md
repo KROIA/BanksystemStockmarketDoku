@@ -82,8 +82,10 @@ Built by the user on 2026-11-24: world `DemoCorner` (superflat, Prism instance "
 | `banksystem/display-in-world.png` | Bank Display | The 2×2 Bank Display in the home corner showing **Balance History** of Savings over 7 days. Camera centred in front. | |
 | `banksystem/share-items.png` | Shares | The inventory screen with two or three Company Shares of different designs (Acme Mining and one more company). The mouse rests on one, so its tooltip with the supply shows. | TK-14: hover |
 | `banksystem/bank-terminal-deposit.gif` | Bank Terminal, Getting started | The Bank Terminal of Savings, 64 iron ingots in its slots: click **Send items to bank**. Then **+10** on iron and **Receive items from bank**. About 8 s. | TK-14: GIF, pointer |
-| `banksystem/currency-bindings.png` | Currency bindings | **Currency Bindings** of Tavrik's personal account: the Spur slot bound to Tavrik's Numismatics account, with a balance. | Numismatics in the cell (TK-14) |
-| `banksystem/currency-bind-dialog.png` | Currency bindings | The **Bind...** dialog on the Spur slot, **Pick an account** showing Tavrik's Numismatics account. | same |
+| `banksystem/currency-bindings.png` | Currency bindings | **Currency Bindings** of Tavrik's personal account: the Spur slot bound to Tavrik's Numismatics account, with a balance. | done 2026-11-24, see the note below |
+| `banksystem/currency-bind-dialog.png` | Currency bindings | The **Bind...** dialog on the Spur slot, **Pick an account** showing Tavrik's Numismatics account. | done 2026-11-24 |
+
+Currency bindings shots (taken 2026-11-24): BankSystem's on-demand suite `banksystem/bs_docs_shots/DocsCurrencyShotsSuite`, run in the user's Prism instance `1.21.1 currencyIntegration_numismatics` (Create 6.0.10, Numismatics 1.0.20) instead of a test cell. Retake: put BankSystem's dev jar (the suite inside, ModUtilities bundled) and the TestKit jar into the instance's `mods`; close Prism; set the instance's Java arguments `-Dmodutilities.autotest=client -Dmodutilities.autotest.mods=banksystem -Dmodutilities.tests.include=banksystem/bs_docs_shots/DocsCurrencyShotsSuite -Dmodutilities.autotest.world=new -Dmodutilities.autotest.results=<dir>/results.json -Dmodutilities.autotest.screenshots=<dir>`; launch with `prismlauncher.exe --launch "1.21.1 currencyIntegration_numismatics" --offline Tavrik` (the suite expects that name, and no real account name shows); the client makes a world `autotest-new`, takes both shots and quits; then remove the arguments again.
 
 ### StockMarket and shared (SM-361)
 

@@ -40,8 +40,7 @@ Bindings are optional. Nothing is linked until you bind a slot yourself.
 The row now shows the currency mod's account and an **Unbind** button.
 
 <figure markdown="span">
-  ![The Currency Bindings screen with one slot bound to an external account](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/currency-bindings.png</figcaption>
+  ![The Currency Bindings screen of a Savings account: every item with its balance and a Bind... button; the Spur row is bound to the Numismatics Personal Account, shows 1'250 and an Unbind button](../assets/images/banksystem/currency-bindings.png){ width="600" }
 </figure>
 
 ### Personal and shared accounts
@@ -56,8 +55,7 @@ If the kind you need is missing, create it first: a shared bank account with `/b
 The users of the bank account and the members on the currency mod's side are not kept in step. Manage the Blaze Banker's trust list (Numismatics) or the team members (Lightman's Currency) in that mod yourself.
 
 <figure markdown="span">
-  ![Choosing the external account when binding a slot](../assets/images/placeholder.svg){ width="600" }
-  <figcaption>Image missing: banksystem/currency-bind-dialog.png</figcaption>
+  ![The Pick an account (numismatics) list after clicking Bind... on the Spur row: it offers the player's Numismatics Personal Account](../assets/images/banksystem/currency-bind-dialog.png){ width="600" }
 </figure>
 
 ## Paying in other coins
