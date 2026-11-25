@@ -354,14 +354,16 @@
   display: table;
 }
 
-/* Feedback (assets/javascripts/feedback.js): a "?" after each section heading, shown on hover
-   like the heading link (always, faintly, on touch screens), and a button at the end of the page */
+/* Feedback (assets/javascripts/feedback.js): a "?" after each section heading, shown while the
+   mouse is over the heading or anything below it up to the next heading (always, faintly, on
+   touch screens), and a button at the end of the page. It fades out with a short delay, so it
+   doesn't flicker while the mouse crosses the gap between two paragraphs. */
 .md-typeset .feedback-icon {
   display: inline-block;
   margin-left: 0.4em;
   color: var(--md-default-fg-color--lighter);
   opacity: 0;
-  transition: opacity 250ms, color 250ms;
+  transition: opacity 250ms 300ms, color 250ms;
 }
 .md-typeset .feedback-icon svg {
   display: block;
@@ -370,8 +372,10 @@
   fill: currentColor;
 }
 .md-typeset h2:hover > .feedback-icon,
+.md-content__inner > h2:has(~ :hover:not(.feedback-end)):not(:has(~ h2:hover, ~ h2 ~ :hover)) > .feedback-icon,
 .md-typeset .feedback-icon:focus {
   opacity: 1;
+  transition-delay: 0s;
 }
 .md-typeset .feedback-icon:hover,
 .md-typeset .feedback-icon:focus {
