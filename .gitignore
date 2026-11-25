@@ -37,3 +37,4 @@ graphify-out/
 .venv/
 site/
 __pycache__/
+.cache/

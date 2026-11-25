@@ -230,7 +230,8 @@ Don't use `!!! example`, `!!! question` or collapsible boxes (`???`) unless the 
 - **Cross-links between mods** are normal links, not "see the other mod's docs". When a StockMarket page needs a bank concept, link the BankSystem page at the point of need, e.g. "your [BankSystem bank account](../banksystem/bank-accounts.md)". Shared topics (multi-server, permissions, placeholders, Discord, backups) live once under **Server Admin → Both mods**; mod pages link there instead of repeating them.
 - Link text says where the link goes. Never "click here" or "this page".
 - Each page ends with a **Related pages** list of 2-4 links, each with a few words on why.
-- External links (CurseForge, Modrinth, GitHub) only on the Home, Installation, Audit Tool and Developers → Setting up your project pages.
+- External links (CurseForge, Modrinth, GitHub) only on the Home, Installation, Audit Tool and Developers → Setting up your project pages. The Privacy page links the privacy policies of GitHub, GoatCounter and Tally.
+- The Privacy page (`privacy.md`) is not in the nav: the footer links it (`copyright` in `mkdocs.yml`, German under the `de` language). When the site starts sending data to a new service (a script, a font, an embed), add it there in both languages.
 
 ## 9. Front matter
 

@@ -1,6 +1,10 @@
 site_name: BankSystem & StockMarket
 site_description: Player, admin and developer documentation for the StockMarket and BankSystem Minecraft mods.
 site_url: https://kroia.github.io/BanksystemStockmarketDoku/
+# Footer link to the privacy page (not in the nav). The German one is set under the de language.
+copyright: <a href="/BanksystemStockmarketDoku/privacy/">Privacy</a>
+not_in_nav: |
+  /privacy*.md
 docs_dir: docs
 strict: true
 validation:
@@ -51,6 +55,11 @@ hooks:
 
 plugins:
   - search
+  # Fonts (Roboto) come from the site itself instead of Google Fonts, so visitors' IPs don't go to Google.
+  # Only on the build server (GitHub Actions sets CI): on Windows the plugin can't create its symlinks
+  # and warns, which fails the strict build. Local previews still load the font from Google.
+  - privacy:
+      enabled: !ENV [CI, false]
   - glightbox:
       zoomable: true
       skip_classes:
@@ -70,6 +79,7 @@ plugins:
           name: Deutsch
           build: true
           site_description: Spieler-, Admin- und Entwicklerdokumentation für die Minecraft-Mods StockMarket und BankSystem.
+          copyright: <a href="/BanksystemStockmarketDoku/de/privacy/">Datenschutz</a>
           theme:
             palette:
               - media: "(prefers-color-scheme: light)"
