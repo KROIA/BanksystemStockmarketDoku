@@ -21,6 +21,21 @@
 .md-typeset .download-buttons .md-button {
   margin: 0.2rem;
 }
+/* Last row: Discord button in Discord's blue, Buy Me a Coffee banner as tall as the buttons */
+.md-typeset .download-buttons .discord-button {
+  background: #5865f2;
+  text-shadow: 2px 2px 0 #3b44a8;
+}
+.md-typeset .download-buttons .discord-button:hover,
+.md-typeset .download-buttons .discord-button:focus {
+  background: #6d79f5;
+}
+.md-typeset .download-buttons .coffee-banner {
+  height: 2.5rem;
+  width: auto;
+  margin: 0.2rem;
+  vertical-align: middle;
+}
 
 /* Language switch left of the light/dark toggle: Material puts it to the right, so the toggle
    and everything after it (search, repo link) move behind the switch. */

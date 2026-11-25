@@ -18,6 +18,9 @@ Deine Diamanten haben Besseres verdient als eine Truhe im Keller. Bring sie zur 
 [:simple-curseforge: StockMarket auf CurseForge](https://www.curseforge.com/minecraft/mc-mods/stockmarket){ .md-button .md-button--primary }
 [:simple-modrinth: StockMarket auf Modrinth](https://modrinth.com/mod/kroia_stockmarket){ .md-button .md-button--primary }
 
+[:simple-discord: Discord beitreten](https://discord.gg/qHNVaDGAyB){ .md-button .discord-button }
+[![Spendier mir einen Kaffee](assets/images/shared/buy-me-a-coffee.png){ .coffee-banner .no-zoom }](https://buymeacoffee.com/alexkrieg)
+
 </div>
 
 <figure markdown="span">

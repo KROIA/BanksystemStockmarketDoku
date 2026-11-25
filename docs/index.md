@@ -18,6 +18,9 @@ Your diamonds deserve better than a chest in the basement. Put them in the bank,
 [:simple-curseforge: StockMarket on CurseForge](https://www.curseforge.com/minecraft/mc-mods/stockmarket){ .md-button .md-button--primary }
 [:simple-modrinth: StockMarket on Modrinth](https://modrinth.com/mod/kroia_stockmarket){ .md-button .md-button--primary }
 
+[:simple-discord: Join the Discord](https://discord.gg/qHNVaDGAyB){ .md-button .discord-button }
+[![Buy Me a Coffee](assets/images/shared/buy-me-a-coffee.png){ .coffee-banner .no-zoom }](https://buymeacoffee.com/alexkrieg)
+
 </div>
 
 <figure markdown="span">
