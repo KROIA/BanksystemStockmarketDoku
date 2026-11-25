@@ -353,3 +353,54 @@
 .md-typeset table:not([class]) {
   display: table;
 }
+
+/* Feedback (assets/javascripts/feedback.js): a "?" after each section heading, shown on hover
+   like the heading link (always, faintly, on touch screens), and a button at the end of the page */
+.md-typeset .feedback-icon {
+  display: inline-block;
+  margin-left: 0.4em;
+  color: var(--md-default-fg-color--lighter);
+  opacity: 0;
+  transition: opacity 250ms, color 250ms;
+}
+.md-typeset .feedback-icon svg {
+  display: block;
+  width: 0.8em;
+  height: 0.8em;
+  fill: currentColor;
+}
+.md-typeset h2:hover > .feedback-icon,
+.md-typeset .feedback-icon:focus {
+  opacity: 1;
+}
+.md-typeset .feedback-icon:hover,
+.md-typeset .feedback-icon:focus {
+  color: var(--md-accent-fg-color);
+}
+@media (hover: none) {
+  .md-typeset .feedback-icon {
+    opacity: 0.6;
+  }
+}
+.md-typeset .feedback-end {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 0.05rem solid var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .feedback-end .md-button {
+  margin-left: 0.5em;
+}
+.md-typeset .feedback-end svg {
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 0.4em;
+  vertical-align: -0.2em;
+  fill: currentColor;
+}
+@media print {
+  .feedback-icon,
+  .feedback-end {
+    display: none;
+  }
+}

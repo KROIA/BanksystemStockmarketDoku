@@ -44,6 +44,7 @@ extra_css:
 
 extra_javascript:
   - assets/javascripts/home-fx.js
+  - assets/javascripts/feedback.js
 
 hooks:
   - hooks/check_front_matter.py
